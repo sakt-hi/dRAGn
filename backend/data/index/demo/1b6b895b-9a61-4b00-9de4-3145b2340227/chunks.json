@@ -1,0 +1,533 @@
+[
+  {
+    "chunk_id": 0,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 1\nATLAS\nSECTION 01\nSection 1\nAtlas 12-Week General Fitness Program is a fictional synthetic training guide created for dRAGn retrieval\ndemonstrations. It targets general strength, cardiovascular capacity, mobility, and consistency. It is not\nmedical advice.\nProgram design\n • Three strength sessions per week.\n • Two cardio sessions per week.\n • One active recovery session.\n • One full rest day.\n • Most strength sets finish with approximately 2–3 repetitions in reserve.\n The program prioritizes consistency and controlled progression. A participant should not force a planned",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 622
+  },
+  {
+    "chunk_id": 1,
+    "text": "progression when technique, recovery, or symptoms indicate that the current workload is inappropriate.\nOperational scenario\nThe weekly structure is intentionally distributed across the week. Monday, Wednesday, and Friday are\nstrength days; Tuesday and Saturday are cardio; Thursday is active recovery; Sunday is the full rest day. The\nschedule is not a requirement to perform seven hard workouts. Adding another intense session on Thursday\ncan change the recovery balance and make the following strength session less productive.\nInterpretation and operational notes\nThe weekly schedule should be interpreted as a workload distribution rather than seven mandatory hard",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 667
+  },
+  {
+    "chunk_id": 2,
+    "text": "sessions. Monday, Wednesday, and Friday are strength days. Tuesday and Saturday are cardio days.\nThursday is intentionally recovery-oriented, and Sunday is the full rest day. Treating Thursday as another\nstrength session or adding unscheduled high-intensity work can change the intended recovery balance. This\ndistinction makes the guide useful for testing retrieval of schedule-specific conditions rather than simple\nexercise-name matching.\nStrength progression is conditional. The plan does not instruct the participant to add weight every week\nregardless of performance. Load should increase only after the top of the prescribed repetition range is",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 651
+  },
+  {
+    "chunk_id": 3,
+    "text": "completed with good technique for two sessions. If form deteriorates, recovery is poor, or symptoms occur,\nmaintaining or reducing the workload is more appropriate. This is a useful example of why an AI answer\nshould retrieve both the progression rule and the condition attached to it.\nCardio progression has its own conditions. Tuesday uses steady moderate aerobic work for 25–40 minutes.\nSaturday intervals are introduced only after at least four weeks of consistent training, using six rounds of one\nminute faster effort followed by two minutes easy. Weekly cardio duration should increase by no more than",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 608
+  },
+  {
+    "chunk_id": 4,
+    "text": "approximately 10% when recovery is good. The plan therefore contains a time-based gate, a session\nstructure, and a progression ceiling that should not be conflated.\nThe guide treats recovery as part of training rather than as an optional afterthought. Sleep, hydration, food\nintake, and manageable training volume affect readiness. Persistent decline in performance, unusually poor\nsleep, or prolonged soreness are signals to reduce training volume rather than force progression. The safety\nsection also distinguishes ordinary fatigue from concerning symptoms such as sharp pain, fainting, unusual\nshortness of breath, or sudden dizziness. These distinctions are important when generating grounded",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 697
+  },
+  {
+    "chunk_id": 5,
+    "text": "shortness of breath, or sudden dizziness. These distinctions are important when generating grounded\nanswers from the document.",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 126
+  },
+  {
+    "chunk_id": 6,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 2\nATLAS\nSECTION 02\n1. Weekly Structure\nDay\nSession\nDuration\nFocus\nMonday\nStrength A\n45–60 min\nSquat, push, core\nTuesday\nCardio 1\n25–40 min\nSteady aerobic\nWednesday\nStrength B\n45–60 min\nHinge, pull, core\nThursday\nRecovery\n20–30 min\nMobility / walking\nFriday\nStrength C\n45–60 min\nFull body\nSaturday\nCardio 2\n25–45 min\nIntervals / steady\nSunday\nRest\n—\nRecovery\nWeekly interpretation\nThursday is intentionally low intensity and should not be treated as a fourth strength workout. Sunday is\nthe full rest day. Saturday intervals are not recommended immediately for an inconsistent beginner.\nOperational scenario",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 650
+  },
+  {
+    "chunk_id": 7,
+    "text": "Operational scenario\nA participant who can complete all prescribed repetitions with good technique should progress gradually, but\nthe plan does not require an increase every week. Warm up for 5–8 minutes, use controlled range of motion,\nand rest 90–150 seconds between demanding compound sets. Accessory work generally uses 45–90 seconds\nof rest. If recovery or technique deteriorates, repeating the previous workload is preferable to forcing\nprogression.\nInterpretation and operational notes\nStrength progression is conditional. The plan does not instruct the participant to add weight every week",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 597
+  },
+  {
+    "chunk_id": 8,
+    "text": "regardless of performance. Load should increase only after the top of the prescribed repetition range is\ncompleted with good technique for two sessions. If form deteriorates, recovery is poor, or symptoms occur,\nmaintaining or reducing the workload is more appropriate. This is a useful example of why an AI answer\nshould retrieve both the progression rule and the condition attached to it.\nCardio progression has its own conditions. Tuesday uses steady moderate aerobic work for 25–40 minutes.\nSaturday intervals are introduced only after at least four weeks of consistent training, using six rounds of one",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 607
+  },
+  {
+    "chunk_id": 9,
+    "text": "minute faster effort followed by two minutes easy. Weekly cardio duration should increase by no more than\napproximately 10% when recovery is good. The plan therefore contains a time-based gate, a session\nstructure, and a progression ceiling that should not be conflated.\nThe guide treats recovery as part of training rather than as an optional afterthought. Sleep, hydration, food\nintake, and manageable training volume affect readiness. Persistent decline in performance, unusually poor\nsleep, or prolonged soreness are signals to reduce training volume rather than force progression. The safety",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 596
+  },
+  {
+    "chunk_id": 10,
+    "text": "section also distinguishes ordinary fatigue from concerning symptoms such as sharp pain, fainting, unusual\nshortness of breath, or sudden dizziness. These distinctions are important when generating grounded\nanswers from the document.\nThe weekly schedule should be interpreted as a workload distribution rather than seven mandatory hard\nsessions. Monday, Wednesday, and Friday are strength days. Tuesday and Saturday are cardio days.\nThursday is intentionally recovery-oriented, and Sunday is the full rest day. Treating Thursday as another\nstrength session or adding unscheduled high-intensity work can change the intended recovery balance. This",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 645
+  },
+  {
+    "chunk_id": 11,
+    "text": "distinction makes the guide useful for testing retrieval of schedule-specific conditions rather than simple\nexercise-name matching.",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 131
+  },
+  {
+    "chunk_id": 12,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 3\nATLAS\nSECTION 03\n2. Strength Training Rules\n • Begin with 5–8 minutes of general warm-up followed by movement-specific preparation.\n • Use controlled movement and consistent range of motion.\n • Rest 90–150 seconds between demanding compound sets and 45–90 seconds for accessory\n movements.\n• Increase load by the smallest practical increment after completing the prescribed range with good\n technique for two sessions.\n• Do not increase load when technique deteriorates or recovery is poor.\n \nReadiness\nReadiness can vary from session to session. The plan is a framework rather than a command to increase",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 650
+  },
+  {
+    "chunk_id": 13,
+    "text": "load every week. A participant can repeat a workload when recovery is inadequate.\nOperational scenario\nStrength A emphasizes squat, push, row, hinge, and core patterns. A participant who cannot perform a full\npush-up can use an incline variation without changing the purpose of the session. The Romanian deadlift\nshould remain a controlled hip hinge rather than a maximal lift. The dead bug is performed with controlled\ntrunk position. The goal is repeatable technique across sessions, not simply completing the largest possible\nnumber of repetitions.\nInterpretation and operational notes\nCardio progression has its own conditions. Tuesday uses steady moderate aerobic work for 25–40 minutes.",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 692
+  },
+  {
+    "chunk_id": 14,
+    "text": "Saturday intervals are introduced only after at least four weeks of consistent training, using six rounds of one\nminute faster effort followed by two minutes easy. Weekly cardio duration should increase by no more than\napproximately 10% when recovery is good. The plan therefore contains a time-based gate, a session\nstructure, and a progression ceiling that should not be conflated.\nThe guide treats recovery as part of training rather than as an optional afterthought. Sleep, hydration, food\nintake, and manageable training volume affect readiness. Persistent decline in performance, unusually poor",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 600
+  },
+  {
+    "chunk_id": 15,
+    "text": "sleep, or prolonged soreness are signals to reduce training volume rather than force progression. The safety\nsection also distinguishes ordinary fatigue from concerning symptoms such as sharp pain, fainting, unusual\nshortness of breath, or sudden dizziness. These distinctions are important when generating grounded\nanswers from the document.\nThe weekly schedule should be interpreted as a workload distribution rather than seven mandatory hard\nsessions. Monday, Wednesday, and Friday are strength days. Tuesday and Saturday are cardio days.\nThursday is intentionally recovery-oriented, and Sunday is the full rest day. Treating Thursday as another",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 648
+  },
+  {
+    "chunk_id": 16,
+    "text": "strength session or adding unscheduled high-intensity work can change the intended recovery balance. This\ndistinction makes the guide useful for testing retrieval of schedule-specific conditions rather than simple\nexercise-name matching.\nStrength progression is conditional. The plan does not instruct the participant to add weight every week\nregardless of performance. Load should increase only after the top of the prescribed repetition range is\ncompleted with good technique for two sessions. If form deteriorates, recovery is poor, or symptoms occur,\nmaintaining or reducing the workload is more appropriate. This is a useful example of why an AI answer",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 657
+  },
+  {
+    "chunk_id": 17,
+    "text": "should retrieve both the progression rule and the condition attached to it.",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 75
+  },
+  {
+    "chunk_id": 18,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 4\nATLAS\nSECTION 04\n3. Strength A\nExercise\nSets\nRepetitions\nGoblet squat\n3\n8–12\nPush-up / incline push-up\n3\n8–15\nDumbbell row\n3\n8–12 / side\nRomanian deadlift\n2\n8–12\nDead bug\n3\n8–12 / side\nTechnique notes\n • Keep the squat controlled and maintain stable foot pressure.\n • Use an incline push-up when full push-ups compromise technique.\n • Avoid momentum during rows.\n • Keep the Romanian deadlift as a controlled hip hinge rather than a maximal lift.\n \nOperational scenario\nStrength B emphasizes the hinge, vertical pulling, unilateral leg work, shoulder pressing, and lateral core",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 623
+  },
+  {
+    "chunk_id": 19,
+    "text": "stability. A supported split squat is an appropriate substitution when balance is the limiting factor. The\nshoulder press should stop when the participant cannot maintain controlled shoulder position. The session\ncomplements Strength A by changing movement emphasis while keeping weekly volume manageable.\nInterpretation and operational notes\nThe guide treats recovery as part of training rather than as an optional afterthought. Sleep, hydration, food\nintake, and manageable training volume affect readiness. Persistent decline in performance, unusually poor\nsleep, or prolonged soreness are signals to reduce training volume rather than force progression. The safety",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 668
+  },
+  {
+    "chunk_id": 20,
+    "text": "section also distinguishes ordinary fatigue from concerning symptoms such as sharp pain, fainting, unusual\nshortness of breath, or sudden dizziness. These distinctions are important when generating grounded\nanswers from the document.\nThe weekly schedule should be interpreted as a workload distribution rather than seven mandatory hard\nsessions. Monday, Wednesday, and Friday are strength days. Tuesday and Saturday are cardio days.\nThursday is intentionally recovery-oriented, and Sunday is the full rest day. Treating Thursday as another\nstrength session or adding unscheduled high-intensity work can change the intended recovery balance. This",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 645
+  },
+  {
+    "chunk_id": 21,
+    "text": "distinction makes the guide useful for testing retrieval of schedule-specific conditions rather than simple\nexercise-name matching.\nStrength progression is conditional. The plan does not instruct the participant to add weight every week\nregardless of performance. Load should increase only after the top of the prescribed repetition range is\ncompleted with good technique for two sessions. If form deteriorates, recovery is poor, or symptoms occur,\nmaintaining or reducing the workload is more appropriate. This is a useful example of why an AI answer\nshould retrieve both the progression rule and the condition attached to it.",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 627
+  },
+  {
+    "chunk_id": 22,
+    "text": "should retrieve both the progression rule and the condition attached to it.\nCardio progression has its own conditions. Tuesday uses steady moderate aerobic work for 25–40 minutes.\nSaturday intervals are introduced only after at least four weeks of consistent training, using six rounds of one\nminute faster effort followed by two minutes easy. Weekly cardio duration should increase by no more than\napproximately 10% when recovery is good. The plan therefore contains a time-based gate, a session\nstructure, and a progression ceiling that should not be conflated.",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 563
+  },
+  {
+    "chunk_id": 23,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 5\nATLAS\nSECTION 05\n4. Strength B\nExercise\nSets\nRepetitions\nRomanian deadlift\n3\n8–12\nLat pulldown / band pulldown\n3\n8–12\nSplit squat\n3\n8–12 / side\nDumbbell shoulder press\n2\n8–12\nSide plank\n3\n20–40 sec / side\nTechnique notes\n • Maintain a neutral spine during the hinge.\n • Use a supported split squat if balance is limiting.\n • Stop a set if shoulder position cannot be controlled.\n The purpose of Strength B is to expose the participant to a different movement emphasis from Strength\nA while preserving manageable weekly volume.\nOperational scenario",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 593
+  },
+  {
+    "chunk_id": 24,
+    "text": "A while preserving manageable weekly volume.\nOperational scenario\nStrength C provides a full-body session using a squat or leg-press variation, horizontal press, row, hip thrust,\nand loaded carry. When the top of the repetition range is achieved with good technique for two sessions, the\nload can increase slightly and repetitions can return toward the lower end. A push-up can substitute for\ndumbbell bench press, and a loaded backpack carry can substitute for a farmer carry when equipment is\nlimited.\nInterpretation and operational notes\nThe weekly schedule should be interpreted as a workload distribution rather than seven mandatory hard",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 642
+  },
+  {
+    "chunk_id": 25,
+    "text": "sessions. Monday, Wednesday, and Friday are strength days. Tuesday and Saturday are cardio days.\nThursday is intentionally recovery-oriented, and Sunday is the full rest day. Treating Thursday as another\nstrength session or adding unscheduled high-intensity work can change the intended recovery balance. This\ndistinction makes the guide useful for testing retrieval of schedule-specific conditions rather than simple\nexercise-name matching.\nStrength progression is conditional. The plan does not instruct the participant to add weight every week\nregardless of performance. Load should increase only after the top of the prescribed repetition range is",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 651
+  },
+  {
+    "chunk_id": 26,
+    "text": "completed with good technique for two sessions. If form deteriorates, recovery is poor, or symptoms occur,\nmaintaining or reducing the workload is more appropriate. This is a useful example of why an AI answer\nshould retrieve both the progression rule and the condition attached to it.\nCardio progression has its own conditions. Tuesday uses steady moderate aerobic work for 25–40 minutes.\nSaturday intervals are introduced only after at least four weeks of consistent training, using six rounds of one\nminute faster effort followed by two minutes easy. Weekly cardio duration should increase by no more than",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 608
+  },
+  {
+    "chunk_id": 27,
+    "text": "approximately 10% when recovery is good. The plan therefore contains a time-based gate, a session\nstructure, and a progression ceiling that should not be conflated.\nThe guide treats recovery as part of training rather than as an optional afterthought. Sleep, hydration, food\nintake, and manageable training volume affect readiness. Persistent decline in performance, unusually poor\nsleep, or prolonged soreness are signals to reduce training volume rather than force progression. The safety\nsection also distinguishes ordinary fatigue from concerning symptoms such as sharp pain, fainting, unusual\nshortness of breath, or sudden dizziness. These distinctions are important when generating grounded",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 697
+  },
+  {
+    "chunk_id": 28,
+    "text": "shortness of breath, or sudden dizziness. These distinctions are important when generating grounded\nanswers from the document.",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 126
+  },
+  {
+    "chunk_id": 29,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 6\nATLAS\nSECTION 06\n5. Strength C\nExercise\nSets\nRepetitions\nLeg press / squat variation\n3\n8–12\nDumbbell bench press\n3\n8–12\nSeated row\n3\n8–12\nHip thrust\n2\n10–15\nFarmer carry\n3\n30–45 sec\nProgression\nWhen the top of the repetition range is achieved with good technique for two sessions, increase load\nslightly and return toward the lower end of the range. If technique deteriorates, keep the previous load\nrather than forcing progression.\nSubstitution\n • Leg press may substitute for a squat variation; a push-up may substitute for dumbbell bench press; a\n loaded backpack carry may substitute for a farmer carry.\nOperational scenario",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 6,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 674
+  },
+  {
+    "chunk_id": 30,
+    "text": "loaded backpack carry may substitute for a farmer carry.\nOperational scenario\nSteady cardio should feel sustainable enough that the participant can speak in short sentences without\ngasping. Tuesday uses 25–40 minutes of moderate steady work. Saturday intervals are introduced only after\nat least four weeks of consistent training, using six rounds of one minute faster effort followed by two\nminutes easy. Weekly cardio duration should increase by no more than approximately 10% when recovery is\ngood.\nInterpretation and operational notes\nStrength progression is conditional. The plan does not instruct the participant to add weight every week",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 6,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 643
+  },
+  {
+    "chunk_id": 31,
+    "text": "regardless of performance. Load should increase only after the top of the prescribed repetition range is\ncompleted with good technique for two sessions. If form deteriorates, recovery is poor, or symptoms occur,\nmaintaining or reducing the workload is more appropriate. This is a useful example of why an AI answer\nshould retrieve both the progression rule and the condition attached to it.\nCardio progression has its own conditions. Tuesday uses steady moderate aerobic work for 25–40 minutes.\nSaturday intervals are introduced only after at least four weeks of consistent training, using six rounds of one",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 6,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 607
+  },
+  {
+    "chunk_id": 32,
+    "text": "minute faster effort followed by two minutes easy. Weekly cardio duration should increase by no more than\napproximately 10% when recovery is good. The plan therefore contains a time-based gate, a session\nstructure, and a progression ceiling that should not be conflated.\nThe guide treats recovery as part of training rather than as an optional afterthought. Sleep, hydration, food\nintake, and manageable training volume affect readiness. Persistent decline in performance, unusually poor\nsleep, or prolonged soreness are signals to reduce training volume rather than force progression. The safety",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 6,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 596
+  },
+  {
+    "chunk_id": 33,
+    "text": "section also distinguishes ordinary fatigue from concerning symptoms such as sharp pain, fainting, unusual\nshortness of breath, or sudden dizziness. These distinctions are important when generating grounded\nanswers from the document.\nThe weekly schedule should be interpreted as a workload distribution rather than seven mandatory hard\nsessions. Monday, Wednesday, and Friday are strength days. Tuesday and Saturday are cardio days.\nThursday is intentionally recovery-oriented, and Sunday is the full rest day. Treating Thursday as another\nstrength session or adding unscheduled high-intensity work can change the intended recovery balance. This",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 6,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 645
+  },
+  {
+    "chunk_id": 34,
+    "text": "distinction makes the guide useful for testing retrieval of schedule-specific conditions rather than simple\nexercise-name matching.",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 6,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 131
+  },
+  {
+    "chunk_id": 35,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 7\nATLAS\nSECTION 07\n6. Cardio\nSteady aerobic work\n • Zone 2 sessions should feel sustainable enough to speak in short sentences without gasping.\n • Tuesday cardio lasts 25–40 minutes at a steady moderate effort.\n \nIntervals\n • After at least four weeks of consistent training, Saturday may use 6 rounds of 1 minute faster effort\n followed by 2 minutes easy.\n• Beginners should establish consistent steady cardio before adding intervals.\n \nProgression\n • Increase weekly cardio duration by no more than approximately 10% when recovery is good.\n Cardio progression should consider total training load. A participant adding intervals should not",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 684
+  },
+  {
+    "chunk_id": 36,
+    "text": "Cardio progression should consider total training load. A participant adding intervals should not\nsimultaneously make large increases to strength volume and weekly duration.\nOperational scenario\nThursday recovery should leave the participant feeling better rather than exhausted. Useful mobility work\nincludes ankle mobility, hip-flexor stretching, thoracic rotation, hamstring mobility, and shoulder\nrange-of-motion drills. Sleep, hydration, and adequate food intake affect readiness. Persistent performance\ndecline, unusually poor sleep, or prolonged soreness is a reason to reduce volume rather than add more\ntraining.\nInterpretation and operational notes",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 658
+  },
+  {
+    "chunk_id": 37,
+    "text": "training.\nInterpretation and operational notes\nCardio progression has its own conditions. Tuesday uses steady moderate aerobic work for 25–40 minutes.\nSaturday intervals are introduced only after at least four weeks of consistent training, using six rounds of one\nminute faster effort followed by two minutes easy. Weekly cardio duration should increase by no more than\napproximately 10% when recovery is good. The plan therefore contains a time-based gate, a session\nstructure, and a progression ceiling that should not be conflated.\nThe guide treats recovery as part of training rather than as an optional afterthought. Sleep, hydration, food",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 644
+  },
+  {
+    "chunk_id": 38,
+    "text": "intake, and manageable training volume affect readiness. Persistent decline in performance, unusually poor\nsleep, or prolonged soreness are signals to reduce training volume rather than force progression. The safety\nsection also distinguishes ordinary fatigue from concerning symptoms such as sharp pain, fainting, unusual\nshortness of breath, or sudden dizziness. These distinctions are important when generating grounded\nanswers from the document.\nThe weekly schedule should be interpreted as a workload distribution rather than seven mandatory hard\nsessions. Monday, Wednesday, and Friday are strength days. Tuesday and Saturday are cardio days.",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 648
+  },
+  {
+    "chunk_id": 39,
+    "text": "sessions. Monday, Wednesday, and Friday are strength days. Tuesday and Saturday are cardio days.\nThursday is intentionally recovery-oriented, and Sunday is the full rest day. Treating Thursday as another\nstrength session or adding unscheduled high-intensity work can change the intended recovery balance. This\ndistinction makes the guide useful for testing retrieval of schedule-specific conditions rather than simple\nexercise-name matching.\nStrength progression is conditional. The plan does not instruct the participant to add weight every week\nregardless of performance. Load should increase only after the top of the prescribed repetition range is",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 651
+  },
+  {
+    "chunk_id": 40,
+    "text": "completed with good technique for two sessions. If form deteriorates, recovery is poor, or symptoms occur,\nmaintaining or reducing the workload is more appropriate. This is a useful example of why an AI answer\nshould retrieve both the progression rule and the condition attached to it.",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 285
+  },
+  {
+    "chunk_id": 41,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 8\nATLAS\nSECTION 08\n7. Mobility and Recovery\n • Thursday should leave the participant feeling better rather than exhausted.\n • Useful movements include ankle mobility, hip-flexor stretch, thoracic rotation, hamstring mobility, and\n shoulder range-of-motion drills.\n• Sleep, hydration, and adequate food intake influence recovery and training performance.\n • Persistent decline in performance, unusually poor sleep, or prolonged soreness is a reason to reduce\n training volume.\nRecovery checklist\n • Keep a consistent sleep schedule.\n • Hydrate according to climate, activity, body size, and sweat rate.",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 8,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 645
+  },
+  {
+    "chunk_id": 42,
+    "text": "• Hydrate according to climate, activity, body size, and sweat rate.\n • Avoid adding unplanned high-intensity sessions when recovery is poor.\n \nOperational scenario\nThe 12-week structure starts with technique, moves into gradual overload, consolidates progress, and\nfinishes with a deload. During weeks 1–4 the emphasis is consistency and 2–3 repetitions in reserve. Weeks\n5–8 emphasize gradual increases, weeks 9–11 consolidate, and week 12 reduces strength volume by\napproximately 30–40%. Progression should follow performance rather than the calendar alone.\nInterpretation and operational notes",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 8,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 597
+  },
+  {
+    "chunk_id": 43,
+    "text": "Interpretation and operational notes\nThe guide treats recovery as part of training rather than as an optional afterthought. Sleep, hydration, food\nintake, and manageable training volume affect readiness. Persistent decline in performance, unusually poor\nsleep, or prolonged soreness are signals to reduce training volume rather than force progression. The safety\nsection also distinguishes ordinary fatigue from concerning symptoms such as sharp pain, fainting, unusual\nshortness of breath, or sudden dizziness. These distinctions are important when generating grounded\nanswers from the document.\nThe weekly schedule should be interpreted as a workload distribution rather than seven mandatory hard",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 8,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 698
+  },
+  {
+    "chunk_id": 44,
+    "text": "sessions. Monday, Wednesday, and Friday are strength days. Tuesday and Saturday are cardio days.\nThursday is intentionally recovery-oriented, and Sunday is the full rest day. Treating Thursday as another\nstrength session or adding unscheduled high-intensity work can change the intended recovery balance. This\ndistinction makes the guide useful for testing retrieval of schedule-specific conditions rather than simple\nexercise-name matching.\nStrength progression is conditional. The plan does not instruct the participant to add weight every week\nregardless of performance. Load should increase only after the top of the prescribed repetition range is",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 8,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 651
+  },
+  {
+    "chunk_id": 45,
+    "text": "completed with good technique for two sessions. If form deteriorates, recovery is poor, or symptoms occur,\nmaintaining or reducing the workload is more appropriate. This is a useful example of why an AI answer\nshould retrieve both the progression rule and the condition attached to it.\nCardio progression has its own conditions. Tuesday uses steady moderate aerobic work for 25–40 minutes.\nSaturday intervals are introduced only after at least four weeks of consistent training, using six rounds of one\nminute faster effort followed by two minutes easy. Weekly cardio duration should increase by no more than",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 8,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 608
+  },
+  {
+    "chunk_id": 46,
+    "text": "approximately 10% when recovery is good. The plan therefore contains a time-based gate, a session\nstructure, and a progression ceiling that should not be conflated.",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 8,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 164
+  },
+  {
+    "chunk_id": 47,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 9\nATLAS\nSECTION 09\n8. 12-Week Progression\nWeeks\nFocus\nApproach\n1–4\nTechnique\nConsistency; 2–3 reps in reserve\n5–8\nOverload\nGradual reps or load increase\n9–11\nConsolidation\nProgress only with adequate\nrecovery\n12\nDeload\nReduce strength volume 30–40%\nExample\nIf an exercise target is 8–12 repetitions and a participant completes 12, 12, and 12 with good form for\ntwo sessions, increase the load slightly and return toward 8–10 repetitions. If the participant instead\ncompletes 12, 10, and 8 with deteriorating technique, the load should not be increased.\nOperational scenario",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 617
+  },
+  {
+    "chunk_id": 48,
+    "text": "Operational scenario\nNutrition should support training rather than undermine it. Protein is best distributed across meals, while\nfruit or vegetables, minimally processed carbohydrate sources, and adequate overall food intake support\nrecovery. Aggressive calorie restriction can reduce training performance. Substitutions such as bodyweight\nsquat for goblet squat or resistance-band row for dumbbell row preserve movement patterns when\nequipment is unavailable.\nInterpretation and operational notes\nThe weekly schedule should be interpreted as a workload distribution rather than seven mandatory hard\nsessions. Monday, Wednesday, and Friday are strength days. Tuesday and Saturday are cardio days.",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 696
+  },
+  {
+    "chunk_id": 49,
+    "text": "sessions. Monday, Wednesday, and Friday are strength days. Tuesday and Saturday are cardio days.\nThursday is intentionally recovery-oriented, and Sunday is the full rest day. Treating Thursday as another\nstrength session or adding unscheduled high-intensity work can change the intended recovery balance. This\ndistinction makes the guide useful for testing retrieval of schedule-specific conditions rather than simple\nexercise-name matching.\nStrength progression is conditional. The plan does not instruct the participant to add weight every week\nregardless of performance. Load should increase only after the top of the prescribed repetition range is",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 651
+  },
+  {
+    "chunk_id": 50,
+    "text": "completed with good technique for two sessions. If form deteriorates, recovery is poor, or symptoms occur,\nmaintaining or reducing the workload is more appropriate. This is a useful example of why an AI answer\nshould retrieve both the progression rule and the condition attached to it.\nCardio progression has its own conditions. Tuesday uses steady moderate aerobic work for 25–40 minutes.\nSaturday intervals are introduced only after at least four weeks of consistent training, using six rounds of one\nminute faster effort followed by two minutes easy. Weekly cardio duration should increase by no more than",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 608
+  },
+  {
+    "chunk_id": 51,
+    "text": "approximately 10% when recovery is good. The plan therefore contains a time-based gate, a session\nstructure, and a progression ceiling that should not be conflated.\nThe guide treats recovery as part of training rather than as an optional afterthought. Sleep, hydration, food\nintake, and manageable training volume affect readiness. Persistent decline in performance, unusually poor\nsleep, or prolonged soreness are signals to reduce training volume rather than force progression. The safety\nsection also distinguishes ordinary fatigue from concerning symptoms such as sharp pain, fainting, unusual\nshortness of breath, or sudden dizziness. These distinctions are important when generating grounded",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 697
+  },
+  {
+    "chunk_id": 52,
+    "text": "shortness of breath, or sudden dizziness. These distinctions are important when generating grounded\nanswers from the document.",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 126
+  },
+  {
+    "chunk_id": 53,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 10\nATLAS\nSECTION 10\n9. Nutrition, Substitutions and Safety\nNutrition\n • Distribute protein across meals rather than concentrating it in one meal.\n • Choose minimally processed foods, vegetables or fruit, whole-food carbohydrate sources, and\n protein-rich foods.\n• Aggressive calorie restriction can reduce training performance and recovery.\n \nSubstitutions\n • Goblet squat → bodyweight squat or leg press.\n • Dumbbell row → resistance-band row.\n • Lat pulldown → resistance-band pulldown.\n • Dumbbell bench press → push-up or incline push-up.\n \nSafety\n • Stop for sharp pain, sudden dizziness, fainting, unusual shortness of breath, or another concerning",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 10,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 698
+  },
+  {
+    "chunk_id": 54,
+    "text": "symptom.\n• People with medical conditions, recent injuries, pregnancy, or significant limitations should obtain\n appropriate professional guidance before starting.\nOperational scenario\nThe program is a general fitness guide, not medical advice. Sharp pain, sudden dizziness, fainting, unusual\nshortness of breath, or another concerning symptom is a reason to stop and seek appropriate professional\nguidance. People with medical conditions, recent injuries, pregnancy, or significant limitations should obtain\nsuitable advice before starting. Consistency, controlled progression, and recovery are more important than\nforcing a planned workload.\nInterpretation and operational notes",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 10,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 680
+  },
+  {
+    "chunk_id": 55,
+    "text": "forcing a planned workload.\nInterpretation and operational notes\nStrength progression is conditional. The plan does not instruct the participant to add weight every week\nregardless of performance. Load should increase only after the top of the prescribed repetition range is\ncompleted with good technique for two sessions. If form deteriorates, recovery is poor, or symptoms occur,\nmaintaining or reducing the workload is more appropriate. This is a useful example of why an AI answer\nshould retrieve both the progression rule and the condition attached to it.\nCardio progression has its own conditions. Tuesday uses steady moderate aerobic work for 25–40 minutes.",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 10,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 664
+  },
+  {
+    "chunk_id": 56,
+    "text": "Saturday intervals are introduced only after at least four weeks of consistent training, using six rounds of one\nminute faster effort followed by two minutes easy. Weekly cardio duration should increase by no more than\napproximately 10% when recovery is good. The plan therefore contains a time-based gate, a session\nstructure, and a progression ceiling that should not be conflated.\nThe guide treats recovery as part of training rather than as an optional afterthought. Sleep, hydration, food\nintake, and manageable training volume affect readiness. Persistent decline in performance, unusually poor",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 10,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 600
+  },
+  {
+    "chunk_id": 57,
+    "text": "sleep, or prolonged soreness are signals to reduce training volume rather than force progression. The safety\nsection also distinguishes ordinary fatigue from concerning symptoms such as sharp pain, fainting, unusual\nshortness of breath, or sudden dizziness. These distinctions are important when generating grounded\nanswers from the document.\nThe weekly schedule should be interpreted as a workload distribution rather than seven mandatory hard\nsessions. Monday, Wednesday, and Friday are strength days. Tuesday and Saturday are cardio days.\nThursday is intentionally recovery-oriented, and Sunday is the full rest day. Treating Thursday as another",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 10,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 648
+  },
+  {
+    "chunk_id": 58,
+    "text": "strength session or adding unscheduled high-intensity work can change the intended recovery balance. This\ndistinction makes the guide useful for testing retrieval of schedule-specific conditions rather than simple\nexercise-name matching.",
+    "source": "data/documents/demo/fitness-program-guide.pdf",
+    "page": 10,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 237
+  }
+]

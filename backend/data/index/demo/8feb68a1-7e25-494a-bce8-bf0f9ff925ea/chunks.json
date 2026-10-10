@@ -1,0 +1,515 @@
+[
+  {
+    "chunk_id": 0,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 1\nHORIZONCARE\nSECTION 01\nSection 1\nHorizonCare Employee Health Plan is a fictional synthetic policy created for dRAGn retrieval\ndemonstrations. It intentionally contains numerical limits, waiting periods, exclusions, claim deadlines,\nand exceptions that require precise retrieval.\nAt-a-glance figures\n • Hospitalization family-floater limit: ₹5,00,000.\n • Hospitalization deductible: ₹10,000.\n • Hospitalization co-payment: 10% after deductible.\n • Outpatient annual limit: ₹15,000 with 20% member share.\n • Maternity annual limit: ₹75,000 with 10% member share.\n • Pre-existing disease waiting period: 12 months.\n • Maternity waiting period: 9 months.",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 696
+  },
+  {
+    "chunk_id": 1,
+    "text": "• Pre-existing disease waiting period: 12 months.\n • Maternity waiting period: 9 months.\n \nOperational scenario\nA new employee reaches the 30-day eligibility point but has not completed enrollment. Eligibility and\nenrollment are related but not identical: coverage normally begins after the eligibility date and completion of\nthe enrollment process. A spouse or child added after a qualifying life event should use the applicable\nspecial-enrollment window. A dependent child remains covered until the end of the month in which they\nreach age 25, subject to dependency rules.\nInterpretation and operational notes",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 611
+  },
+  {
+    "chunk_id": 2,
+    "text": "reach age 25, subject to dependency rules.\nInterpretation and operational notes\nHealth-plan questions should be answered by identifying the benefit category before looking for a numerical\nlimit. Hospitalization, outpatient consultation, prescription medicines, mental health services, ambulance,\nmaternity, and day-care treatment have different rules. The ₹5,00,000 hospitalization limit is a family-floater\nbalance, while the ₹75,000 maternity limit applies to the maternity benefit. Returning the largest number\nsimply because it appears in the document would therefore produce an incorrect answer.",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 600
+  },
+  {
+    "chunk_id": 3,
+    "text": "simply because it appears in the document would therefore produce an incorrect answer.\nFinancial responsibility also has multiple layers. The ₹10,000 hospitalization deductible is a fixed annual\namount, while the 10% hospitalization member share is a percentage applied after the deductible.\nOutpatient treatment uses a 20% member share and does not reduce the hospitalization deductible. Room\neligibility is separate again, with a ₹6,000 per-day room limit. A correct answer should preserve these\ndistinctions instead of combining them into one generic co-payment statement.\nClaim questions also depend on timing and provider status. Planned hospitalization should normally be",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 677
+  },
+  {
+    "chunk_id": 4,
+    "text": "pre-authorized 48 hours before admission, while emergency hospitalization should be reported within 24\nhours. Reimbursement claims should normally be filed within 30 days of discharge. Network hospitals can\nprovide cashless service subject to authorization; eligible non-network treatment may be reimbursed but is\ngenerally paid by the member first. These rules can interact, so retrieval should include enough surrounding\ncontext to preserve the condition.\nWaiting periods and exclusions are independent from network status. A treatment performed at a network\nhospital can still be excluded, and a pre-existing condition can still be subject to its waiting period. Maternity",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 675
+  },
+  {
+    "chunk_id": 5,
+    "text": "has a nine-month waiting period, pre-existing diseases have a 12-month waiting period, and specified\nprocedures have a 12-month waiting period. Accidental injury is treated differently and has no general\nwaiting period from the effective date. This makes the document useful for testing conditional retrieval and\ncitation accuracy.",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 331
+  },
+  {
+    "chunk_id": 6,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 2\nHORIZONCARE\nSECTION 02\n1. Eligibility and Enrollment\nEmployee eligibility\n • Employees become eligible after 30 days of continuous employment unless their employment letter\n states otherwise.\n• Coverage normally begins after enrollment is completed and the eligibility date is reached.\n \nDependents\n • Spouses and dependent children may be enrolled during annual enrollment or within 30 days of a\n qualifying life event.\n• Dependent children are covered until the end of the month in which they reach age 25, subject to\n dependency rules.\nChanges\nA marriage, birth, adoption, or other qualifying life event may create a special enrollment opportunity.",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 697
+  },
+  {
+    "chunk_id": 7,
+    "text": "Employees should provide the required documentation within the specified enrollment window.\nOperational scenario\nA family has a ₹5,00,000 hospitalization limit and one member submits a large claim. The amount is a shared\nfamily-floater balance, so the first claim reduces what remains for other covered family members during the\npolicy year. This is different from the ₹75,000 maternity limit and the ₹15,000 outpatient limit. A correct\nanswer must identify the benefit category before selecting a number.\nInterpretation and operational notes\nFinancial responsibility also has multiple layers. The ₹10,000 hospitalization deductible is a fixed annual",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 650
+  },
+  {
+    "chunk_id": 8,
+    "text": "amount, while the 10% hospitalization member share is a percentage applied after the deductible.\nOutpatient treatment uses a 20% member share and does not reduce the hospitalization deductible. Room\neligibility is separate again, with a ₹6,000 per-day room limit. A correct answer should preserve these\ndistinctions instead of combining them into one generic co-payment statement.\nClaim questions also depend on timing and provider status. Planned hospitalization should normally be\npre-authorized 48 hours before admission, while emergency hospitalization should be reported within 24\nhours. Reimbursement claims should normally be filed within 30 days of discharge. Network hospitals can",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 689
+  },
+  {
+    "chunk_id": 9,
+    "text": "provide cashless service subject to authorization; eligible non-network treatment may be reimbursed but is\ngenerally paid by the member first. These rules can interact, so retrieval should include enough surrounding\ncontext to preserve the condition.\nWaiting periods and exclusions are independent from network status. A treatment performed at a network\nhospital can still be excluded, and a pre-existing condition can still be subject to its waiting period. Maternity\nhas a nine-month waiting period, pre-existing diseases have a 12-month waiting period, and specified\nprocedures have a 12-month waiting period. Accidental injury is treated differently and has no general",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 672
+  },
+  {
+    "chunk_id": 10,
+    "text": "waiting period from the effective date. This makes the document useful for testing conditional retrieval and\ncitation accuracy.\nHealth-plan questions should be answered by identifying the benefit category before looking for a numerical\nlimit. Hospitalization, outpatient consultation, prescription medicines, mental health services, ambulance,\nmaternity, and day-care treatment have different rules. The ₹5,00,000 hospitalization limit is a family-floater\nbalance, while the ₹75,000 maternity limit applies to the maternity benefit. Returning the largest number\nsimply because it appears in the document would therefore produce an incorrect answer.",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 648
+  },
+  {
+    "chunk_id": 11,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 3\nHORIZONCARE\nSECTION 03\n2. Coverage Limits\nBenefit\nAnnual limit\nMember share\nHospitalization\n₹5,00,000\n10% after deductible\nOutpatient consultation\n₹15,000\n20%\nPrescription medicines\n₹20,000\n20%\nMental health services\n₹25,000\n10%\nAmbulance\n₹10,000\n10%\nMaternity\n₹75,000\n10%\nDay-care\nWithin hospitalization limit\n10% after deductible\nThe hospitalization amount is a family-floater balance shared by covered family members. A claim by\none member reduces the remaining balance for the policy year.\nOperational scenario\nSuppose an eligible hospitalization bill is subject to the ₹10,000 annual deductible and the 10% member",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 664
+  },
+  {
+    "chunk_id": 12,
+    "text": "share. The deductible is a fixed initial amount; the 10% co-payment is a percentage applied after the\ndeductible. Room eligibility is a separate rule with a ₹6,000 daily limit. A member selecting a more expensive\nroom may also face proportionate deductions on related hospital charges, so the room rule should be\nchecked before estimating out-of-pocket cost.\nInterpretation and operational notes\nClaim questions also depend on timing and provider status. Planned hospitalization should normally be\npre-authorized 48 hours before admission, while emergency hospitalization should be reported within 24",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 600
+  },
+  {
+    "chunk_id": 13,
+    "text": "hours. Reimbursement claims should normally be filed within 30 days of discharge. Network hospitals can\nprovide cashless service subject to authorization; eligible non-network treatment may be reimbursed but is\ngenerally paid by the member first. These rules can interact, so retrieval should include enough surrounding\ncontext to preserve the condition.\nWaiting periods and exclusions are independent from network status. A treatment performed at a network\nhospital can still be excluded, and a pre-existing condition can still be subject to its waiting period. Maternity\nhas a nine-month waiting period, pre-existing diseases have a 12-month waiting period, and specified",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 673
+  },
+  {
+    "chunk_id": 14,
+    "text": "procedures have a 12-month waiting period. Accidental injury is treated differently and has no general\nwaiting period from the effective date. This makes the document useful for testing conditional retrieval and\ncitation accuracy.\nHealth-plan questions should be answered by identifying the benefit category before looking for a numerical\nlimit. Hospitalization, outpatient consultation, prescription medicines, mental health services, ambulance,\nmaternity, and day-care treatment have different rules. The ₹5,00,000 hospitalization limit is a family-floater\nbalance, while the ₹75,000 maternity limit applies to the maternity benefit. Returning the largest number",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 664
+  },
+  {
+    "chunk_id": 15,
+    "text": "simply because it appears in the document would therefore produce an incorrect answer.\nFinancial responsibility also has multiple layers. The ₹10,000 hospitalization deductible is a fixed annual\namount, while the 10% hospitalization member share is a percentage applied after the deductible.\nOutpatient treatment uses a 20% member share and does not reduce the hospitalization deductible. Room\neligibility is separate again, with a ₹6,000 per-day room limit. A correct answer should preserve these\ndistinctions instead of combining them into one generic co-payment statement.",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 575
+  },
+  {
+    "chunk_id": 16,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 4\nHORIZONCARE\nSECTION 04\n3. Deductibles, Co-payment and Room Limits\nDeductible\n • The annual hospitalization deductible is ₹10,000 for the family floater.\n • The deductible is satisfied before eligible hospitalization coverage applies.\n \nCo-payment\n • A 10% co-payment applies to eligible hospitalization expenses after the deductible.\n • Outpatient claims have a 20% member share and do not reduce the hospitalization deductible.\n \nRoom\n • Room charges are covered up to ₹6,000 per day.\n • Selecting a room above ₹6,000 per day may result in proportionate deductions to related hospital\n charges.",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 641
+  },
+  {
+    "chunk_id": 17,
+    "text": "charges.\nThe deductible and co-payment should not be confused: the deductible is an initial amount, while the\nco-payment is a percentage applied afterward.\nOperational scenario\nA patient is admitted for an emergency at night. The normal pre-authorization rule for planned\nhospitalization is 48 hours before admission, but emergency hospitalization should instead be reported\nwithin 24 hours. A treatment lasting less than 24 hours can still qualify when it is an approved day-care\nprocedure. Pre-authorization is a review of the proposed treatment; it is not a guarantee that every final bill\nitem will be paid.\nInterpretation and operational notes",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 648
+  },
+  {
+    "chunk_id": 18,
+    "text": "item will be paid.\nInterpretation and operational notes\nWaiting periods and exclusions are independent from network status. A treatment performed at a network\nhospital can still be excluded, and a pre-existing condition can still be subject to its waiting period. Maternity\nhas a nine-month waiting period, pre-existing diseases have a 12-month waiting period, and specified\nprocedures have a 12-month waiting period. Accidental injury is treated differently and has no general\nwaiting period from the effective date. This makes the document useful for testing conditional retrieval and\ncitation accuracy.",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 605
+  },
+  {
+    "chunk_id": 19,
+    "text": "citation accuracy.\nHealth-plan questions should be answered by identifying the benefit category before looking for a numerical\nlimit. Hospitalization, outpatient consultation, prescription medicines, mental health services, ambulance,\nmaternity, and day-care treatment have different rules. The ₹5,00,000 hospitalization limit is a family-floater\nbalance, while the ₹75,000 maternity limit applies to the maternity benefit. Returning the largest number\nsimply because it appears in the document would therefore produce an incorrect answer.\nFinancial responsibility also has multiple layers. The ₹10,000 hospitalization deductible is a fixed annual",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 647
+  },
+  {
+    "chunk_id": 20,
+    "text": "amount, while the 10% hospitalization member share is a percentage applied after the deductible.\nOutpatient treatment uses a 20% member share and does not reduce the hospitalization deductible. Room\neligibility is separate again, with a ₹6,000 per-day room limit. A correct answer should preserve these\ndistinctions instead of combining them into one generic co-payment statement.\nClaim questions also depend on timing and provider status. Planned hospitalization should normally be\npre-authorized 48 hours before admission, while emergency hospitalization should be reported within 24\nhours. Reimbursement claims should normally be filed within 30 days of discharge. Network hospitals can",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 689
+  },
+  {
+    "chunk_id": 21,
+    "text": "provide cashless service subject to authorization; eligible non-network treatment may be reimbursed but is\ngenerally paid by the member first. These rules can interact, so retrieval should include enough surrounding\ncontext to preserve the condition.",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 250
+  },
+  {
+    "chunk_id": 22,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 5\nHORIZONCARE\nSECTION 05\n4. Hospitalization and Day-care\n • Planned hospitalization should normally be pre-authorized at least 48 hours before admission.\n • Emergency hospitalization should be reported within 24 hours of admission.\n • Hospitalization normally requires at least 24 continuous hours unless the procedure is an approved\n day-care treatment.\nDay-care\nAn approved procedure can qualify as day-care even without a 24-hour admission when it appears in the\napproved procedure schedule and satisfies the policy conditions.\nAuthorization scenario\nPre-authorization confirms that the administrator has reviewed the proposed treatment; it does not",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 696
+  },
+  {
+    "chunk_id": 23,
+    "text": "Pre-authorization confirms that the administrator has reviewed the proposed treatment; it does not\nguarantee payment of every final expense. Final claims remain subject to eligibility, limits, exclusions,\ndocumentation, and actual treatment.\nOperational scenario\nA member asks whether a condition diagnosed during the first few months of coverage is covered. The\nanswer depends on whether it is pre-existing and whether the applicable waiting period has expired. The\npolicy gives pre-existing diseases a 12-month waiting period and maternity a 9-month waiting period.\nAccidental injury is treated differently and has no general waiting period from the effective date. Waiting",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 675
+  },
+  {
+    "chunk_id": 24,
+    "text": "periods must therefore be read by condition, not as one universal rule.\nInterpretation and operational notes\nHealth-plan questions should be answered by identifying the benefit category before looking for a numerical\nlimit. Hospitalization, outpatient consultation, prescription medicines, mental health services, ambulance,\nmaternity, and day-care treatment have different rules. The ₹5,00,000 hospitalization limit is a family-floater\nbalance, while the ₹75,000 maternity limit applies to the maternity benefit. Returning the largest number\nsimply because it appears in the document would therefore produce an incorrect answer.",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 629
+  },
+  {
+    "chunk_id": 25,
+    "text": "simply because it appears in the document would therefore produce an incorrect answer.\nFinancial responsibility also has multiple layers. The ₹10,000 hospitalization deductible is a fixed annual\namount, while the 10% hospitalization member share is a percentage applied after the deductible.\nOutpatient treatment uses a 20% member share and does not reduce the hospitalization deductible. Room\neligibility is separate again, with a ₹6,000 per-day room limit. A correct answer should preserve these\ndistinctions instead of combining them into one generic co-payment statement.\nClaim questions also depend on timing and provider status. Planned hospitalization should normally be",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 677
+  },
+  {
+    "chunk_id": 26,
+    "text": "pre-authorized 48 hours before admission, while emergency hospitalization should be reported within 24\nhours. Reimbursement claims should normally be filed within 30 days of discharge. Network hospitals can\nprovide cashless service subject to authorization; eligible non-network treatment may be reimbursed but is\ngenerally paid by the member first. These rules can interact, so retrieval should include enough surrounding\ncontext to preserve the condition.\nWaiting periods and exclusions are independent from network status. A treatment performed at a network\nhospital can still be excluded, and a pre-existing condition can still be subject to its waiting period. Maternity",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 675
+  },
+  {
+    "chunk_id": 27,
+    "text": "has a nine-month waiting period, pre-existing diseases have a 12-month waiting period, and specified\nprocedures have a 12-month waiting period. Accidental injury is treated differently and has no general\nwaiting period from the effective date. This makes the document useful for testing conditional retrieval and\ncitation accuracy.",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 331
+  },
+  {
+    "chunk_id": 28,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 6\nHORIZONCARE\nSECTION 06\n5. Waiting Periods\nCondition / benefit\nWaiting period\nPre-existing diseases\n12 months\nMaternity\n9 months\nSpecified procedures\n12 months\nAccidental injury\nNo general waiting period from effective date\nInterpretation\nA pre-existing disease is not automatically payable from the first day of coverage. The 12-month waiting\nperiod applies unless an explicit policy exception exists. Accidental injuries are treated differently and\nhave no general waiting period from the effective date.\nOperational scenario\nA cosmetic procedure at a network hospital is not automatically covered merely because the hospital",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 6,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 672
+  },
+  {
+    "chunk_id": 29,
+    "text": "A cosmetic procedure at a network hospital is not automatically covered merely because the hospital\nparticipates in the network. Cosmetic treatment is excluded unless it is medically necessary following an\naccidental injury or covered reconstruction. Experimental treatment, deliberate self-injury expenses,\nnon-prescription wellness supplements, and personal comfort items are also excluded. Network status and\nmedical eligibility are separate checks.\nInterpretation and operational notes\nFinancial responsibility also has multiple layers. The ₹10,000 hospitalization deductible is a fixed annual\namount, while the 10% hospitalization member share is a percentage applied after the deductible.",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 6,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 694
+  },
+  {
+    "chunk_id": 30,
+    "text": "amount, while the 10% hospitalization member share is a percentage applied after the deductible.\nOutpatient treatment uses a 20% member share and does not reduce the hospitalization deductible. Room\neligibility is separate again, with a ₹6,000 per-day room limit. A correct answer should preserve these\ndistinctions instead of combining them into one generic co-payment statement.\nClaim questions also depend on timing and provider status. Planned hospitalization should normally be\npre-authorized 48 hours before admission, while emergency hospitalization should be reported within 24\nhours. Reimbursement claims should normally be filed within 30 days of discharge. Network hospitals can",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 6,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 689
+  },
+  {
+    "chunk_id": 31,
+    "text": "provide cashless service subject to authorization; eligible non-network treatment may be reimbursed but is\ngenerally paid by the member first. These rules can interact, so retrieval should include enough surrounding\ncontext to preserve the condition.\nWaiting periods and exclusions are independent from network status. A treatment performed at a network\nhospital can still be excluded, and a pre-existing condition can still be subject to its waiting period. Maternity\nhas a nine-month waiting period, pre-existing diseases have a 12-month waiting period, and specified\nprocedures have a 12-month waiting period. Accidental injury is treated differently and has no general",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 6,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 672
+  },
+  {
+    "chunk_id": 32,
+    "text": "waiting period from the effective date. This makes the document useful for testing conditional retrieval and\ncitation accuracy.\nHealth-plan questions should be answered by identifying the benefit category before looking for a numerical\nlimit. Hospitalization, outpatient consultation, prescription medicines, mental health services, ambulance,\nmaternity, and day-care treatment have different rules. The ₹5,00,000 hospitalization limit is a family-floater\nbalance, while the ₹75,000 maternity limit applies to the maternity benefit. Returning the largest number\nsimply because it appears in the document would therefore produce an incorrect answer.",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 6,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 648
+  },
+  {
+    "chunk_id": 33,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 7\nHORIZONCARE\nSECTION 07\n6. Exclusions\n • Cosmetic procedures are excluded unless medically necessary following an accidental injury or\n covered reconstruction.\n• Experimental or unproven treatments are excluded unless explicitly approved by the insurer.\n • Expenses caused by deliberate self-injury are excluded.\n • Non-prescription wellness supplements are not covered under prescription medicine benefits.\n • Personal comfort items, television charges, and non-medical attendant expenses are not covered.\n • Treatment that is not medically necessary or outside an eligible benefit category may be rejected.\n \nWhy exclusions matter",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 677
+  },
+  {
+    "chunk_id": 34,
+    "text": "Why exclusions matter\nA treatment may occur in a network hospital and still be excluded. Network status, medical necessity,\nbenefit category, and policy limits are separate checks.\nOperational scenario\nFor a cashless claim, the member presents the health card and identity document at a network hospital,\nafter which the hospital submits the pre-authorization request. For reimbursement, the member submits the\nclaim form, discharge summary, itemized bills, prescriptions, payment proof, and required medical records.\nReimbursement claims should normally be filed within 30 days of discharge. Missing documents can pause\nprocessing until the requested information is supplied.",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 676
+  },
+  {
+    "chunk_id": 35,
+    "text": "processing until the requested information is supplied.\nInterpretation and operational notes\nClaim questions also depend on timing and provider status. Planned hospitalization should normally be\npre-authorized 48 hours before admission, while emergency hospitalization should be reported within 24\nhours. Reimbursement claims should normally be filed within 30 days of discharge. Network hospitals can\nprovide cashless service subject to authorization; eligible non-network treatment may be reimbursed but is\ngenerally paid by the member first. These rules can interact, so retrieval should include enough surrounding\ncontext to preserve the condition.",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 652
+  },
+  {
+    "chunk_id": 36,
+    "text": "context to preserve the condition.\nWaiting periods and exclusions are independent from network status. A treatment performed at a network\nhospital can still be excluded, and a pre-existing condition can still be subject to its waiting period. Maternity\nhas a nine-month waiting period, pre-existing diseases have a 12-month waiting period, and specified\nprocedures have a 12-month waiting period. Accidental injury is treated differently and has no general\nwaiting period from the effective date. This makes the document useful for testing conditional retrieval and\ncitation accuracy.\nHealth-plan questions should be answered by identifying the benefit category before looking for a numerical",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 692
+  },
+  {
+    "chunk_id": 37,
+    "text": "limit. Hospitalization, outpatient consultation, prescription medicines, mental health services, ambulance,\nmaternity, and day-care treatment have different rules. The ₹5,00,000 hospitalization limit is a family-floater\nbalance, while the ₹75,000 maternity limit applies to the maternity benefit. Returning the largest number\nsimply because it appears in the document would therefore produce an incorrect answer.\nFinancial responsibility also has multiple layers. The ₹10,000 hospitalization deductible is a fixed annual\namount, while the 10% hospitalization member share is a percentage applied after the deductible.",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 617
+  },
+  {
+    "chunk_id": 38,
+    "text": "amount, while the 10% hospitalization member share is a percentage applied after the deductible.\nOutpatient treatment uses a 20% member share and does not reduce the hospitalization deductible. Room\neligibility is separate again, with a ₹6,000 per-day room limit. A correct answer should preserve these\ndistinctions instead of combining them into one generic co-payment statement.",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 380
+  },
+  {
+    "chunk_id": 39,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 8\nHORIZONCARE\nSECTION 08\n7. Claims and Pre-authorization\nCashless process\n • Present the health card and identity document at a network hospital.\n • The hospital sends a pre-authorization request to the claims administrator.\n • Treatment proceeds after authorization subject to the approved amount and policy conditions.\n \nReimbursement process\n • Submit the claim form, discharge summary, itemized bills, prescriptions, payment proof, and required\n medical records.\n• Reimbursement claims should normally be submitted within 30 days of discharge.\n • Missing documents may pause processing until the requested information is supplied.",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 8,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 678
+  },
+  {
+    "chunk_id": 40,
+    "text": "• Missing documents may pause processing until the requested information is supplied.\n Members should retain copies of all submitted documents and claim references so that later queries can\nbe resolved efficiently.\nOperational scenario\nA member receives treatment at a non-network hospital during an emergency. The treatment may still be\neligible for reimbursement, but it is generally not cashless and the member normally pays the hospital first.\nMaternity has a separate ₹75,000 annual limit and a 9-month waiting period. A newborn should be added\nwithin 30 days when the enrollment rule applies. These conditions should be checked separately rather than",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 8,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 656
+  },
+  {
+    "chunk_id": 41,
+    "text": "assuming one hospital rule covers everything.\nInterpretation and operational notes\nWaiting periods and exclusions are independent from network status. A treatment performed at a network\nhospital can still be excluded, and a pre-existing condition can still be subject to its waiting period. Maternity\nhas a nine-month waiting period, pre-existing diseases have a 12-month waiting period, and specified\nprocedures have a 12-month waiting period. Accidental injury is treated differently and has no general\nwaiting period from the effective date. This makes the document useful for testing conditional retrieval and\ncitation accuracy.",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 8,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 632
+  },
+  {
+    "chunk_id": 42,
+    "text": "citation accuracy.\nHealth-plan questions should be answered by identifying the benefit category before looking for a numerical\nlimit. Hospitalization, outpatient consultation, prescription medicines, mental health services, ambulance,\nmaternity, and day-care treatment have different rules. The ₹5,00,000 hospitalization limit is a family-floater\nbalance, while the ₹75,000 maternity limit applies to the maternity benefit. Returning the largest number\nsimply because it appears in the document would therefore produce an incorrect answer.\nFinancial responsibility also has multiple layers. The ₹10,000 hospitalization deductible is a fixed annual",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 8,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 647
+  },
+  {
+    "chunk_id": 43,
+    "text": "amount, while the 10% hospitalization member share is a percentage applied after the deductible.\nOutpatient treatment uses a 20% member share and does not reduce the hospitalization deductible. Room\neligibility is separate again, with a ₹6,000 per-day room limit. A correct answer should preserve these\ndistinctions instead of combining them into one generic co-payment statement.\nClaim questions also depend on timing and provider status. Planned hospitalization should normally be\npre-authorized 48 hours before admission, while emergency hospitalization should be reported within 24\nhours. Reimbursement claims should normally be filed within 30 days of discharge. Network hospitals can",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 8,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 689
+  },
+  {
+    "chunk_id": 44,
+    "text": "provide cashless service subject to authorization; eligible non-network treatment may be reimbursed but is\ngenerally paid by the member first. These rules can interact, so retrieval should include enough surrounding\ncontext to preserve the condition.",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 8,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 250
+  },
+  {
+    "chunk_id": 45,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 9\nHORIZONCARE\nSECTION 09\n8. Network Hospitals and Maternity\nNetwork\n • Cashless service is available only at participating network hospitals.\n • Non-network eligible treatment may be reimbursed, but the member normally pays the hospital first.\n • Emergency treatment at a non-network hospital remains subject to notification and policy\n requirements.\nMaternity\n • Maternity coverage is limited to ₹75,000 per policy year.\n • Normal delivery and medically necessary cesarean delivery are eligible within the maternity limit.\n • Maternity has a 9-month waiting period unless a documented exception applies.",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 648
+  },
+  {
+    "chunk_id": 46,
+    "text": "• Maternity has a 9-month waiting period unless a documented exception applies.\n • A newborn should be added within 30 days when the enrollment rule applies.\n \nOperational scenario\nA mental-health claim can be eligible up to ₹25,000 per year with a 10% member share, while general\nwellness coaching or gym membership is outside the medical benefit. A ₹7,000 room exceeds the ₹6,000\ndaily room limit. A pre-existing disease during the first 12 months may be subject to the waiting period, and\na reimbursement claim filed 45 days after discharge is outside the normal 30-day window. Each outcome\ndepends on a different policy clause.\nInterpretation and operational notes",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 668
+  },
+  {
+    "chunk_id": 47,
+    "text": "depends on a different policy clause.\nInterpretation and operational notes\nHealth-plan questions should be answered by identifying the benefit category before looking for a numerical\nlimit. Hospitalization, outpatient consultation, prescription medicines, mental health services, ambulance,\nmaternity, and day-care treatment have different rules. The ₹5,00,000 hospitalization limit is a family-floater\nbalance, while the ₹75,000 maternity limit applies to the maternity benefit. Returning the largest number\nsimply because it appears in the document would therefore produce an incorrect answer.",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 595
+  },
+  {
+    "chunk_id": 48,
+    "text": "simply because it appears in the document would therefore produce an incorrect answer.\nFinancial responsibility also has multiple layers. The ₹10,000 hospitalization deductible is a fixed annual\namount, while the 10% hospitalization member share is a percentage applied after the deductible.\nOutpatient treatment uses a 20% member share and does not reduce the hospitalization deductible. Room\neligibility is separate again, with a ₹6,000 per-day room limit. A correct answer should preserve these\ndistinctions instead of combining them into one generic co-payment statement.\nClaim questions also depend on timing and provider status. Planned hospitalization should normally be",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 677
+  },
+  {
+    "chunk_id": 49,
+    "text": "pre-authorized 48 hours before admission, while emergency hospitalization should be reported within 24\nhours. Reimbursement claims should normally be filed within 30 days of discharge. Network hospitals can\nprovide cashless service subject to authorization; eligible non-network treatment may be reimbursed but is\ngenerally paid by the member first. These rules can interact, so retrieval should include enough surrounding\ncontext to preserve the condition.\nWaiting periods and exclusions are independent from network status. A treatment performed at a network\nhospital can still be excluded, and a pre-existing condition can still be subject to its waiting period. Maternity",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 675
+  },
+  {
+    "chunk_id": 50,
+    "text": "has a nine-month waiting period, pre-existing diseases have a 12-month waiting period, and specified\nprocedures have a 12-month waiting period. Accidental injury is treated differently and has no general\nwaiting period from the effective date. This makes the document useful for testing conditional retrieval and\ncitation accuracy.",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 331
+  },
+  {
+    "chunk_id": 51,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 10\nHORIZONCARE\nSECTION 10\n9. Mental Health and Common Claim Scenarios\nMental health\n • Eligible mental health treatment is covered up to ₹25,000 per year with a 10% member share.\n • General lifestyle coaching, gym memberships, and non-medical wellness programs are not covered\n under the medical benefit.\nScenarios\nA ₹7,000 room exceeds the ₹6,000 eligible room limit and may trigger proportionate deductions. A\nnon-network hospital may be reimbursable but is generally not cashless. A pre-existing disease claim\nduring the first 12 months may be subject to the waiting period. A reimbursement claim submitted 45",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 10,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 656
+  },
+  {
+    "chunk_id": 52,
+    "text": "during the first 12 months may be subject to the waiting period. A reimbursement claim submitted 45\ndays after discharge is outside the normal 30-day filing window and may require an exception.\nOperational scenario\nThe most useful quick-reference numbers are ₹5,00,000 for hospitalization, ₹10,000 for the hospitalization\ndeductible, ₹6,000 for the daily room limit, ₹75,000 for maternity, ₹25,000 for mental health, 12 months for\npre-existing disease waiting, 9 months for maternity waiting, and 30 days for normal reimbursement filing.\nThese figures are meaningful only when paired with the benefit category and conditions around them.\nInterpretation and operational notes",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 10,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 674
+  },
+  {
+    "chunk_id": 53,
+    "text": "Interpretation and operational notes\nFinancial responsibility also has multiple layers. The ₹10,000 hospitalization deductible is a fixed annual\namount, while the 10% hospitalization member share is a percentage applied after the deductible.\nOutpatient treatment uses a 20% member share and does not reduce the hospitalization deductible. Room\neligibility is separate again, with a ₹6,000 per-day room limit. A correct answer should preserve these\ndistinctions instead of combining them into one generic co-payment statement.\nClaim questions also depend on timing and provider status. Planned hospitalization should normally be",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 10,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 627
+  },
+  {
+    "chunk_id": 54,
+    "text": "pre-authorized 48 hours before admission, while emergency hospitalization should be reported within 24\nhours. Reimbursement claims should normally be filed within 30 days of discharge. Network hospitals can\nprovide cashless service subject to authorization; eligible non-network treatment may be reimbursed but is\ngenerally paid by the member first. These rules can interact, so retrieval should include enough surrounding\ncontext to preserve the condition.\nWaiting periods and exclusions are independent from network status. A treatment performed at a network\nhospital can still be excluded, and a pre-existing condition can still be subject to its waiting period. Maternity",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 10,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 675
+  },
+  {
+    "chunk_id": 55,
+    "text": "has a nine-month waiting period, pre-existing diseases have a 12-month waiting period, and specified\nprocedures have a 12-month waiting period. Accidental injury is treated differently and has no general\nwaiting period from the effective date. This makes the document useful for testing conditional retrieval and\ncitation accuracy.\nHealth-plan questions should be answered by identifying the benefit category before looking for a numerical\nlimit. Hospitalization, outpatient consultation, prescription medicines, mental health services, ambulance,\nmaternity, and day-care treatment have different rules. The ₹5,00,000 hospitalization limit is a family-floater",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 10,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 659
+  },
+  {
+    "chunk_id": 56,
+    "text": "balance, while the ₹75,000 maternity limit applies to the maternity benefit. Returning the largest number\nsimply because it appears in the document would therefore produce an incorrect answer.",
+    "source": "data/documents/demo/health-insurance-policy.pdf",
+    "page": 10,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 192
+  }
+]

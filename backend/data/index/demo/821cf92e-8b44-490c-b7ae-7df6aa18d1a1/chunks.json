@@ -1,0 +1,524 @@
+[
+  {
+    "chunk_id": 0,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 1\nSTREAMFORGE\nSECTION 01\nSection 1\nStreamForge API is a fictional event-processing platform created for dRAGn retrieval demonstrations. It\nis intentionally parameter-rich, with exact endpoint behavior, rate limits, retry rules, status codes, and\nconfiguration constraints.\nKey limits\n • Single event payload: 256 KB.\n • Batch size: 500 events.\n • Maximum encoded batch request: 5 MB.\n • Successful event retention: 7 days.\n • Dead-letter threshold: five failed delivery attempts.\n • Default SDK request timeout: 10 seconds.\n \nOperational scenario\nA typical event starts at the HTTPS gateway, passes validation, enters a durable queue, and is processed by",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 698
+  },
+  {
+    "chunk_id": 1,
+    "text": "workers before delivery to configured destinations. Because delivery is at-least-once, a destination may\nreceive the same logical event more than once. Workspace boundaries are enforced through authentication\nand authorization, so a token or identifier from one workspace must not be treated as permission to access\nanother workspace. This separation is part of the platform's security model.\nInterpretation and operational notes\nAPI questions should first identify the endpoint and HTTP operation, then retrieve the relevant\nauthentication, permission, input, size, and rate-limit rules. A batch endpoint has two independent",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 625
+  },
+  {
+    "chunk_id": 2,
+    "text": "authentication, permission, input, size, and rate-limit rules. A batch endpoint has two independent\nboundaries: a maximum of 500 events and a maximum encoded request size of 5 MB. A request can\ntherefore fail because of event count even when the payload is small, or because of encoded size even when\nthe number of events is within the count limit. The distinction is important for both developers and retrieval\nevaluation.\nAuthentication and authorization are different failure classes. HTTP 401 indicates that the request lacks a\nusable authentication credential, such as a missing, expired, or revoked token. HTTP 403 indicates that",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 635
+  },
+  {
+    "chunk_id": 3,
+    "text": "authentication succeeded but the token does not have the required permission. A client that receives 403\nshould not keep rotating credentials blindly; it should inspect the token scope and requested operation. This\nis a classic retrieval case because both errors appear close together but have different remedies.\nRate limits are scoped by operation. Single-event ingestion allows 1,000 requests per 60 seconds per\nworkspace, while batch ingestion allows 100 requests per 60 seconds per workspace. Destination creation\nhas a 20-request per 60-minute workspace limit, and status lookup has a 300-request per 60-second token",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 622
+  },
+  {
+    "chunk_id": 4,
+    "text": "limit. HTTP 429 includes Retry-After. A good implementation should respect that signal rather than retrying\nimmediately and increasing load during the rate-limited period.\nDelivery is at-least-once, so duplicate events are an expected engineering concern rather than necessarily a\nplatform defect. Idempotency keys help producers avoid creating multiple logical events, while consumers\nshould still tolerate duplicate delivery. The retry sequence is 10 seconds, 30 seconds, 90 seconds, 5 minutes,\nand 15 minutes, followed by dead-lettering after five failed attempts. Destination timeout, destination state,\nand response history should be inspected before changing application logic.",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 683
+  },
+  {
+    "chunk_id": 5,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 2\nSTREAMFORGE\nSECTION 02\n1. Architecture and Workspace Model\n • The platform contains an API gateway, authentication service, ingestion service, queue layer,\n transformation workers, destination connectors, and observability service.\n• Events are validated before entering durable queues.\n • Delivery is at-least-once, so consumers must tolerate duplicates.\n • Workspace boundaries are enforced through authentication and authorization.\n \nEvent lifecycle\nAn event enters through HTTPS ingestion, is validated, queued, processed, and delivered to configured",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 600
+  },
+  {
+    "chunk_id": 6,
+    "text": "destinations. Failed delivery follows the retry sequence and eventually moves to the dead-letter queue.\nIsolation\nA token created for one workspace cannot retrieve or modify resources in another workspace.\nApplications should treat workspace identifiers as authorization boundaries rather than simple display\nlabels.\nOperational scenario\nA developer receives HTTP 401 while calling an endpoint. The first check should be the Authorization header\nand token validity. If the same developer receives HTTP 403 with a valid token, the next check is permission\nscope. Creating or deleting destinations requires admin permission. Token rotation should create and",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 655
+  },
+  {
+    "chunk_id": 7,
+    "text": "validate a replacement before the old token is revoked; a revoked token cannot be restored.\nInterpretation and operational notes\nAuthentication and authorization are different failure classes. HTTP 401 indicates that the request lacks a\nusable authentication credential, such as a missing, expired, or revoked token. HTTP 403 indicates that\nauthentication succeeded but the token does not have the required permission. A client that receives 403\nshould not keep rotating credentials blindly; it should inspect the token scope and requested operation. This\nis a classic retrieval case because both errors appear close together but have different remedies.",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 654
+  },
+  {
+    "chunk_id": 8,
+    "text": "is a classic retrieval case because both errors appear close together but have different remedies.\nRate limits are scoped by operation. Single-event ingestion allows 1,000 requests per 60 seconds per\nworkspace, while batch ingestion allows 100 requests per 60 seconds per workspace. Destination creation\nhas a 20-request per 60-minute workspace limit, and status lookup has a 300-request per 60-second token\nlimit. HTTP 429 includes Retry-After. A good implementation should respect that signal rather than retrying\nimmediately and increasing load during the rate-limited period.\nDelivery is at-least-once, so duplicate events are an expected engineering concern rather than necessarily a",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 688
+  },
+  {
+    "chunk_id": 9,
+    "text": "platform defect. Idempotency keys help producers avoid creating multiple logical events, while consumers\nshould still tolerate duplicate delivery. The retry sequence is 10 seconds, 30 seconds, 90 seconds, 5 minutes,\nand 15 minutes, followed by dead-lettering after five failed attempts. Destination timeout, destination state,\nand response history should be inspected before changing application logic.\nAPI questions should first identify the endpoint and HTTP operation, then retrieve the relevant\nauthentication, permission, input, size, and rate-limit rules. A batch endpoint has two independent\nboundaries: a maximum of 500 events and a maximum encoded request size of 5 MB. A request can",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 692
+  },
+  {
+    "chunk_id": 10,
+    "text": "boundaries: a maximum of 500 events and a maximum encoded request size of 5 MB. A request can\ntherefore fail because of event count even when the payload is small, or because of encoded size even when\nthe number of events is within the count limit. The distinction is important for both developers and retrieval\nevaluation.",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 323
+  },
+  {
+    "chunk_id": 11,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 3\nSTREAMFORGE\nSECTION 03\n2. Authentication and Authorization\n • Requests use Authorization: Bearer <token>.\n • Tokens are scoped to one workspace.\n • Permissions are read, write, and admin.\n • Creating or deleting destinations requires admin permission.\n • Expired or revoked tokens return HTTP 401.\n • Valid tokens without sufficient permission return HTTP 403.\n \nRotation\nCreate and validate a replacement token before revoking the previous token. Revoked tokens cannot be\nrestored. Tokens should never be written to source control or ordinary application logs.\nFailure interpretation",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 630
+  },
+  {
+    "chunk_id": 12,
+    "text": "Failure interpretation\nA 401 generally indicates an authentication problem. A 403 means authentication succeeded but the\ntoken lacks permission for the requested operation.\nOperational scenario\nA client sends 501 events in a batch with a body smaller than 5 MB. The request still violates the batch-count\nlimit because a batch may contain at most 500 events. Conversely, a batch with 400 events can still exceed\nthe 5 MB encoded request limit. The single-event endpoint has a separate 256 KB payload boundary. These\nare independent validation rules and should be represented separately in client-side validation.\nInterpretation and operational notes",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 649
+  },
+  {
+    "chunk_id": 13,
+    "text": "Interpretation and operational notes\nRate limits are scoped by operation. Single-event ingestion allows 1,000 requests per 60 seconds per\nworkspace, while batch ingestion allows 100 requests per 60 seconds per workspace. Destination creation\nhas a 20-request per 60-minute workspace limit, and status lookup has a 300-request per 60-second token\nlimit. HTTP 429 includes Retry-After. A good implementation should respect that signal rather than retrying\nimmediately and increasing load during the rate-limited period.\nDelivery is at-least-once, so duplicate events are an expected engineering concern rather than necessarily a",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 626
+  },
+  {
+    "chunk_id": 14,
+    "text": "platform defect. Idempotency keys help producers avoid creating multiple logical events, while consumers\nshould still tolerate duplicate delivery. The retry sequence is 10 seconds, 30 seconds, 90 seconds, 5 minutes,\nand 15 minutes, followed by dead-lettering after five failed attempts. Destination timeout, destination state,\nand response history should be inspected before changing application logic.\nAPI questions should first identify the endpoint and HTTP operation, then retrieve the relevant\nauthentication, permission, input, size, and rate-limit rules. A batch endpoint has two independent\nboundaries: a maximum of 500 events and a maximum encoded request size of 5 MB. A request can",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 692
+  },
+  {
+    "chunk_id": 15,
+    "text": "boundaries: a maximum of 500 events and a maximum encoded request size of 5 MB. A request can\ntherefore fail because of event count even when the payload is small, or because of encoded size even when\nthe number of events is within the count limit. The distinction is important for both developers and retrieval\nevaluation.\nAuthentication and authorization are different failure classes. HTTP 401 indicates that the request lacks a\nusable authentication credential, such as a missing, expired, or revoked token. HTTP 403 indicates that\nauthentication succeeded but the token does not have the required permission. A client that receives 403",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 640
+  },
+  {
+    "chunk_id": 16,
+    "text": "should not keep rotating credentials blindly; it should inspect the token scope and requested operation. This\nis a classic retrieval case because both errors appear close together but have different remedies.",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 208
+  },
+  {
+    "chunk_id": 17,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 4\nSTREAMFORGE\nSECTION 04\n3. Ingestion API\nEndpoint\nMethod\nPurpose\nLimit\n/v1/events\nPOST\nSubmit one event\n256 KB\n/v1/events/batch\nPOST\nSubmit batch\n500 / 5 MB\n/v1/events/{id}\nGET\nEvent status\nRate limited\n/v1/destinations\nGET\nList destinations\nRead\n/v1/destinations\nPOST\nCreate destination\nAdmin\n/v1/health\nGET\nService health\nGateway\n• A single event requires event_type and payload. An optional idempotency_key may be supplied.\n • A batch may contain at most 500 events and 5 MB encoded request size.\n • When individual records fail validation, the response identifies rejected positions.\n \nBoundary scenario",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 652
+  },
+  {
+    "chunk_id": 18,
+    "text": "Boundary scenario\nA 500-event request can be valid when the encoded body is 5 MB or less. A 501-event request is invalid\neven if the encoded body is small.\nOperational scenario\nA workspace makes 1,000 single-event requests within a 60-second window. A further single-event request\nmay receive HTTP 429, while batch ingestion uses a separate 100-request bucket. Destination creation has a\n20-request per 60-minute workspace limit, and status lookup has a 300-request per 60-second token limit.\nClients should use Retry-After rather than immediately repeating a rate-limited request.\nInterpretation and operational notes",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 618
+  },
+  {
+    "chunk_id": 19,
+    "text": "Interpretation and operational notes\nDelivery is at-least-once, so duplicate events are an expected engineering concern rather than necessarily a\nplatform defect. Idempotency keys help producers avoid creating multiple logical events, while consumers\nshould still tolerate duplicate delivery. The retry sequence is 10 seconds, 30 seconds, 90 seconds, 5 minutes,\nand 15 minutes, followed by dead-lettering after five failed attempts. Destination timeout, destination state,\nand response history should be inspected before changing application logic.\nAPI questions should first identify the endpoint and HTTP operation, then retrieve the relevant",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 644
+  },
+  {
+    "chunk_id": 20,
+    "text": "API questions should first identify the endpoint and HTTP operation, then retrieve the relevant\nauthentication, permission, input, size, and rate-limit rules. A batch endpoint has two independent\nboundaries: a maximum of 500 events and a maximum encoded request size of 5 MB. A request can\ntherefore fail because of event count even when the payload is small, or because of encoded size even when\nthe number of events is within the count limit. The distinction is important for both developers and retrieval\nevaluation.\nAuthentication and authorization are different failure classes. HTTP 401 indicates that the request lacks a",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 627
+  },
+  {
+    "chunk_id": 21,
+    "text": "usable authentication credential, such as a missing, expired, or revoked token. HTTP 403 indicates that\nauthentication succeeded but the token does not have the required permission. A client that receives 403\nshould not keep rotating credentials blindly; it should inspect the token scope and requested operation. This\nis a classic retrieval case because both errors appear close together but have different remedies.\nRate limits are scoped by operation. Single-event ingestion allows 1,000 requests per 60 seconds per\nworkspace, while batch ingestion allows 100 requests per 60 seconds per workspace. Destination creation",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 622
+  },
+  {
+    "chunk_id": 22,
+    "text": "has a 20-request per 60-minute workspace limit, and status lookup has a 300-request per 60-second token\nlimit. HTTP 429 includes Retry-After. A good implementation should respect that signal rather than retrying\nimmediately and increasing load during the rate-limited period.",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 275
+  },
+  {
+    "chunk_id": 23,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 5\nSTREAMFORGE\nSECTION 05\n4. Rate Limits\nOperation\nLimit\nWindow\nSingle event\n1,000 requests\n60 seconds / workspace\nBatch event\n100 requests\n60 seconds / workspace\nDestination creation\n20 requests\n60 minutes / workspace\nStatus lookup\n300 requests\n60 seconds / token\nWhen a rate limit is exceeded, the API returns HTTP 429 and includes Retry-After. Clients should use that\nvalue rather than immediately repeating the same request.\nOperational example\nA workspace that has already made 1,000 single-event requests during the current 60-second window\nshould not issue the 1,001st request until the server indicates that the limit has reset. Batch requests",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 694
+  },
+  {
+    "chunk_id": 24,
+    "text": "use a separate 100-request bucket.\nOperational scenario\nSuppose a destination repeatedly fails. The platform retries after 10 seconds, 30 seconds, 90 seconds, 5\nminutes, and 15 minutes. After five failed attempts, the event enters the dead-letter queue. Pausing a\ndestination preserves its configuration and queued events, while deleting the destination stops new delivery\nattempts. Because delivery is at-least-once, the consumer should still implement duplicate handling even\nwhen the producer uses idempotency keys.\nInterpretation and operational notes\nAPI questions should first identify the endpoint and HTTP operation, then retrieve the relevant",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 651
+  },
+  {
+    "chunk_id": 25,
+    "text": "API questions should first identify the endpoint and HTTP operation, then retrieve the relevant\nauthentication, permission, input, size, and rate-limit rules. A batch endpoint has two independent\nboundaries: a maximum of 500 events and a maximum encoded request size of 5 MB. A request can\ntherefore fail because of event count even when the payload is small, or because of encoded size even when\nthe number of events is within the count limit. The distinction is important for both developers and retrieval\nevaluation.\nAuthentication and authorization are different failure classes. HTTP 401 indicates that the request lacks a",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 627
+  },
+  {
+    "chunk_id": 26,
+    "text": "usable authentication credential, such as a missing, expired, or revoked token. HTTP 403 indicates that\nauthentication succeeded but the token does not have the required permission. A client that receives 403\nshould not keep rotating credentials blindly; it should inspect the token scope and requested operation. This\nis a classic retrieval case because both errors appear close together but have different remedies.\nRate limits are scoped by operation. Single-event ingestion allows 1,000 requests per 60 seconds per\nworkspace, while batch ingestion allows 100 requests per 60 seconds per workspace. Destination creation",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 622
+  },
+  {
+    "chunk_id": 27,
+    "text": "has a 20-request per 60-minute workspace limit, and status lookup has a 300-request per 60-second token\nlimit. HTTP 429 includes Retry-After. A good implementation should respect that signal rather than retrying\nimmediately and increasing load during the rate-limited period.\nDelivery is at-least-once, so duplicate events are an expected engineering concern rather than necessarily a\nplatform defect. Idempotency keys help producers avoid creating multiple logical events, while consumers\nshould still tolerate duplicate delivery. The retry sequence is 10 seconds, 30 seconds, 90 seconds, 5 minutes,",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 600
+  },
+  {
+    "chunk_id": 28,
+    "text": "and 15 minutes, followed by dead-lettering after five failed attempts. Destination timeout, destination state,\nand response history should be inspected before changing application logic.",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 186
+  },
+  {
+    "chunk_id": 29,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 6\nSTREAMFORGE\nSECTION 06\n5. Delivery, Retry and Retention\n • Events are retained for 7 days after successful ingestion.\n • Default retry sequence: 10 seconds, 30 seconds, 90 seconds, 5 minutes, and 15 minutes.\n • After five failed attempts, the event enters the dead-letter queue.\n • Deleting a destination stops new delivery attempts but does not remove already-ingested events.\n • Paused destinations retain queued events.\n \nIdempotency\n • Reusing an idempotency key with an identical body returns the original event identifier.\n • Reusing the key with a different body returns HTTP 409.",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 6,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 633
+  },
+  {
+    "chunk_id": 30,
+    "text": "• Reusing the key with a different body returns HTTP 409.\n Because delivery is at-least-once, a consumer should still implement duplicate protection even when the\nproducer uses idempotency keys.\nOperational scenario\nAn HTTP destination must use HTTPS; plain HTTP is rejected. A webhook may use an HMAC signing secret,\nand the destination timeout can be configured up to 30 seconds with a default of 10 seconds. Active, paused,\nand disabled states have different effects. Pausing preserves configuration and queued events, while\ndeleting removes the destination configuration. Production clients should validate TLS certificates and never\ndisable certificate verification as a workaround.",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 6,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 687
+  },
+  {
+    "chunk_id": 31,
+    "text": "disable certificate verification as a workaround.\nInterpretation and operational notes\nAuthentication and authorization are different failure classes. HTTP 401 indicates that the request lacks a\nusable authentication credential, such as a missing, expired, or revoked token. HTTP 403 indicates that\nauthentication succeeded but the token does not have the required permission. A client that receives 403\nshould not keep rotating credentials blindly; it should inspect the token scope and requested operation. This\nis a classic retrieval case because both errors appear close together but have different remedies.",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 6,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 612
+  },
+  {
+    "chunk_id": 32,
+    "text": "is a classic retrieval case because both errors appear close together but have different remedies.\nRate limits are scoped by operation. Single-event ingestion allows 1,000 requests per 60 seconds per\nworkspace, while batch ingestion allows 100 requests per 60 seconds per workspace. Destination creation\nhas a 20-request per 60-minute workspace limit, and status lookup has a 300-request per 60-second token\nlimit. HTTP 429 includes Retry-After. A good implementation should respect that signal rather than retrying\nimmediately and increasing load during the rate-limited period.\nDelivery is at-least-once, so duplicate events are an expected engineering concern rather than necessarily a",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 6,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 688
+  },
+  {
+    "chunk_id": 33,
+    "text": "platform defect. Idempotency keys help producers avoid creating multiple logical events, while consumers\nshould still tolerate duplicate delivery. The retry sequence is 10 seconds, 30 seconds, 90 seconds, 5 minutes,\nand 15 minutes, followed by dead-lettering after five failed attempts. Destination timeout, destination state,\nand response history should be inspected before changing application logic.\nAPI questions should first identify the endpoint and HTTP operation, then retrieve the relevant\nauthentication, permission, input, size, and rate-limit rules. A batch endpoint has two independent\nboundaries: a maximum of 500 events and a maximum encoded request size of 5 MB. A request can",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 6,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 692
+  },
+  {
+    "chunk_id": 34,
+    "text": "boundaries: a maximum of 500 events and a maximum encoded request size of 5 MB. A request can\ntherefore fail because of event count even when the payload is small, or because of encoded size even when\nthe number of events is within the count limit. The distinction is important for both developers and retrieval\nevaluation.",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 6,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 323
+  },
+  {
+    "chunk_id": 35,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 7\nSTREAMFORGE\nSECTION 07\n6. Destination Configuration\n • HTTP destinations require HTTPS. Plain HTTP URLs are rejected.\n • Webhook destinations may configure an HMAC signing secret.\n • Maximum destination timeout is 30 seconds; default timeout is 10 seconds.\n • Destinations can be active, paused, or disabled.\n \nState behavior\nPausing preserves the destination configuration and queued events. Disabling prevents new routing\nassignments. Deleting removes the destination configuration and stops new delivery attempts.\nSecurity\nWebhook secrets should be stored in a protected secret manager or environment variable. Production",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 670
+  },
+  {
+    "chunk_id": 36,
+    "text": "Webhook secrets should be stored in a protected secret manager or environment variable. Production\napplications should validate TLS certificates and must not disable certificate verification.\nOperational scenario\nA malformed request should not be retried blindly. HTTP 400 indicates malformed input, 422 indicates field\nvalidation failure, 401 indicates an authentication problem, and 403 indicates insufficient permission. HTTP\n404 means the resource is absent, 409 indicates a conflict, 429 indicates a rate limit, and 500 indicates an\nunexpected server error. HTTP 429 may be retried after Retry-After, while most other 4xx responses require\na request or permission change.",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 676
+  },
+  {
+    "chunk_id": 37,
+    "text": "a request or permission change.\nInterpretation and operational notes\nRate limits are scoped by operation. Single-event ingestion allows 1,000 requests per 60 seconds per\nworkspace, while batch ingestion allows 100 requests per 60 seconds per workspace. Destination creation\nhas a 20-request per 60-minute workspace limit, and status lookup has a 300-request per 60-second token\nlimit. HTTP 429 includes Retry-After. A good implementation should respect that signal rather than retrying\nimmediately and increasing load during the rate-limited period.\nDelivery is at-least-once, so duplicate events are an expected engineering concern rather than necessarily a",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 658
+  },
+  {
+    "chunk_id": 38,
+    "text": "platform defect. Idempotency keys help producers avoid creating multiple logical events, while consumers\nshould still tolerate duplicate delivery. The retry sequence is 10 seconds, 30 seconds, 90 seconds, 5 minutes,\nand 15 minutes, followed by dead-lettering after five failed attempts. Destination timeout, destination state,\nand response history should be inspected before changing application logic.\nAPI questions should first identify the endpoint and HTTP operation, then retrieve the relevant\nauthentication, permission, input, size, and rate-limit rules. A batch endpoint has two independent\nboundaries: a maximum of 500 events and a maximum encoded request size of 5 MB. A request can",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 692
+  },
+  {
+    "chunk_id": 39,
+    "text": "boundaries: a maximum of 500 events and a maximum encoded request size of 5 MB. A request can\ntherefore fail because of event count even when the payload is small, or because of encoded size even when\nthe number of events is within the count limit. The distinction is important for both developers and retrieval\nevaluation.\nAuthentication and authorization are different failure classes. HTTP 401 indicates that the request lacks a\nusable authentication credential, such as a missing, expired, or revoked token. HTTP 403 indicates that\nauthentication succeeded but the token does not have the required permission. A client that receives 403",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 640
+  },
+  {
+    "chunk_id": 40,
+    "text": "should not keep rotating credentials blindly; it should inspect the token scope and requested operation. This\nis a classic retrieval case because both errors appear close together but have different remedies.",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 208
+  },
+  {
+    "chunk_id": 41,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 8\nSTREAMFORGE\nSECTION 08\n7. Error Handling\nHTTP\nCode\nMeaning\n400\ninvalid_request\nMalformed input\n401\nunauthorized\nMissing/expired/revoked token\n403\nforbidden\nInsufficient permission\n404\nnot_found\nResource absent\n409\nconflict\nIdempotency/state conflict\n422\nvalidation_error\nField validation failure\n429\nrate_limited\nRate exceeded\n500\ninternal_error\nUnexpected server error\nRetry rules\n • HTTP 429 may be retried after Retry-After.\n • Transient HTTP 500 responses may be retried with exponential backoff.\n • 400, 401, 403, 404, and 422 should not be blindly retried without changing the request, credentials, or\n resource.\nOperational scenario",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 8,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 685
+  },
+  {
+    "chunk_id": 42,
+    "text": "resource.\nOperational scenario\nThe Python SDK exposes event creation, batch creation, and event lookup methods. It automatically retries\nHTTP 429 and selected 5xx responses up to three times, but does not automatically retry other 4xx\nresponses. The default request timeout is 10 seconds. Applications should log correlation identifiers and\nstatus information without recording API tokens or sensitive payloads. SDK retries do not remove the need\nfor application-level idempotency.\nInterpretation and operational notes\nDelivery is at-least-once, so duplicate events are an expected engineering concern rather than necessarily a",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 8,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 627
+  },
+  {
+    "chunk_id": 43,
+    "text": "platform defect. Idempotency keys help producers avoid creating multiple logical events, while consumers\nshould still tolerate duplicate delivery. The retry sequence is 10 seconds, 30 seconds, 90 seconds, 5 minutes,\nand 15 minutes, followed by dead-lettering after five failed attempts. Destination timeout, destination state,\nand response history should be inspected before changing application logic.\nAPI questions should first identify the endpoint and HTTP operation, then retrieve the relevant\nauthentication, permission, input, size, and rate-limit rules. A batch endpoint has two independent\nboundaries: a maximum of 500 events and a maximum encoded request size of 5 MB. A request can",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 8,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 692
+  },
+  {
+    "chunk_id": 44,
+    "text": "boundaries: a maximum of 500 events and a maximum encoded request size of 5 MB. A request can\ntherefore fail because of event count even when the payload is small, or because of encoded size even when\nthe number of events is within the count limit. The distinction is important for both developers and retrieval\nevaluation.\nAuthentication and authorization are different failure classes. HTTP 401 indicates that the request lacks a\nusable authentication credential, such as a missing, expired, or revoked token. HTTP 403 indicates that\nauthentication succeeded but the token does not have the required permission. A client that receives 403",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 8,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 640
+  },
+  {
+    "chunk_id": 45,
+    "text": "should not keep rotating credentials blindly; it should inspect the token scope and requested operation. This\nis a classic retrieval case because both errors appear close together but have different remedies.\nRate limits are scoped by operation. Single-event ingestion allows 1,000 requests per 60 seconds per\nworkspace, while batch ingestion allows 100 requests per 60 seconds per workspace. Destination creation\nhas a 20-request per 60-minute workspace limit, and status lookup has a 300-request per 60-second token\nlimit. HTTP 429 includes Retry-After. A good implementation should respect that signal rather than retrying\nimmediately and increasing load during the rate-limited period.",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 8,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 689
+  },
+  {
+    "chunk_id": 46,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 9\nSTREAMFORGE\nSECTION 09\n8. SDK Behavior\n • The Python SDK exposes client.events.create(), client.events.create_batch(), and client.events.get().\n • The SDK retries HTTP 429 and selected 5xx responses automatically up to three times.\n • Automatic retries do not occur for 4xx responses except 429.\n • The default SDK request timeout is 10 seconds.\n \nExample\nIf a batch request receives HTTP 429, the SDK can retry according to the retry policy. If it receives HTTP\n422 because a field is invalid, retrying the same payload is not useful; the application must correct the\ndata first.\nOperational controls",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 647
+  },
+  {
+    "chunk_id": 47,
+    "text": "data first.\nOperational controls\n • Applications should record correlation IDs and relevant status codes without logging credentials or\n sensitive payloads.\nOperational scenario\nWhen troubleshooting, start with the request path rather than jumping directly to delivery. Verify\nauthentication, authorization, request validation, rate limits, destination state, and delivery history in that\norder. For duplicate events, inspect idempotency behavior and consumer handling. For dead-lettered events,\ninspect destination responses and retry counts. For timeouts, inspect destination latency and configured\ntimeout values before changing unrelated application code.\nInterpretation and operational notes",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 696
+  },
+  {
+    "chunk_id": 48,
+    "text": "timeout values before changing unrelated application code.\nInterpretation and operational notes\nAPI questions should first identify the endpoint and HTTP operation, then retrieve the relevant\nauthentication, permission, input, size, and rate-limit rules. A batch endpoint has two independent\nboundaries: a maximum of 500 events and a maximum encoded request size of 5 MB. A request can\ntherefore fail because of event count even when the payload is small, or because of encoded size even when\nthe number of events is within the count limit. The distinction is important for both developers and retrieval\nevaluation.",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 615
+  },
+  {
+    "chunk_id": 49,
+    "text": "evaluation.\nAuthentication and authorization are different failure classes. HTTP 401 indicates that the request lacks a\nusable authentication credential, such as a missing, expired, or revoked token. HTTP 403 indicates that\nauthentication succeeded but the token does not have the required permission. A client that receives 403\nshould not keep rotating credentials blindly; it should inspect the token scope and requested operation. This\nis a classic retrieval case because both errors appear close together but have different remedies.\nRate limits are scoped by operation. Single-event ingestion allows 1,000 requests per 60 seconds per",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 638
+  },
+  {
+    "chunk_id": 50,
+    "text": "workspace, while batch ingestion allows 100 requests per 60 seconds per workspace. Destination creation\nhas a 20-request per 60-minute workspace limit, and status lookup has a 300-request per 60-second token\nlimit. HTTP 429 includes Retry-After. A good implementation should respect that signal rather than retrying\nimmediately and increasing load during the rate-limited period.\nDelivery is at-least-once, so duplicate events are an expected engineering concern rather than necessarily a\nplatform defect. Idempotency keys help producers avoid creating multiple logical events, while consumers",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 593
+  },
+  {
+    "chunk_id": 51,
+    "text": "should still tolerate duplicate delivery. The retry sequence is 10 seconds, 30 seconds, 90 seconds, 5 minutes,\nand 15 minutes, followed by dead-lettering after five failed attempts. Destination timeout, destination state,\nand response history should be inspected before changing application logic.",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 297
+  },
+  {
+    "chunk_id": 52,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 10\nSTREAMFORGE\nSECTION 10\n9. Troubleshooting\n • 401: verify the Authorization header and confirm the token is valid and not revoked.\n • 403: inspect the token scope and the operation's required permission.\n • 429: respect Retry-After and reduce request pressure.\n • Dead-lettered events: inspect destination response history and retry count.\n • Duplicate events: verify consumer idempotency and stable producer keys.\n • Repeated timeouts: inspect destination latency, timeout configuration, and retry history.\n \nDiagnostic order\nStart with authentication, then authorization, request validation, rate limits, destination state, and",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 10,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 675
+  },
+  {
+    "chunk_id": 53,
+    "text": "delivery history. This order prevents teams from debugging downstream delivery when the request\nnever passed the gateway.\nOperational scenario\nThe most important limits are 256 KB for a single payload, 500 events and 5 MB for a batch, 7 days of\nsuccessful-ingestion retention, five failed delivery attempts before dead-lettering, 30 seconds maximum\ndestination timeout, and 10 seconds default SDK timeout. Authentication uses bearer tokens, HTTPS is\nmandatory for HTTP destinations, and HTTP 429 should be handled using Retry-After. These values should be\nretrieved with their associated endpoint or operation.\nInterpretation and operational notes",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 10,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 647
+  },
+  {
+    "chunk_id": 54,
+    "text": "retrieved with their associated endpoint or operation.\nInterpretation and operational notes\nAuthentication and authorization are different failure classes. HTTP 401 indicates that the request lacks a\nusable authentication credential, such as a missing, expired, or revoked token. HTTP 403 indicates that\nauthentication succeeded but the token does not have the required permission. A client that receives 403\nshould not keep rotating credentials blindly; it should inspect the token scope and requested operation. This\nis a classic retrieval case because both errors appear close together but have different remedies.",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 10,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 617
+  },
+  {
+    "chunk_id": 55,
+    "text": "is a classic retrieval case because both errors appear close together but have different remedies.\nRate limits are scoped by operation. Single-event ingestion allows 1,000 requests per 60 seconds per\nworkspace, while batch ingestion allows 100 requests per 60 seconds per workspace. Destination creation\nhas a 20-request per 60-minute workspace limit, and status lookup has a 300-request per 60-second token\nlimit. HTTP 429 includes Retry-After. A good implementation should respect that signal rather than retrying\nimmediately and increasing load during the rate-limited period.\nDelivery is at-least-once, so duplicate events are an expected engineering concern rather than necessarily a",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 10,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 688
+  },
+  {
+    "chunk_id": 56,
+    "text": "platform defect. Idempotency keys help producers avoid creating multiple logical events, while consumers\nshould still tolerate duplicate delivery. The retry sequence is 10 seconds, 30 seconds, 90 seconds, 5 minutes,\nand 15 minutes, followed by dead-lettering after five failed attempts. Destination timeout, destination state,\nand response history should be inspected before changing application logic.\nAPI questions should first identify the endpoint and HTTP operation, then retrieve the relevant\nauthentication, permission, input, size, and rate-limit rules. A batch endpoint has two independent\nboundaries: a maximum of 500 events and a maximum encoded request size of 5 MB. A request can",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 10,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 692
+  },
+  {
+    "chunk_id": 57,
+    "text": "boundaries: a maximum of 500 events and a maximum encoded request size of 5 MB. A request can\ntherefore fail because of event count even when the payload is small, or because of encoded size even when\nthe number of events is within the count limit. The distinction is important for both developers and retrieval\nevaluation.",
+    "source": "data/documents/demo/software-documentation.pdf",
+    "page": 10,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 323
+  }
+]

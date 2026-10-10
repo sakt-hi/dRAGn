@@ -1,0 +1,506 @@
+[
+  {
+    "chunk_id": 0,
+    "text": "# Azure Functions Documentation",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Azure Functions Documentation",
+    "chunking_strategy": "recursive",
+    "character_count": 31
+  },
+  {
+    "chunk_id": 1,
+    "text": "## Overview\n\nAzure Functions is a serverless compute service that allows developers to run\nsmall pieces of code, called functions, without managing the underlying server\ninfrastructure.\n\nFunctions can be triggered by HTTP requests, timers, messages in queues,\nchanges in storage, events, and other Azure services.\n\nAzure Functions supports several programming languages and provides integrations\nwith Azure Storage, Azure Event Grid, Azure Service Bus, Cosmos DB, and other\nservices.\n\nAzure Functions applications can automatically scale based on workload. This\nallows applications to handle variable traffic without requiring developers to\nmanually provision additional servers.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Overview",
+    "chunking_strategy": "recursive",
+    "character_count": 684
+  },
+  {
+    "chunk_id": 2,
+    "text": "# Functions and Function Apps\n\nA function is an individual unit of code that performs a specific operation.\n\nA function app is the hosting environment for one or more functions. Functions\nwithin the same function app share configuration settings and deployment\nresources.\n\nA function app can contain multiple functions. Each function can have its own\ntrigger and bindings.\n\nFunction apps also provide configuration, monitoring, authentication, and\ndeployment capabilities for the functions they contain.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Functions and Function Apps",
+    "chunking_strategy": "recursive",
+    "character_count": 508
+  },
+  {
+    "chunk_id": 3,
+    "text": "# Triggers\n\nA trigger defines how a function is invoked.\n\nEvery Azure Function must have exactly one trigger.\n\nCommon trigger types include:\n\n- HTTP trigger\n- Timer trigger\n- Queue trigger\n- Blob trigger\n- Event Grid trigger\n- Service Bus trigger\n- Cosmos DB trigger\n\nTriggers determine when a function executes and can provide input data to the\nfunction.\n\nFor example, an HTTP trigger executes when an HTTP request is received, while a\nqueue trigger executes when a new message becomes available in a configured\nqueue.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Triggers",
+    "chunking_strategy": "recursive",
+    "character_count": 524
+  },
+  {
+    "chunk_id": 4,
+    "text": "# HTTP Trigger\n\nAn HTTP trigger allows a function to execute when an HTTP request is received.\n\nHTTP-triggered functions are commonly used to implement lightweight APIs,\nwebhooks, backend endpoints, and serverless HTTP services.\n\nAn HTTP-triggered function can receive data through:\n\n- URL parameters\n- Query parameters\n- Request headers\n- Request body\n\nHTTP functions can return an HTTP status code, response headers, and response\nbody.\n\nFor example, an application might expose an endpoint such as:\n\nGET /api/orders/123\n\nThe function can process the request and return information about order 123.\n\nHTTP triggers are useful when external clients need to directly invoke a\nserverless function.",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "HTTP Trigger",
+    "chunking_strategy": "recursive",
+    "character_count": 694
+  },
+  {
+    "chunk_id": 5,
+    "text": "HTTP triggers are useful when external clients need to directly invoke a\nserverless function.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "HTTP Trigger",
+    "chunking_strategy": "recursive",
+    "character_count": 98
+  },
+  {
+    "chunk_id": 6,
+    "text": "# Timer Trigger\n\nA timer trigger allows a function to execute according to a schedule.\n\nTimer triggers are useful for:\n\n- Scheduled cleanup operations\n- Generating reports\n- Sending periodic notifications\n- Processing scheduled jobs\n- Running maintenance tasks\n\nA timer trigger uses a schedule expression to determine when the function\nshould execute.\n\nFor example, an application could configure a timer trigger to execute once\nevery hour.\n\nTimer-triggered functions are useful when work needs to happen periodically\nwithout requiring an external HTTP request.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Timer Trigger",
+    "chunking_strategy": "recursive",
+    "character_count": 566
+  },
+  {
+    "chunk_id": 7,
+    "text": "# Queue Trigger\n\nA queue trigger executes a function when a new message appears in an Azure\nStorage Queue.\n\nQueue triggers are useful for asynchronous background processing.\n\nA common architecture is:\n\nApplication\n    |\n    v\nAzure Storage Queue\n    |\n    v\nQueue Trigger\n    |\n    v\nAzure Function\n\nFor example, an e-commerce application might place an order-processing message\ninto a queue. The queue-triggered function can then process the order\nasynchronously.\n\nQueue-based processing helps separate the application that produces work from\nthe application that processes work.",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Queue Trigger",
+    "chunking_strategy": "recursive",
+    "character_count": 580
+  },
+  {
+    "chunk_id": 8,
+    "text": "This pattern can improve scalability and reliability because producers do not\nneed to wait for background processing to complete.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Queue Trigger",
+    "chunking_strategy": "recursive",
+    "character_count": 134
+  },
+  {
+    "chunk_id": 9,
+    "text": "# Blob Trigger\n\nA blob trigger allows a function to execute when changes occur in an Azure\nStorage Blob container.\n\nBlob triggers are commonly used for:\n\n- Processing uploaded files\n- Image processing\n- Document extraction\n- Data transformation\n- File validation\n\nFor example, when a user uploads a PDF document to a blob container, a blob\ntrigger can invoke a function that extracts text from the document.\n\nBlob-triggered processing can be combined with AI services to build automated\ndocument processing pipelines.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Blob Trigger",
+    "chunking_strategy": "recursive",
+    "character_count": 522
+  },
+  {
+    "chunk_id": 10,
+    "text": "# Event Grid Trigger\n\nAzure Functions can respond to events using Event Grid triggers.\n\nEvent Grid is an event routing service that allows applications and Azure\nservices to publish and consume events.\n\nAn Event Grid-triggered function can respond to events such as:\n\n- Resource changes\n- Blob creation\n- Subscription events\n- Custom application events\n\nEvent-driven architectures can reduce coupling between application components.\n\nInstead of one application directly calling another application, the first\napplication can publish an event and allow interested consumers to process it.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Event Grid Trigger",
+    "chunking_strategy": "recursive",
+    "character_count": 592
+  },
+  {
+    "chunk_id": 11,
+    "text": "# Service Bus Trigger\n\nAzure Functions can process messages from Azure Service Bus queues and topics.\n\nService Bus is designed for enterprise messaging scenarios that require\nfeatures such as:\n\n- Reliable message delivery\n- Queues\n- Topics\n- Subscriptions\n- Dead-letter queues\n- Message sessions\n\nA Service Bus-triggered function can process messages asynchronously.\n\nThis pattern is useful for distributed applications where different services\nneed to communicate through reliable messaging.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Service Bus Trigger",
+    "chunking_strategy": "recursive",
+    "character_count": 497
+  },
+  {
+    "chunk_id": 12,
+    "text": "# Cosmos DB Trigger\n\nAzure Functions can respond to changes in Azure Cosmos DB using a Cosmos DB\ntrigger.\n\nThe trigger monitors a Cosmos DB container and executes when new changes are\ndetected.\n\nThis can be useful for:\n\n- Event-driven processing\n- Data synchronization\n- Notifications\n- Analytics pipelines\n- Materialized views\n\nFor example, when a new customer record is inserted into Cosmos DB, a function\ncould process the record and update another system.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Cosmos DB Trigger",
+    "chunking_strategy": "recursive",
+    "character_count": 464
+  },
+  {
+    "chunk_id": 13,
+    "text": "# Azure Functions Runtime\n\nThe FUNCTIONS_WORKER_RUNTIME application setting specifies the language worker\nruntime used by an Azure Functions application.\n\nCommon runtime values correspond to supported programming languages.\n\nFor example, Python applications typically use:\n\nFUNCTIONS_WORKER_RUNTIME=python\n\nThe runtime configuration allows the Azure Functions host to determine which\nlanguage worker should execute the application code.\n\nIncorrect runtime configuration can prevent functions from starting correctly.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Azure Functions Runtime",
+    "chunking_strategy": "recursive",
+    "character_count": 521
+  },
+  {
+    "chunk_id": 14,
+    "text": "# Application Settings\n\nApplication settings are configuration values available to an Azure Functions\napplication.\n\nApplication settings are commonly used for:\n\n- Connection strings\n- API endpoints\n- Feature flags\n- Runtime configuration\n- Environment-specific values\n\nSensitive configuration values should not be hardcoded directly into source\ncode.\n\nFor example, an application might use an environment variable named:\n\nDATABASE_CONNECTION_STRING\n\nThe function can read this configuration value at runtime.\n\nApplication settings can be different between development, staging, and\nproduction environments.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Application Settings",
+    "chunking_strategy": "recursive",
+    "character_count": 611
+  },
+  {
+    "chunk_id": 15,
+    "text": "# Managed Identity\n\nManaged identities allow Azure resources to authenticate to other Azure\nservices without storing credentials directly in application code.\n\nAzure Functions can use managed identities to access services such as:\n\n- Azure Key Vault\n- Azure Storage\n- Azure Cosmos DB\n- Azure SQL\n- Azure Service Bus\n\nA system-assigned managed identity is associated with the lifecycle of the\nAzure resource.\n\nA user-assigned managed identity is an independent Azure resource that can be\nassociated with multiple resources.\n\nManaged identity reduces the need to store passwords, access keys, or service\nprincipal credentials in application configuration.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Managed Identity",
+    "chunking_strategy": "recursive",
+    "character_count": 658
+  },
+  {
+    "chunk_id": 16,
+    "text": "# Azure Key Vault\n\nAzure Key Vault provides secure storage for secrets, keys, and certificates.\n\nAn Azure Function can use managed identity to access secrets stored in Key\nVault.\n\nA typical architecture is:\n\nAzure Function\n    |\n    | Managed Identity\n    v\nAzure Key Vault\n    |\n    v\nSecret\n\nThis approach is safer than storing sensitive secrets directly in source code.\n\nKey Vault can be used to manage database credentials, API keys, certificates,\nand other sensitive configuration values.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Azure Key Vault",
+    "chunking_strategy": "recursive",
+    "character_count": 498
+  },
+  {
+    "chunk_id": 17,
+    "text": "# Input and Output Bindings\n\nBindings provide a way for Azure Functions to connect to other services without\nwriting extensive integration code.\n\nA binding can provide input to a function or send output from a function.\n\nCommon bindings include:\n\n- Azure Storage\n- Cosmos DB\n- Service Bus\n- Event Hubs\n- Blob Storage\n- Queue Storage\n\nFor example, a function might use a queue trigger as input and a blob output\nbinding to store the result.\n\nBindings can reduce the amount of integration code required by an application.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Input and Output Bindings",
+    "chunking_strategy": "recursive",
+    "character_count": 524
+  },
+  {
+    "chunk_id": 18,
+    "text": "# Input Binding\n\nAn input binding allows a function to read data from another service.\n\nFor example, a function can use an input binding to retrieve a blob or database\nrecord.\n\nThe function receives the configured data as an input value.\n\nInput bindings are useful when the function needs data from another service to\nperform its processing.\n\n---\n\n# Output Binding\n\nAn output binding allows a function to write data to another service.\n\nFor example, a function can process an HTTP request and write a message to an\nAzure Storage Queue using an output binding.\n\nOutput bindings simplify integration with supported Azure services.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Output Binding",
+    "chunking_strategy": "recursive",
+    "character_count": 633
+  },
+  {
+    "chunk_id": 19,
+    "text": "# Durable Functions\n\nDurable Functions is an extension of Azure Functions that allows developers to\nbuild stateful workflows.\n\nNormal serverless functions are generally designed to execute individual units\nof work.\n\nDurable Functions allows multiple function executions to be coordinated as a\nlong-running workflow.\n\nDurable Functions uses the Durable Task framework to manage orchestration\nstate.\n\nThe framework persists orchestration state so that workflows can resume after\ninterruptions.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Durable Functions",
+    "chunking_strategy": "recursive",
+    "character_count": 496
+  },
+  {
+    "chunk_id": 20,
+    "text": "# Orchestrator Functions\n\nAn orchestrator function defines the workflow logic of a Durable Functions\napplication.\n\nThe orchestrator coordinates activities and other durable operations.\n\nAn orchestrator can:\n\n- Call activity functions\n- Wait for events\n- Run activities in parallel\n- Execute activities sequentially\n- Implement retries\n- Wait for timers\n- Maintain workflow state\n\nFor example:\n\nOrchestrator\n    |\n    +--> Activity A\n    |\n    +--> Activity B\n    |\n    +--> Activity C\n\nThe orchestrator determines the order in which these operations should occur.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Orchestrator Functions",
+    "chunking_strategy": "recursive",
+    "character_count": 568
+  },
+  {
+    "chunk_id": 21,
+    "text": "# Activity Functions\n\nActivity functions perform the individual units of work in a Durable Functions\nworkflow.\n\nExamples include:\n\n- Calling an external API\n- Processing an order\n- Sending an email\n- Writing data to a database\n- Performing a calculation\n\nActivity functions should generally contain the actual business operations,\nwhile the orchestrator coordinates them.\n\nFor example:\n\nOrchestrator\n    |\n    +--> ValidateOrder\n    |\n    +--> ProcessPayment\n    |\n    +--> SendConfirmation\n\nEach activity represents a separate unit of work.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Activity Functions",
+    "chunking_strategy": "recursive",
+    "character_count": 546
+  },
+  {
+    "chunk_id": 22,
+    "text": "# Durable Workflow State\n\nDurable Functions maintains workflow state through the Durable Task framework.\n\nThe orchestration state allows a workflow to resume after interruptions.\n\nFor example, suppose a workflow has three steps:\n\nStep 1: Validate customer\nStep 2: Process payment\nStep 3: Send notification\n\nIf the workflow is interrupted after Step 2, Durable Functions can use persisted\nstate to continue the workflow rather than starting from the beginning.\n\nThis makes Durable Functions useful for long-running workflows.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Durable Workflow State",
+    "chunking_strategy": "recursive",
+    "character_count": 529
+  },
+  {
+    "chunk_id": 23,
+    "text": "# Durable Timers\n\nDurable Functions supports durable timers.\n\nA durable timer allows an orchestration to pause until a specified time.\n\nFor example, a business workflow could:\n\n1. Send a payment reminder.\n2. Wait for seven days.\n3. Check whether payment was received.\n4. Send another notification if necessary.\n\nDurable timers allow these workflows to wait without continuously running a\nserver process.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Durable Timers",
+    "chunking_strategy": "recursive",
+    "character_count": 408
+  },
+  {
+    "chunk_id": 24,
+    "text": "# Durable External Events\n\nDurable Functions supports waiting for external events.\n\nAn orchestration can pause until an external system sends a specific event.\n\nFor example, an approval workflow could:\n\n1. Submit an approval request.\n2. Wait for manager approval.\n3. Continue processing after the approval event arrives.\n\nThis pattern is useful for human-in-the-loop workflows.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Durable External Events",
+    "chunking_strategy": "recursive",
+    "character_count": 382
+  },
+  {
+    "chunk_id": 25,
+    "text": "# Parallel Activities\n\nDurable Functions can execute multiple activities in parallel.\n\nFor example, an order-processing workflow might need to:\n\n- Validate inventory\n- Calculate shipping\n- Calculate taxes\n\nThese operations can potentially execute concurrently.\n\nThe orchestrator can wait until all activities complete before continuing.\n\nParallel execution can reduce the total workflow duration.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Parallel Activities",
+    "chunking_strategy": "recursive",
+    "character_count": 401
+  },
+  {
+    "chunk_id": 26,
+    "text": "# Retry Policies\n\nDurable Functions supports retry behavior for activities.\n\nRetries are useful when an external dependency temporarily fails.\n\nFor example, an activity that calls an external API might fail because of a\ntemporary network problem.\n\nA retry policy can specify:\n\n- Number of retry attempts\n- Delay between attempts\n- Backoff behavior\n\nRetries should be configured carefully because repeatedly retrying a\npermanently failing operation can increase load on downstream systems.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Retry Policies",
+    "chunking_strategy": "recursive",
+    "character_count": 493
+  },
+  {
+    "chunk_id": 27,
+    "text": "# Scaling\n\nAzure Functions can scale based on workload.\n\nDepending on the hosting plan and trigger type, Azure Functions can add or\nremove function instances as demand changes.\n\nFor example, if a queue receives a large number of messages, additional\nfunction instances can process messages concurrently.\n\nScaling behavior depends on the Azure Functions hosting plan and workload.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Scaling",
+    "chunking_strategy": "recursive",
+    "character_count": 384
+  },
+  {
+    "chunk_id": 28,
+    "text": "# Cold Starts\n\nA cold start occurs when Azure needs to initialize a new function instance\nbefore processing a request.\n\nCold starts can increase the latency of the first request handled by a new\ninstance.\n\nCold-start impact can depend on:\n\n- Programming language\n- Application size\n- Dependencies\n- Hosting plan\n- Runtime initialization\n\nApplications that require consistently low latency should consider hosting\noptions and architecture choices that reduce cold-start impact.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Cold Starts",
+    "chunking_strategy": "recursive",
+    "character_count": 481
+  },
+  {
+    "chunk_id": 29,
+    "text": "# Hosting Plans\n\nAzure Functions supports multiple hosting options.\n\nDifferent plans provide different capabilities related to:\n\n- Scaling\n- Cost\n- Networking\n- Instance management\n- Execution duration\n- Performance\n\nThe appropriate hosting option depends on application requirements.\n\nDevelopers should evaluate workload characteristics, latency requirements,\nscaling requirements, and budget before selecting a hosting plan.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Hosting Plans",
+    "chunking_strategy": "recursive",
+    "character_count": 431
+  },
+  {
+    "chunk_id": 30,
+    "text": "# Monitoring\n\nAzure Functions can integrate with Azure Application Insights for application\nmonitoring.\n\nApplication Insights can help developers monitor:\n\n- Function executions\n- Request duration\n- Exceptions\n- Dependencies\n- Logs\n- Failures\n- Performance\n\nMonitoring is important for production serverless applications because\nindividual function executions can be distributed across multiple instances.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Monitoring",
+    "chunking_strategy": "recursive",
+    "character_count": 410
+  },
+  {
+    "chunk_id": 31,
+    "text": "# Logging\n\nAzure Functions provides logging capabilities that allow developers to record\napplication events and diagnostic information.\n\nLogs can help identify:\n\n- Function failures\n- Invalid input\n- External dependency failures\n- Unexpected application behavior\n- Performance issues\n\nStructured logging is generally preferable to writing unstructured diagnostic\nmessages because structured logs are easier to search and analyze.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Logging",
+    "chunking_strategy": "recursive",
+    "character_count": 434
+  },
+  {
+    "chunk_id": 32,
+    "text": "# Error Handling\n\nFunctions should handle expected errors explicitly.\n\nCommon error scenarios include:\n\n- Invalid input\n- Authentication failures\n- Network failures\n- Service unavailable errors\n- Database errors\n- Timeout errors\n\nTransient errors may sometimes be handled using retry policies.\n\nPermanent errors should generally be recorded and surfaced appropriately.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Error Handling",
+    "chunking_strategy": "recursive",
+    "character_count": 373
+  },
+  {
+    "chunk_id": 33,
+    "text": "# Authentication\n\nHTTP-triggered Azure Functions can be protected using authentication and\nauthorization mechanisms.\n\nAuthentication verifies the identity of the caller.\n\nAuthorization determines whether the caller has permission to perform an\noperation.\n\nApplications should avoid exposing sensitive operations through anonymous HTTP\nendpoints unless anonymous access is explicitly required.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Authentication",
+    "chunking_strategy": "recursive",
+    "character_count": 397
+  },
+  {
+    "chunk_id": 34,
+    "text": "# Networking\n\nAzure Functions can communicate with resources inside and outside Azure.\n\nDepending on the hosting configuration, applications can use networking\nfeatures such as:\n\n- Virtual networks\n- Private endpoints\n- Network security controls\n- Private DNS\n- Access restrictions\n\nNetworking requirements should be considered when functions access internal\ndatabases or private enterprise services.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Networking",
+    "chunking_strategy": "recursive",
+    "character_count": 405
+  },
+  {
+    "chunk_id": 35,
+    "text": "# Deployment\n\nAzure Functions applications can be deployed using multiple approaches.\n\nCommon deployment methods include:\n\n- Azure CLI\n- Visual Studio Code\n- GitHub Actions\n- Azure DevOps\n- ZIP deployment\n- Infrastructure-as-code pipelines\n\nA production deployment pipeline should separate development, testing, and\nproduction environments.\n\nAutomated deployments can reduce manual configuration errors.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Deployment",
+    "chunking_strategy": "recursive",
+    "character_count": 408
+  },
+  {
+    "chunk_id": 36,
+    "text": "# Continuous Integration and Continuous Deployment\n\nAzure Functions can be integrated into CI/CD pipelines.\n\nA typical pipeline can perform:\n\n1. Source code checkout\n2. Dependency installation\n3. Unit tests\n4. Static analysis\n5. Build or packaging\n6. Deployment\n7. Post-deployment validation\n\nAzure DevOps and GitHub Actions can be used to automate these steps.\n\n---\n\n# Local Development\n\nDevelopers can run Azure Functions locally before deploying them to Azure.\n\nLocal development allows developers to:\n\n- Test triggers\n- Debug function code\n- Validate configuration\n- Run unit tests\n- Test integrations\n\nThe Azure Functions Core Tools can be used for local development and testing.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Local Development",
+    "chunking_strategy": "recursive",
+    "character_count": 689
+  },
+  {
+    "chunk_id": 37,
+    "text": "# Function Timeout\n\nFunction execution time can be affected by the hosting plan and function\nconfiguration.\n\nLong-running workloads should be designed carefully.\n\nDurable Functions can be useful when a workflow needs to coordinate long-running\noperations rather than keeping a single function execution active for a long\nperiod.\n\n---\n\n# Stateless Functions\n\nTraditional Azure Functions are generally designed around stateless\nexecution.\n\nEach invocation should ideally avoid depending on local in-memory state that\nmay not exist during a subsequent invocation.\n\nPersistent state should be stored in appropriate external services such as\nAzure Storage, databases, or other durable services.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Stateless Functions",
+    "chunking_strategy": "recursive",
+    "character_count": 694
+  },
+  {
+    "chunk_id": 38,
+    "text": "# Stateful Workflows\n\nWhen an application requires stateful workflows, Durable Functions can provide\norchestration capabilities.\n\nStateful workflows are useful for scenarios such as:\n\n- Order processing\n- Approval workflows\n- Payment processing\n- ETL pipelines\n- Scheduled business processes\n- Long-running operations\n\nDurable Functions separates workflow coordination from individual activity\nexecution.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Stateful Workflows",
+    "chunking_strategy": "recursive",
+    "character_count": 409
+  },
+  {
+    "chunk_id": 39,
+    "text": "# Serverless Architecture\n\nAzure Functions is commonly used as part of serverless architectures.\n\nA serverless application might contain:\n\nAzure API Management\n        |\n        v\nAzure Functions\n        |\n   +----+----+\n   |         |\n   v         v\nCosmos DB   Storage\n\nAdditional services such as Event Grid, Service Bus, and Key Vault can be added\ndepending on application requirements.\n\nServerless architecture allows teams to focus on application logic while Azure\nmanages much of the underlying infrastructure.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Serverless Architecture",
+    "chunking_strategy": "recursive",
+    "character_count": 522
+  },
+  {
+    "chunk_id": 40,
+    "text": "# Security Best Practices\n\nProduction Azure Functions applications should follow security best practices.\n\nRecommended practices include:\n\n- Use managed identities where possible.\n- Store secrets in Azure Key Vault.\n- Avoid hardcoding credentials.\n- Apply least-privilege access.\n- Protect HTTP endpoints.\n- Validate incoming input.\n- Monitor authentication failures.\n- Use private networking when required.\n- Keep dependencies updated.\n\nSecurity should be considered during application design rather than added only\nafter deployment.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Security Best Practices",
+    "chunking_strategy": "recursive",
+    "character_count": 539
+  },
+  {
+    "chunk_id": 41,
+    "text": "# Performance Best Practices\n\nFunction performance can be improved by:\n\n- Keeping functions focused on a single responsibility.\n- Reusing expensive connections when appropriate.\n- Avoiding unnecessary dependencies.\n- Reducing cold-start overhead.\n- Using asynchronous programming for I/O-bound operations.\n- Choosing an appropriate hosting plan.\n- Monitoring execution duration.\n- Optimizing database queries.\n\nPerformance optimization should be based on actual monitoring data rather than\nassumptions.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Performance Best Practices",
+    "chunking_strategy": "recursive",
+    "character_count": 507
+  },
+  {
+    "chunk_id": 42,
+    "text": "# Cost Optimization\n\nAzure Functions cost depends on factors such as hosting plan, execution,\nresource consumption, and workload characteristics.\n\nCost can be controlled by:\n\n- Choosing an appropriate hosting plan.\n- Avoiding unnecessary executions.\n- Optimizing function duration.\n- Reducing unnecessary external calls.\n- Using asynchronous processing.\n- Monitoring resource consumption.\n\nApplications with predictable workloads should evaluate whether serverless\npricing remains appropriate as usage increases.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Cost Optimization",
+    "chunking_strategy": "recursive",
+    "character_count": 517
+  },
+  {
+    "chunk_id": 43,
+    "text": "# Example: Order Processing Architecture\n\nAn e-commerce application can use Azure Functions for order processing.\n\nA possible architecture is:\n\nCustomer\n    |\n    v\nHTTP Function\n    |\n    v\nAzure Storage Queue\n    |\n    v\nQueue Trigger\n    |\n    v\nOrder Processing Function\n    |\n    +--> Inventory Service\n    |\n    +--> Payment Service\n    |\n    +--> Notification Service\n\nThe HTTP function accepts the order request and places a message into a queue.\n\nThe queue-triggered function processes the order asynchronously.\n\nThis architecture prevents the HTTP request from waiting for every downstream\noperation to complete.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Example: Order Processing Architecture",
+    "chunking_strategy": "recursive",
+    "character_count": 627
+  },
+  {
+    "chunk_id": 44,
+    "text": "# Example: Document Processing Pipeline\n\nA document processing system can use Blob Storage and Azure Functions.\n\nA possible workflow is:\n\nUser uploads document\n        |\n        v\nAzure Blob Storage\n        |\n        v\nBlob Trigger\n        |\n        v\nAzure Function\n        |\n        +--> Extract text\n        |\n        +--> Validate document\n        |\n        +--> Store metadata\n        |\n        v\nDatabase\n\nThis architecture is useful for applications that need to automatically process\nuploaded documents.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Example: Document Processing Pipeline",
+    "chunking_strategy": "recursive",
+    "character_count": 516
+  },
+  {
+    "chunk_id": 45,
+    "text": "# Example: Approval Workflow\n\nDurable Functions can be used to implement an approval workflow.\n\nExample:\n\nStart workflow\n      |\n      v\nCreate approval request\n      |\n      v\nWait for manager approval\n      |\n      v\nApproval received\n      |\n      v\nProcess request\n      |\n      v\nSend notification\n      |\n      v\nComplete workflow\n\nThe orchestration can wait for an external approval event without continuously\nexecuting a function.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Example: Approval Workflow",
+    "chunking_strategy": "recursive",
+    "character_count": 443
+  },
+  {
+    "chunk_id": 46,
+    "text": "# Example: Scheduled Data Processing\n\nA scheduled data pipeline can use a timer trigger.\n\nExample:\n\nTimer Trigger\n      |\n      v\nExtract data\n      |\n      v\nTransform data\n      |\n      v\nStore results\n      |\n      v\nSend completion notification\n\nTimer triggers are appropriate when processing needs to occur at predefined\nintervals.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Example: Scheduled Data Processing",
+    "chunking_strategy": "recursive",
+    "character_count": 341
+  },
+  {
+    "chunk_id": 47,
+    "text": "# Troubleshooting\n\n## Function Does Not Start\n\nCheck:\n\n- FUNCTIONS_WORKER_RUNTIME\n- Application settings\n- Dependency installation\n- Runtime version\n- Function trigger configuration\n- Deployment logs\n\nIncorrect runtime configuration is a common cause of startup problems.\n\n---\n\n## Queue Trigger Does Not Execute\n\nCheck:\n\n- Queue connection configuration\n- Storage account availability\n- Queue name\n- Function trigger configuration\n- Message visibility\n- Function application logs\n\nApplication Insights can help identify runtime errors.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Queue Trigger Does Not Execute",
+    "chunking_strategy": "recursive",
+    "character_count": 540
+  },
+  {
+    "chunk_id": 48,
+    "text": "## HTTP Function Returns 401\n\nA 401 response generally indicates an authentication problem.\n\nCheck:\n\n- Authentication configuration\n- Access token\n- Identity configuration\n- Authorization settings\n- Function authentication level\n\n---\n\n## Function Times Out\n\nA timeout can occur when a function takes longer than the configured or\nsupported execution duration.\n\nPossible approaches include:\n\n- Optimize the operation.\n- Move long-running work to asynchronous processing.\n- Use a queue.\n- Use Durable Functions for long-running workflows.\n- Review the hosting plan.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Function Times Out",
+    "chunking_strategy": "recursive",
+    "character_count": 568
+  },
+  {
+    "chunk_id": 49,
+    "text": "## High Cold-Start Latency\n\nIf an application experiences high cold-start latency, investigate:\n\n- Dependency size\n- Application startup time\n- Runtime\n- Hosting plan\n- Application initialization\n\nReducing unnecessary dependencies and startup work can improve startup\nperformance.\n\n---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "High Cold-Start Latency",
+    "chunking_strategy": "recursive",
+    "character_count": 285
+  },
+  {
+    "chunk_id": 50,
+    "text": "# Key Configuration Terms\n\nThe following terms are commonly encountered when working with Azure Functions:",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Key Configuration Terms",
+    "chunking_strategy": "recursive",
+    "character_count": 106
+  },
+  {
+    "chunk_id": 51,
+    "text": "| Term | Meaning |\n|------|---------|\n| Function App | Hosting environment for functions |\n| Function | Individual unit of executable code |\n| Trigger | Event that starts a function |\n| Binding | Connection between a function and another service |\n| FUNCTIONS_WORKER_RUNTIME | Specifies the language worker runtime |\n| Application Settings | Runtime configuration values |\n| Managed Identity | Azure-managed identity for authentication |\n| Durable Functions | Extension for stateful workflows |\n| Orchestrator | Coordinates a durable workflow |\n| Activity | Performs a unit of work |\n| Queue Trigger | Executes when a queue message arrives |\n| HTTP Trigger | Executes when an HTTP request arrives |",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Key Configuration Terms",
+    "chunking_strategy": "recursive",
+    "character_count": 698
+  },
+  {
+    "chunk_id": 52,
+    "text": "| HTTP Trigger | Executes when an HTTP request arrives |\n| Timer Trigger | Executes according to a schedule |\n| Blob Trigger | Executes when blob changes are detected |\n| Application Insights | Monitoring and diagnostics service |",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Key Configuration Terms",
+    "chunking_strategy": "recursive",
+    "character_count": 230
+  },
+  {
+    "chunk_id": 53,
+    "text": "---",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Key Configuration Terms",
+    "chunking_strategy": "recursive",
+    "character_count": 3
+  },
+  {
+    "chunk_id": 54,
+    "text": "# Summary\n\nAzure Functions provides a serverless execution model for running application\ncode without directly managing server infrastructure.\n\nTriggers determine when functions execute.\n\nBindings simplify integration with Azure services.\n\nApplication settings provide runtime configuration.\n\nManaged identities provide secure authentication between Azure resources.\n\nDurable Functions provides stateful workflow orchestration for long-running,\nmulti-step processes.\n\nFAAS applications should be designed with scalability, observability,\nsecurity, reliability, and cost in mind.",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Summary",
+    "chunking_strategy": "recursive",
+    "character_count": 578
+  },
+  {
+    "chunk_id": 55,
+    "text": "For technical questions about Azure Functions, the relevant concepts often\ninclude triggers, bindings, application settings, managed identities, Durable\nFunctions, orchestration, activities, queues, scaling, and monitoring.",
+    "source": "data/documents/demo/azure.md",
+    "page": null,
+    "section": "Summary",
+    "chunking_strategy": "recursive",
+    "character_count": 223
+  }
+]

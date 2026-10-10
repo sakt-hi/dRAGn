@@ -1,0 +1,85 @@
+# ============================================
+# dRAGn — Git Ignore
+# ============================================
+
+# -------------------------
+# Python
+# -------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# -------------------------
+# Environment / Secrets
+# -------------------------
+.env
+.env.*
+!.env.example
+
+# -------------------------
+# IDE / Editor
+# -------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# -------------------------
+# macOS
+# -------------------------
+.DS_Store
+
+# -------------------------
+# Logs
+# -------------------------
+*.log
+
+# -------------------------
+# Python tooling
+# -------------------------
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# -------------------------
+# dRAGn Runtime/User Data
+# -------------------------
+
+# Ignore future user-uploaded documents
+backend/data/documents/*
+
+# Keep demo documents in Git
+!backend/data/documents/demo/
+!backend/data/documents/demo/**
+
+# Ignore future generated/user indexes
+backend/data/index/*
+
+# Keep pre-built demo indexes in Git
+!backend/data/index/demo/
+!backend/data/index/demo/**
+
+# -------------------------
+# Frontend / Next.js
+# -------------------------
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.vercel/
+
+# -------------------------
+# Build / temporary files
+# -------------------------
+dist/
+build/
+*.tmp
+*.temp

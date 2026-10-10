@@ -1,0 +1,461 @@
+[
+  {
+    "chunk_id": 0,
+    "text": "Fictional sample  Page 1\n CivicGrid Recruitment Council (CGRC)\nCombined Digital Administration Assistant Examination, 2026\nAdvertisement No.: CGRC/DAA/01/2026\nRecruitment Year: 2026–27\n **FICTIONAL SAMPLE DOCUMENT FOR dRAGn**\nThis is a synthetic examination notification created for demonstrating document ingestion, retrieval, citation,\nand RAG debugging. It is not issued by the Government of India, UPSC, SSC, NDSRB, or any other public\nauthority. All names, dates, vacancies, fees, rules, and conditions in this document are fictional.\n---\n1. Recruitment Overview\nThe CivicGrid Recruitment Council (CGRC) invites online applications from eligible candidates for recruitment to",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 681
+  },
+  {
+    "chunk_id": 1,
+    "text": "the post of Digital Administration Assistant (DAA) in participating central government offices.\nThe recruitment is intended to identify candidates with general administrative, digital documentation,\ncommunication, and basic computer skills.\nThe recruitment process consists of:\n1. Computer-Based Examination (CBE)\n2. Skill Assessment\n3. Document Verification\n4. Final selection and appointment formalities\nCandidates should read this notification carefully before submitting an application. Submission of an application\ndoes not by itself establish eligibility for appointment.\n---\n2. Important Dates\n Activity\nDate / Time\nNotification publication\n10 October 2026\nOnline application begins",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 689
+  },
+  {
+    "chunk_id": 2,
+    "text": "Activity\nDate / Time\nNotification publication\n10 October 2026\nOnline application begins\n15 October 2026\nLast date for application\n12 November 2026, 23:59 IST\nLast date for online fee payment\n13 November 2026, 23:59 IST\nApplication status available\nFrom 20 November 2026\nCorrection window opens\n18 November 2026\nCorrection window closes\n20 November 2026, 23:59 IST\nCity information slip\nFrom 28 November 2026\nAdmit card\nFrom 5 December 2026\nComputer-Based Examination\n14 December 2026\nSkill Assessment\nJanuary 2027",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 513
+  },
+  {
+    "chunk_id": 3,
+    "text": "Fictional sample  Page 2\nActivity\nDate / Time\nDocument Verification\nFebruary 2027\nTentative final result\nMarch 2027\nThe Board may revise any date because of administrative requirements. Candidates should check the recruitment\nportal regularly for updates.\n---\n3. Post Details\n3.1 Name of Post\nDigital Administration Assistant (DAA)\n3.2 Pay Level\nLevel 5 of the fictional recruitment pay structure.\n3.3 Pay Range\n■29,200 – ■92,300\nThe stated range represents the basic pay scale. Other admissible allowances may be provided according to the\nrules applicable to the place of posting.\n3.4 Probation\nSelected candidates will ordinarily be placed on a two-year probation period.",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 674
+  },
+  {
+    "chunk_id": 4,
+    "text": "3.4 Probation\nSelected candidates will ordinarily be placed on a two-year probation period.\nDuring probation, candidates may be required to complete departmental training and qualifying assessments.\nFailure to meet prescribed probation requirements may result in extension of probation or other action according to\napplicable service conditions.\n3.5 Nature of Duties\nA Digital Administration Assistant may perform duties including:\n Maintaining digital and physical records.\n Preparing letters, reports, and office documents.\n Entering and validating administrative data.\n Managing electronic files.\n Supporting online application and service workflows.",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 658
+  },
+  {
+    "chunk_id": 5,
+    "text": " Managing electronic files.\n Supporting online application and service workflows.\n Preparing spreadsheets and basic reports.\n Handling routine email communication.\n Assisting officers with digital documentation.\n Maintaining confidentiality of official information.\n Performing other administrative duties assigned by the competent authority.\n---",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 353
+  },
+  {
+    "chunk_id": 6,
+    "text": "Fictional sample  Page 3\n4. Vacancy Details\nA total of 1,250 indicative vacancies are proposed.\nCategory\nVacancies\nGeneral / UR\n510\nOBC-NCL\n330\nSC\n185\nST\n95\nEWS\n130\n**Total**\n**1,250**\nThe vacancy figure is indicative and may be increased, reduced, or withdrawn depending on administrative\nrequirements.\nReservation shall be applied according to the category and horizontal reservation provisions specified in the final\nselection instructions.\n---\n5. Horizontal Reservation\nHorizontal reservation may be applicable to eligible candidates belonging to specified categories.\nFor the purpose of this fictional notification, the indicative horizontal reservation is:\nCategory\nIndicative reservation",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 695
+  },
+  {
+    "chunk_id": 7,
+    "text": "Category\nIndicative reservation\nPersons with Benchmark Disabilities (PwBD)\n4%\nEx-servicemen\nAs applicable\nOther horizontal categories\nAs applicable under relevant rules\nHorizontal reservation operates within the relevant vertical reservation categories and does not create an\nadditional vacancy block beyond the sanctioned vacancies.\n---\n6. Essential Educational Qualification\nCandidates must possess a bachelor's degree in any discipline from a recognized university or institution.\nThe degree must be obtained before the date prescribed for document verification.\nCandidates who are awaiting their final semester results may apply provisionally. However, they must possess",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 674
+  },
+  {
+    "chunk_id": 8,
+    "text": "documentary proof of the required qualification by the document verification stage.\nA candidate who cannot produce the required qualification certificate when requested may have their candidature\ncancelled.\n---\n7. Computer Proficiency\nCandidates should have basic computer proficiency.",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 285
+  },
+  {
+    "chunk_id": 9,
+    "text": "Fictional sample  Page 4\nThe expected level includes:\n Operating a computer.\n Managing files and folders.\n Using word-processing applications.\n Creating and editing spreadsheets.\n Sending and receiving email.\n Using web browsers.\n Uploading and downloading files.\n Performing basic online form operations.\nComputer proficiency may be assessed during the Skill Assessment.\n---\n8. Age Limit\nThe candidate must be:\n At least **18 years old**, and\n Not more than **30 years old**\nas on 1 January 2027.\nThe date of birth entered in the application must match the date of birth shown on the candidate's accepted identity\nor educational documents.\n---\n9. Age Relaxation",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 673
+  },
+  {
+    "chunk_id": 10,
+    "text": "or educational documents.\n---\n9. Age Relaxation\nThe following indicative maximum relaxations apply:\nCategory\nMaximum relaxation\nSC / ST\n5 years\nOBC-NCL\n3 years\nPwBD\n10 years\nEx-servicemen\nAs applicable\nOther eligible categories\nAs applicable under recruitment rules\nWhere a candidate is eligible for more than one relaxation category, the applicable rules will determine whether\nrelaxations can be combined.\nCandidates should not automatically add all available relaxation periods without checking the applicable category\nrules.\n---\n10. Nationality\nA candidate must satisfy the nationality requirements applicable to the recruitment.",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 633
+  },
+  {
+    "chunk_id": 11,
+    "text": "A candidate must satisfy the nationality requirements applicable to the recruitment.\nFor this fictional notification, eligibility is open primarily to:",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 151
+  },
+  {
+    "chunk_id": 12,
+    "text": "Fictional sample  Page 5\n1. Citizens of India; or\n2. Persons belonging to another category specifically permitted under applicable Government of India recruitment\nrules.\nCandidates may be required to provide nationality or identity documentation during verification.\n---\n11. Category Eligibility\nCandidates claiming reservation benefits must possess valid supporting certificates.\n11.1 OBC-NCL\nCandidates claiming OBC-NCL benefits must produce a valid certificate meeting the applicable requirements and\nvalidity conditions.\nAn OBC certificate alone does not automatically establish eligibility for the NCL benefit.\n11.2 EWS",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 625
+  },
+  {
+    "chunk_id": 13,
+    "text": "An OBC certificate alone does not automatically establish eligibility for the NCL benefit.\n11.2 EWS\nCandidates claiming EWS reservation must provide a valid Income and Asset Certificate in the prescribed format.\nThe certificate must correspond to the relevant financial and assessment period specified by the recruitment\ninstructions.\n11.3 SC / ST\nCandidates claiming SC or ST reservation must provide an acceptable caste certificate issued by the competent\nauthority.\n11.4 PwBD\nCandidates claiming PwBD benefits must provide the prescribed disability certificate or documentation issued by\nthe competent authority.\n---\n12. Application Fee\n Candidate category\nFee\nGeneral\n■500\nOBC-NCL\n■500\nEWS\n■500",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 698
+  },
+  {
+    "chunk_id": 14,
+    "text": "---\n12. Application Fee\n Candidate category\nFee\nGeneral\n■500\nOBC-NCL\n■500\nEWS\n■500\nSC\n■250\nST\n■250\nPwBD\n■250\nWomen candidates\n■250\nThe applicable fee must be paid online.\nA candidate who submits an application but does not complete a required fee payment may have the application\ntreated as incomplete.",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 302
+  },
+  {
+    "chunk_id": 15,
+    "text": "Fictional sample  Page 6\nThe application fee, once paid, will ordinarily not be refunded.\n---\n13. Online Application Process\nCandidates should complete the application through the official recruitment portal.\nThe application process consists of:\nStep 1 — Registration\nCreate a registration account using:\n Name\n Date of birth\n Mobile number\n Email address\n Basic identity information\nCandidates should use an active mobile number and email address throughout the recruitment process.\nStep 2 — Application Form\nEnter:\n Personal information\n Address\n Category\n Educational qualification\n Examination city preferences\n Other applicable details\nStep 3 — Document Upload",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 6,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 677
+  },
+  {
+    "chunk_id": 16,
+    "text": " Examination city preferences\n Other applicable details\nStep 3 — Document Upload\nUpload the required photograph, signature, and supporting documents.\nStep 4 — Fee Payment\nPay the applicable examination fee.\nStep 5 — Final Submission\nReview the complete form and submit it.\nCandidates should download the final application form and preserve a copy.\n---\n14. Photograph Requirements\nThe photograph should:\n Be recent.\n Clearly show the candidate's face.\n Have a plain or uncluttered background.",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 6,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 496
+  },
+  {
+    "chunk_id": 17,
+    "text": "Fictional sample  Page 7\n Be uploaded in the prescribed format.\n Satisfy the portal's file-size requirements.\nPhotographs that do not permit clear identification may be rejected.\n---\n15. Signature Requirements\nThe signature should:\n Be made by the candidate.\n Be clearly visible.\n Be uploaded in the prescribed format.\n Not contain additional text or marks unrelated to the signature.\nCandidates should verify the uploaded image before final submission.\n---\n16. Multiple Applications\nOnly one valid application should be submitted by a candidate.\nIf multiple applications are submitted, the Board may:\n Reject duplicate applications.\n Consider only the latest valid application.",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 687
+  },
+  {
+    "chunk_id": 18,
+    "text": " Reject duplicate applications.\n Consider only the latest valid application.\n Cancel applications where multiple submissions appear to have been used to circumvent recruitment rules.\nCandidates should not submit repeated applications merely because they made a minor mistake in an earlier\napplication. The correction window should be used where applicable.\n---\n17. Application Correction Window\nA correction window will be available from:\n18 November 2026 to 20 November 2026\nDuring the correction window, candidates may modify selected application fields.\nSome fields may remain locked because they are linked to registration or identity verification.",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 655
+  },
+  {
+    "chunk_id": 19,
+    "text": "Some fields may remain locked because they are linked to registration or identity verification.\nA correction fee may apply to selected fields.\nAfter the correction window closes, requests for ordinary application changes will generally not be accepted.\n---\n18. Examination Structure\nThe Computer-Based Examination contains 100 questions carrying 200 marks.\nSection\nQuestions\nMarks\nGeneral Awareness\n20\n40\nQuantitative Aptitude\n20\n40",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 432
+  },
+  {
+    "chunk_id": 20,
+    "text": "Fictional sample  Page 8\nSection\nQuestions\nMarks\nReasoning Ability\n20\n40\nEnglish Language\n20\n40\nComputer Awareness\n20\n40\n**Total**\n**100**\n**200**\nDuration\n90 minutes\nEligible candidates receiving compensatory time under the applicable provisions may receive additional time.\n---\n19. Marking Scheme\nEach correct answer carries 2 marks.\nFor every incorrect answer:\n0.50 marks will be deducted.\nThere is no negative marking for an unanswered question.\nExample\nIf a candidate answers:\n 70 questions correctly\n 20 questions incorrectly\n 10 questions unanswered\nThe score before any normalization would be:\n70 × 2 − 20 × 0.50 = 130 marks\n---\n20. Normalization",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 8,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 658
+  },
+  {
+    "chunk_id": 21,
+    "text": "The score before any normalization would be:\n70 × 2 − 20 × 0.50 = 130 marks\n---\n20. Normalization\nIf the Computer-Based Examination is conducted in multiple shifts, the Board may apply a statistical normalization\nprocedure to account for differences in question difficulty between shifts.\nThe normalized score may be used for shortlisting candidates.\nThe exact normalization procedure, if applied, will be communicated through the recruitment instructions.\nCandidates should not assume that the raw score alone will determine the final ranking when multiple-shift\nnormalization is used.\n---\n21. Minimum Qualifying Marks\nIndicative minimum qualifying percentages are:",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 8,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 666
+  },
+  {
+    "chunk_id": 22,
+    "text": "Fictional sample  Page 9\nCategory\nMinimum percentage\nGeneral\n40%\nOBC-NCL / EWS\n35%\nSC / ST\n30%\nPwBD\n30%\nMeeting the minimum qualifying percentage does not guarantee selection.\nShortlisting will depend on the number of vacancies, candidate performance, category requirements, normalization\nwhere applicable, and other selection conditions.\n---\n22. General Awareness Syllabus\nThe General Awareness section may include:\n Indian history\n Indian geography\n Indian economy\n General science\n Basic environmental awareness\n Current affairs\n Important national institutions\n Government schemes\n Basic constitutional awareness\n Digital governance\n Major national and international events",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 689
+  },
+  {
+    "chunk_id": 23,
+    "text": " Basic constitutional awareness\n Digital governance\n Major national and international events\nQuestions will generally assess general awareness rather than specialist knowledge.\n---\n23. Quantitative Aptitude Syllabus\nTopics may include:\n Number systems\n Percentages\n Ratio and proportion\n Average\n Profit and loss\n Simple interest\n Compound interest\n Time and work\n Pipes and cisterns",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 395
+  },
+  {
+    "chunk_id": 24,
+    "text": "Fictional sample  Page 10\n Time, speed and distance\n Basic algebra\n Data interpretation\n Tables and charts\n Mensuration\n---\n24. Reasoning Ability Syllabus\nTopics may include:\n Analogy\n Classification\n Number series\n Alphabet series\n Coding and decoding\n Blood relations\n Direction sense\n Ranking\n Syllogism\n Statement and conclusion\n Logical sequence\n Seating arrangement\n Basic analytical reasoning\n---\n25. English Language Syllabus\nTopics may include:\n Reading comprehension\n Vocabulary\n Synonyms\n Antonyms\n Grammar\n Sentence correction\n Fill in the blanks\n Error detection\n Sentence arrangement\n Basic usage\n Short passages",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 10,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 656
+  },
+  {
+    "chunk_id": 25,
+    "text": "Fictional sample  Page 11\n---\n26. Computer Awareness Syllabus\nTopics may include:\n Computer fundamentals\n Hardware and software\n Operating systems\n Files and folders\n Internet\n Web browsers\n Email\n Word processing\n Spreadsheets\n Presentation software\n Cybersecurity basics\n Password security\n Digital payments\n Cloud computing basics\n Common file formats\n---\n27. Examination Cities\nCandidates may select up to three preferred examination cities.\nThe final examination centre will be shown on the admit card.\nThe Board may allot a different city if:\n The preferred city reaches capacity.\n An examination centre becomes unavailable.\n Administrative requirements require reassignment.",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 11,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 700
+  },
+  {
+    "chunk_id": 26,
+    "text": " An examination centre becomes unavailable.\n Administrative requirements require reassignment.\nOnce an examination centre is allotted, requests for change will generally not be accepted.\n---\n28. Admit Card\nThe admit card is expected to be available from 5 December 2026.\nIt will contain:\n Candidate name\n Roll number\n Registration number\n Examination date",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 11,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 361
+  },
+  {
+    "chunk_id": 27,
+    "text": "Fictional sample  Page 12\n Examination time\n Reporting time\n Examination centre\n Centre address\n Candidate instructions\nCandidates should verify all details immediately after downloading the admit card.\n---\n29. Examination-Day Instructions\nCandidates should report at least 60 minutes before the scheduled examination.\nCandidates must carry:\n Printed admit card\n Valid photo identity document\n Any additional document specifically mentioned on the admit card\nThe following items are prohibited unless specifically permitted:\n Mobile phones\n Smart watches\n Bluetooth devices\n Calculators\n Electronic recording devices\n Unauthorized papers\n Communication devices",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 12,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 676
+  },
+  {
+    "chunk_id": 28,
+    "text": " Calculators\n Electronic recording devices\n Unauthorized papers\n Communication devices\nCandidates may undergo identity and biometric verification.\n---\n30. Skill Assessment\nCandidates shortlisted from the Computer-Based Examination may be called for a Skill Assessment.\nThe Skill Assessment may contain:\nTyping\nCandidates may be asked to type a short passage within a prescribed time.\nDocument Formatting\nCandidates may be asked to:\n Format a document.\n Apply headings.\n Create lists.\n Correct simple formatting issues.\nSpreadsheet Operations",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 12,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 549
+  },
+  {
+    "chunk_id": 29,
+    "text": "Fictional sample  Page 13\nTasks may include:\n Entering data.\n Sorting records.\n Applying basic formulas.\n Formatting cells.\n Reading simple tables.\nEmail Drafting\nCandidates may be asked to prepare a short official email based on a given scenario.\nFile Management\nCandidates may be asked to demonstrate basic file and folder operations.\nThe Skill Assessment is qualifying in nature unless the final instructions specify otherwise.\n---\n31. Document Verification\nShortlisted candidates will be required to produce original documents and copies.\nDocuments may include:\n1. Proof of identity\n2. Proof of date of birth\n3. Degree certificate\n4. Academic mark sheets\n5. Category certificate",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 13,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 688
+  },
+  {
+    "chunk_id": 30,
+    "text": "2. Proof of date of birth\n3. Degree certificate\n4. Academic mark sheets\n5. Category certificate\n6. OBC-NCL certificate, where applicable\n7. EWS certificate, where applicable\n8. PwBD certificate, where applicable\n9. Ex-servicemen documentation, where applicable\n10. Application form\n11. Admit card or call letter\n12. Other documents specified by the Board\nFailure to produce a required document may result in cancellation of candidature.\n---\n32. Medical Requirements\nSelected candidates may be required to satisfy prescribed medical standards relevant to the post.\nMedical examination, where required, may be conducted by an authorized medical authority.",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 13,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 653
+  },
+  {
+    "chunk_id": 31,
+    "text": "Medical examination, where required, may be conducted by an authorized medical authority.\nA candidate found medically unsuitable may be subject to the applicable recruitment and appointment rules.\n---",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 13,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 200
+  },
+  {
+    "chunk_id": 32,
+    "text": "Fictional sample  Page 14\n33. Selection Process\nThe overall process is:\nComputer-Based Examination\n↓\nShortlisting\n↓\nSkill Assessment\n↓\nDocument Verification\n↓\nMedical / Appointment Formalities, where applicable\n↓\nFinal Selection\nQualification in an earlier stage does not create an automatic right to appointment.\n---\n34. Merit List\nThe final merit list will be prepared according to:\n Applicable examination scores\n Normalization, where applicable\n Category requirements\n Vacancy availability\n Mandatory qualifying stages\n Document verification\n Other applicable recruitment conditions",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 14,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 594
+  },
+  {
+    "chunk_id": 33,
+    "text": " Mandatory qualifying stages\n Document verification\n Other applicable recruitment conditions\nCandidates should note that merely obtaining the minimum qualifying marks does not guarantee inclusion in the\nfinal merit list.\n---\n35. Tie-Breaking\nIf two or more candidates receive the same applicable score, the Board may apply tie-breaking criteria in the\nfollowing sequence:\n1. Higher score in the General Awareness section.\n2. Higher score in the Reasoning Ability section.\n3. Older candidate according to date of birth.\n4. Earlier registration number, where required.\nThe final tie-breaking procedure may be modified through recruitment instructions.\n---",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 14,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 656
+  },
+  {
+    "chunk_id": 34,
+    "text": "Fictional sample  Page 15\n36. Waiting List\nThe Board may maintain a reserve or waiting list where required.\nA candidate placed on a waiting list does not have an unconditional right to appointment.\nCandidates from the waiting list may be considered only when vacancies arise and the applicable conditions are\nsatisfied.\n---\n37. Appointment and Joining\nSelected candidates will receive appointment instructions specifying:\n Place of posting\n Reporting date\n Required documents\n Medical requirements, where applicable\n Probation conditions\n Training requirements\nCandidates who fail to join within the prescribed period without an approved reason may forfeit the appointment\nopportunity.\n---",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 15,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 696
+  },
+  {
+    "chunk_id": 35,
+    "text": "opportunity.\n---\n38. Transfer and Posting\nSelected candidates may be posted to participating offices based on administrative requirements.\nCandidates should not assume that selection will result in posting to their preferred city.\nRequests for transfer after appointment will be governed by the applicable service conditions.\n---\n39. Confidentiality\nCandidates appointed to the post may have access to official information.\nThey will be expected to:\n Protect confidential information.\n Follow information-security instructions.\n Avoid unauthorized disclosure.\n Use official systems responsibly.\n Follow applicable data-protection and cybersecurity procedures.",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 15,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 664
+  },
+  {
+    "chunk_id": 36,
+    "text": " Follow applicable data-protection and cybersecurity procedures.\nViolation of confidentiality requirements may result in disciplinary action.\n---\n40. Unfair Means and Malpractice\nCandidates found using unfair means may be disqualified.",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 15,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 236
+  },
+  {
+    "chunk_id": 37,
+    "text": "Fictional sample  Page 16\nExamples include:\n Impersonation\n Using unauthorized electronic devices\n Communicating with another candidate during the examination\n Possessing prohibited material\n Attempting to obtain examination content improperly\n Tampering with examination systems\n Submitting false documents\nThe Board may take action even after the examination if malpractice is discovered later.\n---\n41. Cancellation of Candidature\nCandidature may be cancelled at any stage if:\n Eligibility requirements are not satisfied.\n False information is provided.\n Documents are found to be invalid.\n Identity cannot be established.\n Multiple applications violate the instructions.",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 16,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 686
+  },
+  {
+    "chunk_id": 38,
+    "text": " Identity cannot be established.\n Multiple applications violate the instructions.\n Unfair means are detected.\n Material information is suppressed.\nCancellation may occur before or after publication of results.\n---\n42. PwBD Provisions\nEligible candidates with benchmark disabilities may receive facilities according to the applicable provisions.\nDepending on eligibility, facilities may include:\n Compensatory time\n Scribe assistance\n Accessible examination centre\n Other permitted accommodations\nCandidates seeking such facilities must indicate the requirement during application and provide supporting\ndocumentation where required.\n---\n43. Scribe Provisions",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 16,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 666
+  },
+  {
+    "chunk_id": 39,
+    "text": "documentation where required.\n---\n43. Scribe Provisions\nCandidates eligible for a scribe may be required to comply with prescribed conditions.\nA candidate should not independently arrange an unauthorized person as a scribe where the recruitment\ninstructions require formal approval.",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 16,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 282
+  },
+  {
+    "chunk_id": 40,
+    "text": "Fictional sample  Page 17\nThe scribe's role is limited to recording the candidate's answers as permitted by the examination rules.\n---\n44. Ex-Servicemen\nEligible ex-servicemen may receive benefits according to applicable recruitment rules.\nCandidates claiming such benefits must provide the required discharge or service documentation during\nverification.\n---\n45. Important Instructions for Candidates\nCandidates should:\n Use an active mobile number.\n Use an active email address.\n Keep login credentials confidential.\n Save copies of submitted applications.\n Preserve payment receipts.\n Check the recruitment portal regularly.\n Verify uploaded documents before submission.",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 17,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 681
+  },
+  {
+    "chunk_id": 41,
+    "text": " Check the recruitment portal regularly.\n Verify uploaded documents before submission.\n Read the admit-card instructions carefully.\nThe Board will generally communicate important updates through the recruitment portal.\n---\n46. Grievance and Support\nCandidates facing technical issues may submit a support request through the recruitment portal.\nA support request should normally include:\n Registration number\n Candidate name\n Description of the issue\n Screenshot, where useful\n Contact information\nCandidates should not send passwords, payment PINs, or other confidential authentication information in a\nsupport request.\n---\n47. Frequently Asked Questions\nQ1. What is the last date to apply?",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 17,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 699
+  },
+  {
+    "chunk_id": 42,
+    "text": "support request.\n---\n47. Frequently Asked Questions\nQ1. What is the last date to apply?\nThe last date is 12 November 2026 at 23:59 IST.\nQ2. What is the age limit?",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 17,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 162
+  },
+  {
+    "chunk_id": 43,
+    "text": "Fictional sample  Page 18\nThe standard age limit is 18 to 30 years as on 1 January 2027.\nQ3. How much age relaxation is available to OBC-NCL candidates?\nThe indicative OBC-NCL relaxation is 3 years.\nQ4. What is the SC/ST age relaxation?\nThe indicative relaxation is 5 years.\nQ5. How many vacancies are available?\nThere are 1,250 indicative vacancies.\nQ6. What is the application fee for General candidates?\nThe fee is ■500.\nQ7. What is the fee for SC candidates?\nThe fee is ■250.\nQ8. Is there negative marking?\nYes. 0.50 marks are deducted for every incorrect answer.\nQ9. Is there negative marking for unanswered questions?\nNo.\nQ10. What is the examination duration?",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 18,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 667
+  },
+  {
+    "chunk_id": 44,
+    "text": "Q9. Is there negative marking for unanswered questions?\nNo.\nQ10. What is the examination duration?\nThe standard examination duration is 90 minutes.\nQ11. How many questions are there?\nThere are 100 questions.\nQ12. How many marks is the examination worth?\nThe examination carries 200 marks.\nQ13. Can final-year students apply?\nYes, provisionally, provided the required qualification is obtained before document verification.\nQ14. How many examination cities can a candidate select?\nUp to three preferred cities.\nQ15. Can an examination centre be changed after allotment?\nRequests for change will generally not be accepted.\nQ16. When is the correction window?",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 18,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 656
+  },
+  {
+    "chunk_id": 45,
+    "text": "Requests for change will generally not be accepted.\nQ16. When is the correction window?\nThe correction window is 18 to 20 November 2026.\nQ17. When is the Computer-Based Examination?\nThe scheduled date is 14 December 2026.\nQ18. Is the Skill Assessment qualifying?",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 18,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 262
+  },
+  {
+    "chunk_id": 46,
+    "text": "Fictional sample  Page 19\nYes, unless the final instructions specify otherwise.\nQ19. What happens if a candidate cannot produce the original degree certificate?\nThe candidature may be cancelled if the candidate cannot establish the required qualification.\nQ20. Can a candidate submit multiple applications?\nOnly one valid application should be submitted.\nQ21. What happens if multiple applications are submitted?\nThe Board may reject duplicate applications or consider only the latest valid application according to the applicable\ninstructions.\nQ22. Is the application fee refundable?\nThe fee is ordinarily non-refundable once paid.\nQ23. Is normalization applicable?",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 19,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 667
+  },
+  {
+    "chunk_id": 47,
+    "text": "The fee is ordinarily non-refundable once paid.\nQ23. Is normalization applicable?\nNormalization may be applied if the examination is conducted in multiple shifts.\nQ24. Does clearing the minimum qualifying mark guarantee selection?\nNo. Selection depends on merit, vacancies, category requirements, mandatory qualifying stages, and other\napplicable conditions.\nQ25. Can selected candidates choose their posting city?\nPosting will depend on administrative requirements and cannot be assumed to match the candidate's preference.\n---\n48. Quick Reference Table\n Item\nDetails\nPost\nDigital Administration Assistant\nAdvertisement\nCGRC/DAA/01/2026\nVacancies\n1,250\nMinimum age\n18 years\nMaximum age\n30 years",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 19,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 695
+  },
+  {
+    "chunk_id": 48,
+    "text": "Advertisement\nCGRC/DAA/01/2026\nVacancies\n1,250\nMinimum age\n18 years\nMaximum age\n30 years\nAge cut-off\n1 January 2027\nOBC-NCL relaxation\n3 years\nSC/ST relaxation\n5 years\nPwBD relaxation\n10 years\nGeneral/OBC/EWS fee\n■500\nSC/ST/PwBD fee\n■250\nExamination questions\n100\nExamination marks\n200\nExamination duration\n90 minutes",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 19,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 317
+  },
+  {
+    "chunk_id": 49,
+    "text": "Fictional sample  Page 20\nItem\nDetails\nNegative marking\n0.50 per wrong answer\nPreferred exam cities\nUp to 3\nApplication starts\n15 October 2026\nApplication closes\n12 November 2026\nCorrection window\n18–20 November 2026\nExamination\n14 December 2026\nSkill Assessment\nJanuary 2027\nDocument Verification\nFebruary 2027\n---\n49. Final Advisory\nCandidates should carefully verify all information entered in the application before final submission.\nNo candidate should rely on unofficial social-media posts, third-party summaries, or unverified messages for\nrecruitment decisions.\nThe recruitment portal and official notices should be treated as the authoritative source for updates.\n---\n50. Disclaimer",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 20,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 692
+  },
+  {
+    "chunk_id": 50,
+    "text": "---\n50. Disclaimer\nThis entire notification is a fictional synthetic document created for the dRAGn RAG debugger project.\nIt does not represent an actual Government of India recruitment examination.\nThe CivicGrid Recruitment Council name, advertisement number, dates, vacancies, salary, eligibility criteria, fees,\nexamination pattern, syllabus, and all other information are fictional and created solely for software testing and\ndemonstration.",
+    "source": "data/documents/demo/cgrc-exam-notification-2026.pdf",
+    "page": 20,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 444
+  }
+]

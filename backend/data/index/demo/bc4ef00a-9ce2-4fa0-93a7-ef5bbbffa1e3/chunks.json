@@ -1,0 +1,632 @@
+[
+  {
+    "chunk_id": 0,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 1\nNORTHSTAR DIGITAL SYSTEMS\nSECTION 01\n1. Employment and Attendance\nNorthstar Digital Systems is a fictional software organization used solely as a dRAGn demonstration corpus. This\nhandbook is intentionally detailed so that a retrieval system must distinguish similar rules, numerical thresholds,\nexceptions, and policy scope.\nPolicy rules\n • Full-time employees follow their team schedule; part-time employees follow the schedule in their employment letter.\n • Contractors are governed by their statement of work and contractor access agreement.\n • Probation normally lasts six months and requires confirmation from the manager and People Operations.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 695
+  },
+  {
+    "chunk_id": 1,
+    "text": "• The standard collaboration window is 10:00 AM to 4:00 PM local time.\n • Unexpected absence should be communicated before the working day starts whenever reasonably possible.\n • Repeated unexplained absence may trigger an attendance review; one late arrival does not automatically trigger\n disciplinary action.\nOperational interpretation\nThe collaboration window is intended to make cross-team work predictable rather than to prescribe identical start and\nend times for every employee. A team may document a different schedule when customer coverage, operations, or\nproject requirements justify it.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 599
+  },
+  {
+    "chunk_id": 2,
+    "text": "project requirements justify it.\nAttendance decisions should consider the documented schedule, approved leave, manager communication, and any\napplicable accommodation. An informal message from a colleague does not itself create a new attendance policy.\nRecords and controls\n • Managers should retain approved schedule exceptions and probation decisions in the appropriate HR system.\n • Employees should keep contact details current so urgent operational communication can reach them.\n • Contractor access records must align with the end date of the statement of work.\n \nCommon questions\n • Does probation end automatically after six months? No. Confirmation is required.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 670
+  },
+  {
+    "chunk_id": 3,
+    "text": "• Does probation end automatically after six months? No. Confirmation is required.\n • Can a team define different core hours? Yes, when documented.\n • Does one late arrival automatically cause disciplinary action? No.\n \nOperational scenario\nA new employee joins a team whose employment letter specifies a different working pattern from the general handbook.\nThe employee should follow the individual employment letter for that circumstance while still following general security,\nconduct, and reporting requirements. A manager should not create a permanent exception through an informal chat",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 591
+  },
+  {
+    "chunk_id": 4,
+    "text": "message. If the schedule needs to change for the whole team, the change should be documented so that employees have a\nclear reference point.\nInterpretation and operational notes\nThis section should be read together with the employee's individual employment letter. The handbook establishes the\ngeneral rule, while an employment letter or approved local addendum can provide a specific exception. When a question\ncontains a number, the number should be interpreted with its unit and scope. For example, 18 days is the annual leave\nentitlement, 12 days is the normal carry-forward ceiling, and 30 days is the manager-level temporary remote-work",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 642
+  },
+  {
+    "chunk_id": 5,
+    "text": "exception. These figures answer different questions and should never be substituted for one another.\nOperational decisions should preserve the distinction between entitlement, approval, and compliance. Having a leave\nbalance does not mean every requested date is approved. Being eligible for remote work does not remove mandatory\nonsite requirements. Having access to an AI tool does not authorize confidential data to be entered into it. Similarly, having\na reimbursement receipt does not make a personal expense a business expense. The safest interpretation is therefore to\nretrieve the rule and its surrounding condition, rather than returning a number without the qualifying language.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 688
+  },
+  {
+    "chunk_id": 6,
+    "text": "Managers and employees should keep evidence for decisions that may later need review. Leave approvals, remote-work\nexceptions, expense declarations, asset handovers, and security reports should be recorded in the appropriate company\nsystem. A documented exception should include its scope and review date where applicable. This creates an audit trail and\nreduces disputes caused by informal messages. In dRAGn, these are useful retrieval cases because the answer may depend\non a short exception clause located near a broader general rule.\nA practical review sequence is: identify the employee category, identify the relevant policy area, locate the numerical",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 658
+  },
+  {
+    "chunk_id": 7,
+    "text": "threshold or permission, then check for exceptions. For security matters, the urgency rule comes first: suspected credential\ncompromise or accidental disclosure should be reported within one hour. For expenses, check business purpose, receipt\nrequirements, submission timing, and approval. For remote work, check normal weekly limits and then determine whether a\ntemporary exception changes the rule.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 1,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 400
+  },
+  {
+    "chunk_id": 8,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 2\nNORTHSTAR DIGITAL SYSTEMS\nSECTION 02\n2. Leave and Time Off\nAnnual leave entitlement\nEmployees receive 18 days of annual leave per calendar year. Employees joining after 30 June receive a prorated\nbalance. Leave is intended to provide planned time away from work, so employees should submit requests before\nmaking non-refundable travel commitments.\n • Requests exceeding three consecutive working days should normally be submitted at least seven calendar days\n in advance.\n• Up to 12 unused annual-leave days may be carried forward. Amounts above the carry-forward limit normally\n expire at year end.\nSick leave",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 656
+  },
+  {
+    "chunk_id": 9,
+    "text": "expire at year end.\nSick leave\n • Employees receive 12 sick days per calendar year.\n • A medical certificate may be requested for an absence longer than three consecutive working days.\n \nParental leave\n • Eligible primary caregivers receive 20 weeks of paid parental leave.\n • Eligible secondary caregivers receive 4 weeks of paid parental leave.\n Parental leave should normally begin within six months of the qualifying event unless People Operations approves a\nlater start.\nExamples and controls\nAn employee with 15 unused annual-leave days at year end would normally carry forward 12 and lose the",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 599
+  },
+  {
+    "chunk_id": 10,
+    "text": "remaining 3, subject to any applicable local rule or approved exception. A five-day planned vacation should\nnormally be requested at least seven calendar days in advance.\nLeave approval is separate from entitlement. Having an available balance does not mean the request is\nautomatically approved; staffing, project commitments, and required notice may be considered.\nOperational scenario\nAn employee requests five consecutive working days of annual leave and has enough balance available. The manager\nshould check the notice requirement, team coverage, and any operational constraints before approving the dates. The",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 616
+  },
+  {
+    "chunk_id": 11,
+    "text": "available balance answers whether the employee has entitlement; it does not answer whether the requested dates can\nbe approved. At year end, only up to 12 unused annual-leave days normally carry forward, so an employee with 15\nunused days should not assume all 15 remain available in the next calendar year.\nInterpretation and operational notes\nOperational decisions should preserve the distinction between entitlement, approval, and compliance. Having a leave\nbalance does not mean every requested date is approved. Being eligible for remote work does not remove mandatory\nonsite requirements. Having access to an AI tool does not authorize confidential data to be entered into it. Similarly,",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 693
+  },
+  {
+    "chunk_id": 12,
+    "text": "having a reimbursement receipt does not make a personal expense a business expense. The safest interpretation is\ntherefore to retrieve the rule and its surrounding condition, rather than returning a number without the qualifying\nlanguage.\nManagers and employees should keep evidence for decisions that may later need review. Leave approvals, remote-work\nexceptions, expense declarations, asset handovers, and security reports should be recorded in the appropriate company\nsystem. A documented exception should include its scope and review date where applicable. This creates an audit trail",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 589
+  },
+  {
+    "chunk_id": 13,
+    "text": "and reduces disputes caused by informal messages. In dRAGn, these are useful retrieval cases because the answer may\ndepend on a short exception clause located near a broader general rule.\nA practical review sequence is: identify the employee category, identify the relevant policy area, locate the numerical\nthreshold or permission, then check for exceptions. For security matters, the urgency rule comes first: suspected\ncredential compromise or accidental disclosure should be reported within one hour. For expenses, check business\npurpose, receipt requirements, submission timing, and approval. For remote work, check normal weekly limits and then",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 650
+  },
+  {
+    "chunk_id": 14,
+    "text": "determine whether a temporary exception changes the rule.\nThis section should be read together with the employee's individual employment letter. The handbook establishes the\ngeneral rule, while an employment letter or approved local addendum can provide a specific exception. When a question\ncontains a number, the number should be interpreted with its unit and scope. For example, 18 days is the annual leave\nentitlement, 12 days is the normal carry-forward ceiling, and 30 days is the manager-level temporary remote-work\nexception. These figures answer different questions and should never be substituted for one another.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 2,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 623
+  },
+  {
+    "chunk_id": 15,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 3\nNORTHSTAR DIGITAL SYSTEMS\nSECTION 03\n3. Remote and Hybrid Work\nStandard remote arrangement\n • Eligible employees may work remotely up to three days per week when the role and team permit it.\n • Remote work does not replace mandatory onsite events, customer meetings, security-sensitive sessions, or\n approved workshops.\n• Remote employees must use company-approved authentication, endpoint protection, and network security\n controls.\n• Company equipment should not be left unattended in publicly accessible locations.\n \nTemporary exceptions\n • Managers may approve temporary full-remote arrangements for up to 30 calendar days for documented",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 687
+  },
+  {
+    "chunk_id": 16,
+    "text": "circumstances.\n• Exceptions longer than 30 calendar days require People Operations approval and a documented review\n date.\nOperational scenarios\nA developer who normally works remotely three days each week may still be required to attend a quarterly\nsecurity workshop onsite. The remote-work arrangement does not override a mandatory event.\nA temporary full-remote approval for 20 calendar days can be handled by the manager when the documented\ncircumstances qualify. A 45-day arrangement requires the additional People Operations approval.\nSecurity expectations\n • Employees must lock devices when unattended and avoid using public computers for company systems.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 663
+  },
+  {
+    "chunk_id": 17,
+    "text": "• Sensitive conversations should not be conducted where unauthorized people can overhear them.\n \nOperational scenario\nAn eligible employee normally works remotely three days each week but is asked to attend an onsite security\nreview. The onsite requirement takes precedence because the remote arrangement does not override mandatory\nevents. A separate employee who needs 20 consecutive days of full remote work may receive a\nmanager-approved temporary exception when the circumstances qualify. A 45-day exception needs the additional\nPeople Operations approval described in the handbook.\nInterpretation and operational notes",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 624
+  },
+  {
+    "chunk_id": 18,
+    "text": "People Operations approval described in the handbook.\nInterpretation and operational notes\nManagers and employees should keep evidence for decisions that may later need review. Leave approvals,\nremote-work exceptions, expense declarations, asset handovers, and security reports should be recorded in the\nappropriate company system. A documented exception should include its scope and review date where applicable.\nThis creates an audit trail and reduces disputes caused by informal messages. In dRAGn, these are useful retrieval\ncases because the answer may depend on a short exception clause located near a broader general rule.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 629
+  },
+  {
+    "chunk_id": 19,
+    "text": "A practical review sequence is: identify the employee category, identify the relevant policy area, locate the\nnumerical threshold or permission, then check for exceptions. For security matters, the urgency rule comes first:\nsuspected credential compromise or accidental disclosure should be reported within one hour. For expenses,\ncheck business purpose, receipt requirements, submission timing, and approval. For remote work, check normal\nweekly limits and then determine whether a temporary exception changes the rule.\nThis section should be read together with the employee's individual employment letter. The handbook establishes",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 632
+  },
+  {
+    "chunk_id": 20,
+    "text": "the general rule, while an employment letter or approved local addendum can provide a specific exception. When\na question contains a number, the number should be interpreted with its unit and scope. For example, 18 days is\nthe annual leave entitlement, 12 days is the normal carry-forward ceiling, and 30 days is the manager-level\ntemporary remote-work exception. These figures answer different questions and should never be substituted for\none another.\nOperational decisions should preserve the distinction between entitlement, approval, and compliance. Having a\nleave balance does not mean every requested date is approved. Being eligible for remote work does not remove",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 672
+  },
+  {
+    "chunk_id": 21,
+    "text": "mandatory onsite requirements. Having access to an AI tool does not authorize confidential data to be entered into\nit. Similarly, having a reimbursement receipt does not make a personal expense a business expense. The safest\ninterpretation is therefore to retrieve the rule and its surrounding condition, rather than returning a number\nwithout the qualifying language.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 3,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 368
+  },
+  {
+    "chunk_id": 22,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 4\nNORTHSTAR DIGITAL SYSTEMS\nSECTION 04\n4. Compensation, Benefits and Expenses\nPayroll\n • Salary is paid monthly on the last working day.\n • If the scheduled payment day is a company holiday, payment is normally made on the preceding working day.\n \nPerformance reviews\n • Performance reviews occur twice each year.\n • A performance review does not guarantee a salary increase, promotion, or bonus.\n \nHealth benefit eligibility\n • Employees normally become eligible for the company health plan after 30 days of continuous employment\n unless the offer letter states otherwise.\nExpense rules",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 631
+  },
+  {
+    "chunk_id": 23,
+    "text": "unless the offer letter states otherwise.\nExpense rules\n • Business expenses should normally be submitted within 30 calendar days.\n • Receipts are required for individual expenses above ₹1,500. A lost receipt requires a written declaration and\n manager approval.\n• Personal entertainment, traffic fines, minibar charges, and expenses for non-business companions are not\n reimbursable.\nScenario\nIf an employee spends ₹1,200 on a business meal, the receipt should be retained as required by the finance\nprocess even though the individual expense is below the ₹1,500 threshold. If a ₹2,000 business expense has no",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 610
+  },
+  {
+    "chunk_id": 24,
+    "text": "receipt, the employee should use the documented lost-receipt procedure rather than simply omitting the expense.\nControls\n • Expense reports should identify the business purpose and project or cost center when required.\n • Managers should review expenses for business relevance before approval.\n \nOperational scenario\nAn employee submits a ₹2,000 business expense without the original receipt. The employee should use the\ndocumented lost-receipt declaration process and obtain the required approval instead of treating the expense as\nautomatically reimbursable. A separate ₹1,200 business meal is below the ₹1,500 receipt threshold, but the employee",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 648
+  },
+  {
+    "chunk_id": 25,
+    "text": "should still retain whatever supporting evidence the finance workflow requires. The reimbursement decision depends\non business purpose, policy limits, timing, and approval.\nInterpretation and operational notes\nA practical review sequence is: identify the employee category, identify the relevant policy area, locate the numerical\nthreshold or permission, then check for exceptions. For security matters, the urgency rule comes first: suspected\ncredential compromise or accidental disclosure should be reported within one hour. For expenses, check business\npurpose, receipt requirements, submission timing, and approval. For remote work, check normal weekly limits and then",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 672
+  },
+  {
+    "chunk_id": 26,
+    "text": "determine whether a temporary exception changes the rule.\nThis section should be read together with the employee's individual employment letter. The handbook establishes the\ngeneral rule, while an employment letter or approved local addendum can provide a specific exception. When a\nquestion contains a number, the number should be interpreted with its unit and scope. For example, 18 days is the\nannual leave entitlement, 12 days is the normal carry-forward ceiling, and 30 days is the manager-level temporary\nremote-work exception. These figures answer different questions and should never be substituted for one another.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 623
+  },
+  {
+    "chunk_id": 27,
+    "text": "Operational decisions should preserve the distinction between entitlement, approval, and compliance. Having a leave\nbalance does not mean every requested date is approved. Being eligible for remote work does not remove mandatory\nonsite requirements. Having access to an AI tool does not authorize confidential data to be entered into it. Similarly,\nhaving a reimbursement receipt does not make a personal expense a business expense. The safest interpretation is\ntherefore to retrieve the rule and its surrounding condition, rather than returning a number without the qualifying\nlanguage.\nManagers and employees should keep evidence for decisions that may later need review. Leave approvals,",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 690
+  },
+  {
+    "chunk_id": 28,
+    "text": "remote-work exceptions, expense declarations, asset handovers, and security reports should be recorded in the\nappropriate company system. A documented exception should include its scope and review date where applicable. This\ncreates an audit trail and reduces disputes caused by informal messages. In dRAGn, these are useful retrieval cases\nbecause the answer may depend on a short exception clause located near a broader general rule.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 4,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 435
+  },
+  {
+    "chunk_id": 29,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 5\nNORTHSTAR DIGITAL SYSTEMS\nSECTION 05\n5. Security and Acceptable Use\nIdentity and credentials\n • Corporate credentials must never be shared.\n • Multi-factor authentication is mandatory for systems that support it.\n • Suspected phishing, credential compromise, accidental disclosure, or unauthorized access must be\n reported within one hour of discovery.\nData handling\n • Confidential customer data must not be copied into public AI tools, personal email, unmanaged cloud\n storage, or personal repositories.\n• USB storage may be used only when encrypted and approved by IT Security.\n \nGenerative AI",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 642
+  },
+  {
+    "chunk_id": 30,
+    "text": "• USB storage may be used only when encrypted and approved by IT Security.\n \nGenerative AI\nPublic generative AI may be used for non-confidential drafting, brainstorming, public-material\nsummarization, and generic examples. Customer secrets, credentials, personal data, confidential source\ncode, security findings, and unreleased financial information must not be entered into public AI systems.\nApproved internal AI tools may be used for confidential workloads only when the tool is authorized for the\nrelevant classification. Generated code remains subject to normal review, testing, licensing, and security\ncontrols.\nIncident scenario",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 636
+  },
+  {
+    "chunk_id": 31,
+    "text": "controls.\nIncident scenario\nIf an employee accidentally pastes a customer identifier into a public AI assistant, the correct response is not\nto hide the incident. The employee should report the accidental disclosure to Security within one hour and\nfollow the incident-response instructions.\nOperational scenario\nAn employee accidentally pastes confidential customer information into a public AI assistant. The correct\nresponse is to report the accidental disclosure to Security within one hour and follow the incident-response\nprocess. Deleting the conversation locally does not replace reporting. The same policy also prohibits sharing",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 636
+  },
+  {
+    "chunk_id": 32,
+    "text": "credentials and requires multi-factor authentication where supported. Generated code from an approved AI tool\nremains subject to normal review, testing, licensing, and security controls.\nInterpretation and operational notes\nThis section should be read together with the employee's individual employment letter. The handbook\nestablishes the general rule, while an employment letter or approved local addendum can provide a specific\nexception. When a question contains a number, the number should be interpreted with its unit and scope. For\nexample, 18 days is the annual leave entitlement, 12 days is the normal carry-forward ceiling, and 30 days is the",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 652
+  },
+  {
+    "chunk_id": 33,
+    "text": "manager-level temporary remote-work exception. These figures answer different questions and should never be\nsubstituted for one another.\nOperational decisions should preserve the distinction between entitlement, approval, and compliance. Having a\nleave balance does not mean every requested date is approved. Being eligible for remote work does not remove\nmandatory onsite requirements. Having access to an AI tool does not authorize confidential data to be entered\ninto it. Similarly, having a reimbursement receipt does not make a personal expense a business expense. The\nsafest interpretation is therefore to retrieve the rule and its surrounding condition, rather than returning a",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 684
+  },
+  {
+    "chunk_id": 34,
+    "text": "number without the qualifying language.\nManagers and employees should keep evidence for decisions that may later need review. Leave approvals,\nremote-work exceptions, expense declarations, asset handovers, and security reports should be recorded in the\nappropriate company system. A documented exception should include its scope and review date where\napplicable. This creates an audit trail and reduces disputes caused by informal messages. In dRAGn, these are\nuseful retrieval cases because the answer may depend on a short exception clause located near a broader\ngeneral rule.\nA practical review sequence is: identify the employee category, identify the relevant policy area, locate the",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 688
+  },
+  {
+    "chunk_id": 35,
+    "text": "numerical threshold or permission, then check for exceptions. For security matters, the urgency rule comes first:\nsuspected credential compromise or accidental disclosure should be reported within one hour. For expenses,\ncheck business purpose, receipt requirements, submission timing, and approval. For remote work, check normal\nweekly limits and then determine whether a temporary exception changes the rule.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 5,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 410
+  },
+  {
+    "chunk_id": 36,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 6\nNORTHSTAR DIGITAL SYSTEMS\nSECTION 06\n6. Performance, Conduct and Workplace Behavior\nPerformance management\n • Managers should address concerns using specific examples, clear expectations, and an improvement\n plan where appropriate.\n• Employees should communicate blockers early rather than allowing missed commitments to remain\n unexplained.\n• A performance review is an assessment process and does not itself guarantee compensation changes.\n \nWorkplace behavior\n • Respectful communication is expected across offices, remote channels, customer interactions, and\n written communication.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 6,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 632
+  },
+  {
+    "chunk_id": 37,
+    "text": "written communication.\n• Harassment, discrimination, threats, and deliberate intimidation are prohibited.\n • Retaliation against a person raising a good-faith concern is prohibited.\n \nCorrective action\nDepending on severity, corrective action may include coaching, written warning, final warning,\nsuspension, or termination. Serious misconduct may bypass progressive steps where permitted by\napplicable law and company policy.\nInvestigation responsibilities\n • Employees may be asked to preserve relevant records and cooperate with an internal investigation.\n • Managers should avoid promising a particular disciplinary outcome before the facts are reviewed.\n \nOperational scenario",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 6,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 681
+  },
+  {
+    "chunk_id": 38,
+    "text": "Operational scenario\nA manager has concerns about an employee missing documented goals. The manager should use specific\nexamples, explain the expected outcome, and communicate a clear improvement path rather than relying on\nvague criticism. If the issue continues, corrective action may progress through coaching or written warnings\ndepending on severity. Serious misconduct can require a different process. A good-faith workplace concern\nmust be handled without retaliation against the person who raised it.\nInterpretation and operational notes\nOperational decisions should preserve the distinction between entitlement, approval, and compliance.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 6,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 646
+  },
+  {
+    "chunk_id": 39,
+    "text": "Having a leave balance does not mean every requested date is approved. Being eligible for remote work\ndoes not remove mandatory onsite requirements. Having access to an AI tool does not authorize confidential\ndata to be entered into it. Similarly, having a reimbursement receipt does not make a personal expense a\nbusiness expense. The safest interpretation is therefore to retrieve the rule and its surrounding condition,\nrather than returning a number without the qualifying language.\nManagers and employees should keep evidence for decisions that may later need review. Leave approvals,\nremote-work exceptions, expense declarations, asset handovers, and security reports should be recorded in",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 6,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 695
+  },
+  {
+    "chunk_id": 40,
+    "text": "the appropriate company system. A documented exception should include its scope and review date where\napplicable. This creates an audit trail and reduces disputes caused by informal messages. In dRAGn, these\nare useful retrieval cases because the answer may depend on a short exception clause located near a\nbroader general rule.\nA practical review sequence is: identify the employee category, identify the relevant policy area, locate the\nnumerical threshold or permission, then check for exceptions. For security matters, the urgency rule comes\nfirst: suspected credential compromise or accidental disclosure should be reported within one hour. For",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 6,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 650
+  },
+  {
+    "chunk_id": 41,
+    "text": "expenses, check business purpose, receipt requirements, submission timing, and approval. For remote work,\ncheck normal weekly limits and then determine whether a temporary exception changes the rule.\nThis section should be read together with the employee's individual employment letter. The handbook\nestablishes the general rule, while an employment letter or approved local addendum can provide a specific\nexception. When a question contains a number, the number should be interpreted with its unit and scope.\nFor example, 18 days is the annual leave entitlement, 12 days is the normal carry-forward ceiling, and 30",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 6,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 616
+  },
+  {
+    "chunk_id": 42,
+    "text": "days is the manager-level temporary remote-work exception. These figures answer different questions and\nshould never be substituted for one another.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 6,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 148
+  },
+  {
+    "chunk_id": 43,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 7\nNORTHSTAR DIGITAL SYSTEMS\nSECTION 07\n7. Travel and Business Expenses\nApproval and transportation\n • Domestic business travel requires manager approval before booking unless the trip is an emergency\n customer escalation.\n• Economy airfare is the default for flights under six hours.\n • Premium-cabin travel requires executive approval.\n \nAccommodation and meals\n • Hotel reimbursement is capped at ₹7,500 per night excluding taxes unless a city-specific exception is\n published.\n• Meal reimbursement is capped at ₹1,200 per day while traveling on company business.\n • Leisure extensions and expenses for non-business companions are not reimbursable.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 694
+  },
+  {
+    "chunk_id": 44,
+    "text": "• Leisure extensions and expenses for non-business companions are not reimbursable.\n \nScenario analysis\nA hotel room priced at ₹7,200 before taxes is within the standard nightly cap. A ₹9,000 room requires an\napplicable exception or additional approval; the employee should not assume the difference will be\nreimbursed.\nA premium flight on a four-hour route is not automatically reimbursable because the employee prefers it.\nExecutive approval is required.\nRecords\n • Travel claims should contain the business purpose, dates, receipts, and required approval evidence.\n • Employees should retain supporting records according to finance procedures.\n \nOperational scenario",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 669
+  },
+  {
+    "chunk_id": 45,
+    "text": "Operational scenario\nAn employee books a ₹9,000 hotel room for a domestic business trip where the normal hotel cap is ₹7,500 per\nnight excluding taxes. The employee should identify whether a documented city-specific exception applies or\nobtain the required approval. The higher price is not automatically reimbursable because the trip itself is\nbusiness-related. The same principle applies to premium-cabin airfare: executive approval is required rather\nthan assumed.\nInterpretation and operational notes\nManagers and employees should keep evidence for decisions that may later need review. Leave approvals,",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 607
+  },
+  {
+    "chunk_id": 46,
+    "text": "remote-work exceptions, expense declarations, asset handovers, and security reports should be recorded in the\nappropriate company system. A documented exception should include its scope and review date where\napplicable. This creates an audit trail and reduces disputes caused by informal messages. In dRAGn, these are\nuseful retrieval cases because the answer may depend on a short exception clause located near a broader\ngeneral rule.\nA practical review sequence is: identify the employee category, identify the relevant policy area, locate the\nnumerical threshold or permission, then check for exceptions. For security matters, the urgency rule comes",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 652
+  },
+  {
+    "chunk_id": 47,
+    "text": "first: suspected credential compromise or accidental disclosure should be reported within one hour. For\nexpenses, check business purpose, receipt requirements, submission timing, and approval. For remote work,\ncheck normal weekly limits and then determine whether a temporary exception changes the rule.\nThis section should be read together with the employee's individual employment letter. The handbook\nestablishes the general rule, while an employment letter or approved local addendum can provide a specific\nexception. When a question contains a number, the number should be interpreted with its unit and scope. For",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 618
+  },
+  {
+    "chunk_id": 48,
+    "text": "example, 18 days is the annual leave entitlement, 12 days is the normal carry-forward ceiling, and 30 days is\nthe manager-level temporary remote-work exception. These figures answer different questions and should\nnever be substituted for one another.\nOperational decisions should preserve the distinction between entitlement, approval, and compliance. Having a\nleave balance does not mean every requested date is approved. Being eligible for remote work does not\nremove mandatory onsite requirements. Having access to an AI tool does not authorize confidential data to be\nentered into it. Similarly, having a reimbursement receipt does not make a personal expense a business",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 674
+  },
+  {
+    "chunk_id": 49,
+    "text": "expense. The safest interpretation is therefore to retrieve the rule and its surrounding condition, rather than\nreturning a number without the qualifying language.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 7,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 163
+  },
+  {
+    "chunk_id": 50,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 8\nNORTHSTAR DIGITAL SYSTEMS\nSECTION 08\n8. Equipment and Information Management\nCompany assets\n • Employees are responsible for laptops, access cards, security tokens, and other assigned assets.\n • Lost or stolen equipment must be reported to IT within four hours of discovery.\n • Employees leaving the company must return assigned equipment by the final working day unless an\n exception is approved.\n• Company equipment must not be sold, loaned to unauthorized people, or used to store unrelated restricted\n material.\nInformation classification\n • Public information may be shared externally.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 8,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 636
+  },
+  {
+    "chunk_id": 51,
+    "text": "material.\nInformation classification\n • Public information may be shared externally.\n • Internal information is intended for employees and approved contractors and should not normally be\n shared outside the organization.\n• Confidential information requires controlled access.\n • Restricted information requires explicit authorization and additional security controls.\n \nExamples\nPublished website content is normally Public. Team procedures are normally Internal. Customer contracts\nand source code are normally Confidential. Credentials, encryption keys, and highly sensitive security\nrecords are normally Restricted.\nRecords",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 8,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 626
+  },
+  {
+    "chunk_id": 52,
+    "text": "records are normally Restricted.\nRecords\n • Business records should be stored in approved company systems rather than personal accounts.\n • Employees should follow retention and deletion instructions for the relevant system.\n \nOperational scenario\nA company laptop is lost while an employee is traveling. The employee should report the loss to IT within four\nhours of discovery so access and device-protection controls can be activated. The employee should not wait until\nreturning to the office. Information classification also matters: Public, Internal, Confidential, and Restricted\ninformation require progressively stronger controls. Business records should remain in approved company",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 8,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 688
+  },
+  {
+    "chunk_id": 53,
+    "text": "systems rather than personal accounts.\nInterpretation and operational notes\nA practical review sequence is: identify the employee category, identify the relevant policy area, locate the\nnumerical threshold or permission, then check for exceptions. For security matters, the urgency rule comes first:\nsuspected credential compromise or accidental disclosure should be reported within one hour. For expenses,\ncheck business purpose, receipt requirements, submission timing, and approval. For remote work, check normal\nweekly limits and then determine whether a temporary exception changes the rule.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 8,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 596
+  },
+  {
+    "chunk_id": 54,
+    "text": "weekly limits and then determine whether a temporary exception changes the rule.\nThis section should be read together with the employee's individual employment letter. The handbook establishes\nthe general rule, while an employment letter or approved local addendum can provide a specific exception. When\na question contains a number, the number should be interpreted with its unit and scope. For example, 18 days is\nthe annual leave entitlement, 12 days is the normal carry-forward ceiling, and 30 days is the manager-level\ntemporary remote-work exception. These figures answer different questions and should never be substituted for\none another.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 8,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 646
+  },
+  {
+    "chunk_id": 55,
+    "text": "one another.\nOperational decisions should preserve the distinction between entitlement, approval, and compliance. Having a\nleave balance does not mean every requested date is approved. Being eligible for remote work does not remove\nmandatory onsite requirements. Having access to an AI tool does not authorize confidential data to be entered\ninto it. Similarly, having a reimbursement receipt does not make a personal expense a business expense. The\nsafest interpretation is therefore to retrieve the rule and its surrounding condition, rather than returning a number\nwithout the qualifying language.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 8,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 600
+  },
+  {
+    "chunk_id": 56,
+    "text": "without the qualifying language.\nManagers and employees should keep evidence for decisions that may later need review. Leave approvals,\nremote-work exceptions, expense declarations, asset handovers, and security reports should be recorded in the\nappropriate company system. A documented exception should include its scope and review date where\napplicable. This creates an audit trail and reduces disputes caused by informal messages. In dRAGn, these are\nuseful retrieval cases because the answer may depend on a short exception clause located near a broader\ngeneral rule.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 8,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 571
+  },
+  {
+    "chunk_id": 57,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 9\nNORTHSTAR DIGITAL SYSTEMS\nSECTION 09\n9. Leave, Security and Expense Scenarios\nScenario A: planned leave\nAn employee wants a five-working-day vacation beginning next month. The request should normally be submitted\nat least seven calendar days before the leave period. Approval depends on operational circumstances and\navailable entitlement.\nScenario B: remote exception\nAn employee needs to work fully remotely for 20 calendar days due to a documented temporary circumstance. A\nmanager may approve the arrangement within the 30-day exception limit. A longer arrangement needs People\nOperations approval and a review date.\nScenario C: suspected phishing",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 697
+  },
+  {
+    "chunk_id": 58,
+    "text": "Operations approval and a review date.\nScenario C: suspected phishing\nAn employee clicks a suspicious link and enters a corporate password. The incident should be reported to Security\nwithin one hour. The employee should follow credential-reset and incident-response instructions rather than\ncontinuing to use the potentially compromised password.\nScenario D: expense\nA ₹2,400 business expense has no receipt because the original was lost. The employee should use the written\ndeclaration process and obtain manager approval rather than treating the expense as automatically reimbursable.\nKey thresholds\n • Annual leave: 18 days.\n • Carry-forward limit: 12 days.\n • Sick leave: 12 days.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 685
+  },
+  {
+    "chunk_id": 59,
+    "text": "Key thresholds\n • Annual leave: 18 days.\n • Carry-forward limit: 12 days.\n • Sick leave: 12 days.\n • Security incident reporting: within 1 hour.\n • Remote exception without extended approval: up to 30 days.\n \nOperational scenario\nConsider three separate cases: a five-day vacation, a 20-day temporary remote exception, and a suspected credential\ncompromise. The vacation requires normal leave approval and notice; the remote exception can be handled at\nmanager level when it stays within the 30-day limit; the credential incident has the highest urgency and should be\nreported within one hour. These examples show why policy questions should be answered from the exact rule and its",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 681
+  },
+  {
+    "chunk_id": 60,
+    "text": "condition rather than from a generic summary.\nInterpretation and operational notes\nThis section should be read together with the employee's individual employment letter. The handbook establishes the\ngeneral rule, while an employment letter or approved local addendum can provide a specific exception. When a\nquestion contains a number, the number should be interpreted with its unit and scope. For example, 18 days is the\nannual leave entitlement, 12 days is the normal carry-forward ceiling, and 30 days is the manager-level temporary\nremote-work exception. These figures answer different questions and should never be substituted for one another.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 648
+  },
+  {
+    "chunk_id": 61,
+    "text": "Operational decisions should preserve the distinction between entitlement, approval, and compliance. Having a leave\nbalance does not mean every requested date is approved. Being eligible for remote work does not remove mandatory\nonsite requirements. Having access to an AI tool does not authorize confidential data to be entered into it. Similarly,\nhaving a reimbursement receipt does not make a personal expense a business expense. The safest interpretation is\ntherefore to retrieve the rule and its surrounding condition, rather than returning a number without the qualifying\nlanguage.\nManagers and employees should keep evidence for decisions that may later need review. Leave approvals,",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 690
+  },
+  {
+    "chunk_id": 62,
+    "text": "remote-work exceptions, expense declarations, asset handovers, and security reports should be recorded in the\nappropriate company system. A documented exception should include its scope and review date where applicable. This\ncreates an audit trail and reduces disputes caused by informal messages. In dRAGn, these are useful retrieval cases\nbecause the answer may depend on a short exception clause located near a broader general rule.\nA practical review sequence is: identify the employee category, identify the relevant policy area, locate the numerical\nthreshold or permission, then check for exceptions. For security matters, the urgency rule comes first: suspected",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 669
+  },
+  {
+    "chunk_id": 63,
+    "text": "credential compromise or accidental disclosure should be reported within one hour. For expenses, check business\npurpose, receipt requirements, submission timing, and approval. For remote work, check normal weekly limits and then\ndetermine whether a temporary exception changes the rule.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 9,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 286
+  },
+  {
+    "chunk_id": 64,
+    "text": "Synthetic demonstration corpus • dRAGn\nPage 10\nNORTHSTAR DIGITAL SYSTEMS\nSECTION 10\n10. Frequently Asked Questions and Quick\nReference\nLeave\n • How much annual leave is provided? 18 days per calendar year.\n • How much can normally be carried forward? 12 days.\n • How much sick leave is provided? 12 days.\n \nRemote work\n • How many remote days are normally permitted? Up to three per week when eligible.\n • How long can a manager approve a temporary full-remote exception? Up to 30 calendar days.\n \nSecurity\n • How quickly should suspected credential compromise be reported? Within one hour.\n • Can customer data be entered into a public AI tool? No.\n \nExpenses",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 10,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 660
+  },
+  {
+    "chunk_id": 65,
+    "text": "• Can customer data be entered into a public AI tool? No.\n \nExpenses\n • What receipt threshold applies? Receipts are required above ₹1,500.\n • What is the standard hotel cap? ₹7,500 per night excluding taxes.\n • What is the standard meal cap? ₹1,200 per day.\n This handbook is synthetic and intended only as a demonstration corpus for dRAGn.\nOperational scenario\nThe quick-reference values are useful for checking answers but should not be treated as isolated facts.\nAnnual leave is 18 days, sick leave is 12 days, carry-forward is normally capped at 12 days, remote work is\nnormally up to three days per week, and the standard temporary full-remote exception is up to 30 days.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 10,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 677
+  },
+  {
+    "chunk_id": 66,
+    "text": "Expense receipts are required above ₹1,500, the standard hotel cap is ₹7,500 per night, and meal\nreimbursement is capped at ₹1,200 per day.\nInterpretation and operational notes\nOperational decisions should preserve the distinction between entitlement, approval, and compliance.\nHaving a leave balance does not mean every requested date is approved. Being eligible for remote work\ndoes not remove mandatory onsite requirements. Having access to an AI tool does not authorize confidential\ndata to be entered into it. Similarly, having a reimbursement receipt does not make a personal expense a",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 10,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 591
+  },
+  {
+    "chunk_id": 67,
+    "text": "business expense. The safest interpretation is therefore to retrieve the rule and its surrounding condition,\nrather than returning a number without the qualifying language.\nManagers and employees should keep evidence for decisions that may later need review. Leave approvals,\nremote-work exceptions, expense declarations, asset handovers, and security reports should be recorded in\nthe appropriate company system. A documented exception should include its scope and review date where\napplicable. This creates an audit trail and reduces disputes caused by informal messages. In dRAGn, these\nare useful retrieval cases because the answer may depend on a short exception clause located near a",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 10,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 689
+  },
+  {
+    "chunk_id": 68,
+    "text": "are useful retrieval cases because the answer may depend on a short exception clause located near a\nbroader general rule.\nA practical review sequence is: identify the employee category, identify the relevant policy area, locate the\nnumerical threshold or permission, then check for exceptions. For security matters, the urgency rule comes\nfirst: suspected credential compromise or accidental disclosure should be reported within one hour. For\nexpenses, check business purpose, receipt requirements, submission timing, and approval. For remote work,\ncheck normal weekly limits and then determine whether a temporary exception changes the rule.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 10,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 642
+  },
+  {
+    "chunk_id": 69,
+    "text": "check normal weekly limits and then determine whether a temporary exception changes the rule.\nThis section should be read together with the employee's individual employment letter. The handbook\nestablishes the general rule, while an employment letter or approved local addendum can provide a specific\nexception. When a question contains a number, the number should be interpreted with its unit and scope.\nFor example, 18 days is the annual leave entitlement, 12 days is the normal carry-forward ceiling, and 30\ndays is the manager-level temporary remote-work exception. These figures answer different questions and\nshould never be substituted for one another.",
+    "source": "data/documents/demo/employee-handbook.pdf",
+    "page": 10,
+    "section": "Unknown",
+    "chunking_strategy": "recursive",
+    "character_count": 659
+  }
+]
