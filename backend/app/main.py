@@ -1,5 +1,6 @@
 from fastapi import FastAPI,Request
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional
 from sqlalchemy import select
@@ -19,6 +20,16 @@ app = FastAPI(
     title="dRAGn API",
     description="Visual RAG Debugger & Retrieval Intelligence Platform",
     version="0.1.0",
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 class RetrievalConfig(BaseModel):
