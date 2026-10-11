@@ -2,7 +2,6 @@
 
 import { useMemo, useState } from "react";
 import {
-  ArrowUpRight,
   BookOpen,
   Check,
   Code2,
@@ -38,6 +37,8 @@ const documentStyles: Record<
   "Azure Documentation": { icon: Code2, tint: "bg-cyan-100", ink: "text-cyan-700", wash: "from-cyan-50 via-white to-white", label: "CLOUD DOCUMENTATION" },
 };
 
+const documentOrder = ["Employee Handbook", "Fitness Program Guide"];
+
 function getDocumentStyle(document: DocumentItem) {
   return (
     documentStyles[document.title] ?? {
@@ -58,7 +59,13 @@ export function DocumentGallery({ documents, isPending, isError, errorMessage, o
       .filter((document) =>
         !term || `${document.title} ${document.filename} ${document.description ?? ""}`.toLowerCase().includes(term),
       )
-      .sort((a, b) => a.title.localeCompare(b.title));
+      .sort((a, b) => {
+        const aPriority = documentOrder.indexOf(a.title);
+        const bPriority = documentOrder.indexOf(b.title);
+        const aRank = aPriority === -1 ? documentOrder.length : aPriority;
+        const bRank = bPriority === -1 ? documentOrder.length : bPriority;
+        return aRank - bRank || a.title.localeCompare(b.title);
+      });
   }, [documents, search]);
 
   return (
@@ -88,7 +95,7 @@ export function DocumentGallery({ documents, isPending, isError, errorMessage, o
       </div>
 
       {isPending && (
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-4 lg:grid-cols-2 2xl:grid-cols-3">
           {Array.from({ length: 6 }).map((_, index) => (
             <div key={index} className="h-[270px] animate-pulse rounded-2xl border border-slate-200 bg-white" />
           ))}
@@ -119,7 +126,7 @@ export function DocumentGallery({ documents, isPending, isError, errorMessage, o
       )}
 
       {!isPending && !isError && filteredDocuments.length > 0 && (
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-4 lg:grid-cols-2 2xl:grid-cols-3">
           {filteredDocuments.map((document) => {
             const style = getDocumentStyle(document);
             const Icon = style.icon;
@@ -128,9 +135,9 @@ export function DocumentGallery({ documents, isPending, isError, errorMessage, o
                 key={document.id}
                 className="group flex min-w-0 flex-col overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-[0_1px_2px_rgba(15,23,42,0.03)] transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-200 hover:shadow-[0_14px_35px_rgba(36,46,87,0.10)] focus-within:border-indigo-300 focus-within:ring-2 focus-within:ring-indigo-500/15"
               >
-                <div className={`relative flex h-28 items-center justify-between overflow-hidden bg-gradient-to-br ${style.wash} px-5`}>
-                  <span className={`flex size-12 items-center justify-center rounded-2xl ${style.tint} ${style.ink} shadow-sm transition-transform duration-200 group-hover:scale-105`}>
-                    <Icon className="size-[22px]" />
+                <div className={`relative flex h-16 items-center justify-between overflow-hidden bg-gradient-to-br ${style.wash} px-4`}>
+                  <span className={`flex size-10 items-center justify-center rounded-xl ${style.tint} ${style.ink} shadow-sm transition-transform duration-200 group-hover:scale-105`}>
+                    <Icon className="size-5" />
                   </span>
                   <span className={`max-w-[65%] truncate text-[9px] font-semibold tracking-[0.13em] ${style.ink}`}>
                     {style.label}
@@ -138,15 +145,15 @@ export function DocumentGallery({ documents, isPending, isError, errorMessage, o
                   <span className="pointer-events-none absolute -bottom-12 right-8 size-28 rounded-full border border-white/70" />
                 </div>
 
-                <div className="flex flex-1 flex-col p-5">
+                <div className="flex flex-1 flex-col p-4">
                   <div className="flex-1">
-                    <h3 className="truncate text-[15px] font-semibold tracking-[-0.02em] text-slate-900" title={document.title}>
+                    <h3 className="truncate text-sm font-semibold tracking-[-0.02em] text-slate-900" title={document.title}>
                       {document.title}
                     </h3>
                     <p className="mt-1.5 line-clamp-2 min-h-10 text-[12px] leading-5 text-slate-500">
                       {document.description ?? document.filename}
                     </p>
-                    <div className="mt-4 flex items-center gap-2 text-[11px] text-slate-500">
+                    <div className="mt-3 flex items-center gap-2 text-[11px] text-slate-500">
                       <span className="rounded-md bg-slate-100 px-2 py-1 font-medium uppercase tracking-wide text-slate-600">{document.document_type}</span>
                       <span>{document.page_count ?? "—"} pages</span>
                       <span aria-hidden="true" className="text-slate-300">·</span>
@@ -154,11 +161,11 @@ export function DocumentGallery({ documents, isPending, isError, errorMessage, o
                     </div>
                   </div>
 
-                  <div className="mt-5 flex gap-2 border-t border-slate-100 pt-4">
+                  <div className="mt-4 flex gap-2 border-t border-slate-100 pt-3">
                     <button
                       type="button"
                       onClick={() => onPreview(document)}
-                      className="inline-flex h-9 flex-1 items-center justify-center gap-1.5 rounded-lg border border-slate-200 bg-white text-xs font-medium text-slate-600 transition-colors hover:border-indigo-200 hover:bg-indigo-50 hover:text-indigo-700 active:bg-indigo-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+                      className="inline-flex h-10 min-w-0 flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-lg border border-slate-200 bg-white px-2 text-xs font-medium text-slate-600 transition-colors hover:border-indigo-200 hover:bg-indigo-50 hover:text-indigo-700 active:bg-indigo-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 sm:px-3"
                     >
                       <Eye className="size-3.5" />
                       Preview
@@ -166,11 +173,10 @@ export function DocumentGallery({ documents, isPending, isError, errorMessage, o
                     <button
                       type="button"
                       onClick={() => onSelect(document)}
-                      className="inline-flex h-9 flex-1 items-center justify-center gap-1.5 rounded-lg bg-indigo-600 text-xs font-semibold text-white shadow-sm shadow-indigo-200/70 transition-all hover:bg-indigo-700 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+                      className="inline-flex h-10 min-w-0 flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-lg bg-indigo-600 px-2 text-xs font-semibold text-white shadow-sm shadow-indigo-200/70 transition-all hover:bg-indigo-700 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 sm:px-3"
                     >
                       <Check className="size-3.5" />
                       Use document
-                      <ArrowUpRight className="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </button>
                   </div>
                 </div>

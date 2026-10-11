@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "dRAGn — RAG observability",
+    default: "dRAGn — Visual RAG debugger",
     template: "%s · dRAGn",
   },
   description:

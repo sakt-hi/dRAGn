@@ -9,8 +9,9 @@ import { DashboardOverview } from "@/features/dashboard/dashboard-overview";
 function QueryPageContent() {
   const searchParams = useSearchParams();
   const documentId = searchParams.get("documentId") ?? undefined;
+  const investigationId = searchParams.get("investigationId") ?? undefined;
 
-  return <DashboardOverview key={documentId ?? "no-document"} initialDocumentId={documentId} />;
+  return <DashboardOverview key={investigationId ?? documentId ?? "no-document"} initialDocumentId={documentId} initialInvestigationId={investigationId} />;
 }
 
 export default function QueryPage() {

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, LoaderCircle, SlidersHorizontal, Sparkles } from "lucide-react";
+import { ChevronDown, LoaderCircle, Minimize2, SlidersHorizontal, Sparkles } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -12,7 +12,9 @@ import type { QueryResult } from "@/types/rag";
 interface QueryPanelProps {
   selectedDocument?: DocumentItem;
   hasResult: boolean;
-  onResult: (result: QueryResult | null) => void;
+  composerOpen: boolean;
+  onComposerOpenChange: (open: boolean) => void;
+  onResult: (result: QueryResult) => void;
 }
 
 const questionSuggestions = [
@@ -21,7 +23,7 @@ const questionSuggestions = [
   "Explain a specific section",
 ];
 
-export function QueryPanel({ selectedDocument, hasResult, onResult }: QueryPanelProps) {
+export function QueryPanel({ selectedDocument, hasResult, composerOpen, onComposerOpenChange, onResult }: QueryPanelProps) {
   const [question, setQuestion] = useState("");
   const queryMutation = useRAGQuery();
 
@@ -30,10 +32,9 @@ export function QueryPanel({ selectedDocument, hasResult, onResult }: QueryPanel
     const trimmedQuestion = question.trim();
     if (!selectedDocument || !trimmedQuestion || queryMutation.isPending) return;
 
-    onResult(null);
     queryMutation.mutate(
       { document_id: selectedDocument.id, question: trimmedQuestion },
-      { onSuccess: (result) => { setQuestion(""); onResult(result); } },
+      { onSuccess: (result) => { setQuestion(""); onComposerOpenChange(false); onResult(result); } },
     );
   }
 
@@ -46,7 +47,19 @@ export function QueryPanel({ selectedDocument, hasResult, onResult }: QueryPanel
 
   return (
     <section aria-label="Ask a question" className="pointer-events-none absolute inset-x-0 bottom-0 z-20 px-3 pb-[max(env(safe-area-inset-bottom),0.75rem)] sm:px-5 lg:px-7">
-      <div className="pointer-events-auto mx-auto w-full max-w-4xl">
+      {composerOpen && <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[var(--background)] via-[var(--background)]/80 to-transparent backdrop-blur-[1px]" />}
+      <div className={`pointer-events-auto relative z-10 mx-auto w-full ${composerOpen ? "max-w-4xl" : "flex max-w-6xl justify-end"}`}>
+        {!composerOpen ? (
+          <Button
+            type="button"
+            onClick={() => onComposerOpenChange(true)}
+            className="h-11 gap-2 rounded-full bg-indigo-600 px-5 text-xs font-semibold text-white shadow-md shadow-indigo-200/70 transition hover:bg-indigo-700 hover:shadow-lg hover:shadow-indigo-200/80 focus-visible:ring-indigo-500 active:translate-y-px"
+          >
+            <Sparkles className="size-4" />
+            Ask a follow-up
+          </Button>
+        ) : (
+          <>
         {selectedDocument && !hasResult && (
           <div className="mb-2 flex flex-wrap items-center gap-1.5 px-1 sm:gap-2">
             <span className="mr-1 text-[10px] font-medium text-slate-400">Try:</span>
@@ -91,6 +104,11 @@ export function QueryPanel({ selectedDocument, hasResult, onResult }: QueryPanel
                 <span id="query-hint" className="hidden text-[10px] text-slate-400 sm:inline">Answers use retrieved passages</span>
               </div>
               <div className="flex items-center gap-2">
+                {hasResult && (
+                  <button type="button" aria-label="Collapse composer" onClick={() => onComposerOpenChange(false)} className="flex size-8 items-center justify-center rounded-lg text-slate-400 transition hover:bg-slate-100 hover:text-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">
+                    <Minimize2 className="size-3.5" />
+                  </button>
+                )}
                 <span className="hidden rounded border border-slate-200 bg-slate-50 px-1.5 py-1 font-mono text-[9px] text-slate-400 sm:inline">Ctrl / ⌘ Enter</span>
                 <Button
                   type="submit"
@@ -103,6 +121,8 @@ export function QueryPanel({ selectedDocument, hasResult, onResult }: QueryPanel
               </div>
             </div>
         </form>
+          </>
+        )}
       </div>
     </section>
   );

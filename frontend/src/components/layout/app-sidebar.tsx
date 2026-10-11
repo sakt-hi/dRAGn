@@ -1,25 +1,25 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Bug, GitBranch, FlaskConical, ShieldCheck, Sparkles } from "lucide-react";
+import { ShieldCheck, SquarePen } from "lucide-react";
+import { InvestigationHistory } from "@/features/investigations/components/investigation-history";
 
 const navigation = [
-  { label: "New investigation", href: "/", icon: Sparkles },
+  { label: "Start investigation", href: "/", icon: SquarePen },
 ];
 
-export function AppSidebar() {
+export function AppSidebar({ activeInvestigationId }: { activeInvestigationId?: string }) {
   const pathname = usePathname();
 
   return (
-    <aside className="hidden min-h-screen w-[252px] shrink-0 flex-col border-r border-white/10 bg-[#111827] px-4 py-5 text-slate-100 md:flex">
-      <Link href="/" className="group mb-9 flex items-center gap-3 rounded-xl px-2 py-1 outline-none focus-visible:ring-2 focus-visible:ring-indigo-300">
-        <span className="flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-400 to-violet-600 text-white shadow-lg shadow-indigo-950/30 transition-transform group-hover:rotate-[-4deg]">
-          <Bug className="size-[21px]" />
-        </span>
+    <aside className="hidden h-full min-h-0 w-[252px] shrink-0 flex-col border-r border-white/10 bg-[#111827] px-4 py-5 text-slate-100 md:flex">
+      <Link href="/" className="group mb-9 flex items-center gap-1 rounded-xl py-1 outline-none focus-visible:ring-2 focus-visible:ring-indigo-300">
+        <Image src="/dragn-icon.svg" alt="" width={44} height={44} priority className="size-11 shrink-0 transition-transform group-hover:rotate-[-3deg]" />
         <span>
           <span className="block text-[17px] font-semibold tracking-[-0.04em] text-white">dRAGn</span>
-          <span className="mt-0.5 block text-[11px] tracking-wide text-slate-400">RAG observability</span>
+          <span className="mt-0.5 block text-[11px] tracking-wide text-slate-400">Visual RAG debugger</span>
         </span>
       </Link>
 
@@ -30,7 +30,7 @@ export function AppSidebar() {
         {navigation.map((item) => {
           const Icon = item.icon;
           const active = item.href === "/"
-            ? pathname === "/" || pathname.startsWith("/query")
+            ? (pathname === "/" || pathname.startsWith("/query")) && !activeInvestigationId
             : pathname.startsWith(item.href);
 
           return (
@@ -52,21 +52,7 @@ export function AppSidebar() {
         })}
       </nav>
 
-      <div className="mb-2 mt-8 px-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500">
-        Inspect
-      </div>
-      <div className="space-y-1">
-        <div className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-[13px] text-slate-500" aria-label="Query traces are available after running a query">
-          <GitBranch className="size-[17px]" />
-          Query traces
-          <span className="ml-auto rounded-md border border-white/10 px-1.5 py-0.5 text-[9px] text-slate-500">IN QUERY</span>
-        </div>
-        <div className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-[13px] text-slate-600" aria-disabled="true">
-          <FlaskConical className="size-[17px]" />
-          Saved investigations
-          <span className="ml-auto text-[10px] text-slate-600">SOON</span>
-        </div>
-      </div>
+      <InvestigationHistory activeId={activeInvestigationId} className="mt-7 flex min-h-0 flex-1 flex-col overflow-hidden" />
 
       <div className="mt-auto rounded-xl border border-white/10 bg-white/[0.035] p-3.5">
         <div className="mb-2 flex items-center gap-2 text-[11px] font-medium text-slate-200">

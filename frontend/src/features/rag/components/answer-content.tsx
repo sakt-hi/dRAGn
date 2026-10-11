@@ -45,7 +45,12 @@ export function AnswerContent({ answer }: AnswerContentProps) {
     }
   }
 
-  for (const line of answer.replace(/\r\n/g, "\n").split("\n")) {
+  const answerWithoutInlineCitationMarkers = answer
+    .replace(/\[(?:\d+)\]/g, "")
+    .replace(/\s+([.,;:!?])/g, "$1")
+    .replace(/ {2,}/g, " ");
+
+  for (const line of answerWithoutInlineCitationMarkers.replace(/\r\n/g, "\n").split("\n")) {
     const trimmed = line.trim();
     const itemMatch = trimmed.match(/^(?:([-*+])|(\d+)\.)\s+(.+)$/);
 
