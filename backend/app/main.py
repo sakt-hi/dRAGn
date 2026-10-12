@@ -59,7 +59,7 @@ class QueryRequest(BaseModel):
 
 
 # Load the RAG pipeline once when the API starts
-pipeline = None
+pipeline = RAGPipeline()
 
 @app.exception_handler(Exception)
 async def global_exception_handler(
@@ -226,11 +226,10 @@ def query(request: QueryRequest):
                 detail=f"Document is not ready: {document.status}",
             )
 
-    # result = get_pipeline().ask(
-    #     question,
-    #     retrieval_config=request.retrieval,
-    #     document_id=str(request.document_id),
-    # )
+    result = pipeline.ask(
+        question,
+        retrieval_config=request.retrieval,
+        document_id=str(request.document_id),
+    )
 
-    # return result
-    return {"status":"test"}
+    return result
