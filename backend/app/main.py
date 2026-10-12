@@ -17,6 +17,7 @@ from fastapi import HTTPException
 from app.ingestion.loader import load_document
 from pathlib import Path
 
+print("main.py started")
 
 app = FastAPI(
     title="dRAGn API",
@@ -59,13 +60,6 @@ class QueryRequest(BaseModel):
 
 # Load the RAG pipeline once when the API starts
 pipeline = None
-
-def get_pipeline():
-    global pipeline
-
-    if pipeline is None:
-        pipeline = RAGPipeline()
-    return pipeline
 
 @app.exception_handler(Exception)
 async def global_exception_handler(
@@ -232,10 +226,11 @@ def query(request: QueryRequest):
                 detail=f"Document is not ready: {document.status}",
             )
 
-    result = get_pipeline().ask(
-        question,
-        retrieval_config=request.retrieval,
-        document_id=str(request.document_id),
-    )
+    # result = get_pipeline().ask(
+    #     question,
+    #     retrieval_config=request.retrieval,
+    #     document_id=str(request.document_id),
+    # )
 
-    return result
+    # return result
+    return {"status":"test"}
