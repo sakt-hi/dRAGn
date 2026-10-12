@@ -1,4 +1,7 @@
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 from fastapi import FastAPI,Request
 from fastapi.responses import JSONResponse
@@ -39,14 +42,6 @@ cors_origins = [
     ).split(",")
     if origin.strip()
 ]
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=cors_origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 class RetrievalConfig(BaseModel):
     dense_top_k: Optional[int] = None
@@ -260,3 +255,15 @@ def query(request: QueryRequest):
     )
 
     return result
+
+
+# Keep CORS outside FastAPI's ServerErrorMiddleware so even unhandled 500
+# responses include the configured Access-Control-Allow-Origin header.
+fastapi_app = app
+app = CORSMiddleware(
+    app=fastapi_app,
+    allow_origins=cors_origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
