@@ -15,3 +15,5 @@ services:
         value: openai/gpt-oss-120b
       - key: CORS_ORIGINS
         sync: false
+      - key: ENABLE_LIVE_QUERIES
+        value: "false"

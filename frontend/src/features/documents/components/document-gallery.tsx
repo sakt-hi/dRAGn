@@ -74,7 +74,7 @@ export function DocumentGallery({ documents, isPending, isError, errorMessage, o
         <div>
           <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-indigo-600">Start an investigation</p>
           <h1 className="mt-1 text-xl font-semibold tracking-[-0.03em] text-slate-900 sm:text-2xl">Choose a source</h1>
-          <p className="mt-1 text-xs leading-5 text-slate-500 sm:text-sm">Preview a document or select one to ask a question and inspect its RAG pipeline.</p>
+          <p className="mt-1 text-xs leading-5 text-slate-500 sm:text-sm">Choose a published demo to explore saved questions, answers, evidence, and pipeline traces.</p>
         </div>
         <div className="flex w-full items-center gap-3 sm:w-auto">
           <div className="relative w-full sm:w-64">
@@ -112,8 +112,8 @@ export function DocumentGallery({ documents, isPending, isError, errorMessage, o
       {!isPending && !isError && documents.length === 0 && (
         <div className="rounded-2xl border border-dashed border-slate-300 bg-white px-6 py-14 text-center">
           <FileText className="mx-auto size-8 text-slate-400" />
-          <p className="mt-3 text-sm font-semibold text-slate-800">No ready documents found</p>
-          <p className="mt-1 text-sm text-slate-500">Check that the backend has seeded the demo corpus.</p>
+          <p className="mt-3 text-sm font-semibold text-slate-800">No demo traces are published yet</p>
+          <p className="mt-1 text-sm text-slate-500">A document appears here after at least ten saved questions have been validated.</p>
         </div>
       )}
 
@@ -159,6 +159,11 @@ export function DocumentGallery({ documents, isPending, isError, errorMessage, o
                       <span aria-hidden="true" className="text-slate-300">·</span>
                       <span>{document.chunk_count ?? "—"} chunks</span>
                     </div>
+                    <p className={`mt-2 text-[10px] font-medium ${document.demo_ready ? "text-emerald-700" : "text-slate-400"}`}>
+                      {document.demo_ready
+                        ? `${document.available_question_count ?? 0} saved questions ready`
+                        : `${document.available_question_count ?? 0}/10 validated traces`}
+                    </p>
                   </div>
 
                   <div className="mt-4 flex gap-2 border-t border-slate-100 pt-3">
@@ -173,10 +178,12 @@ export function DocumentGallery({ documents, isPending, isError, errorMessage, o
                     <button
                       type="button"
                       onClick={() => onSelect(document)}
-                      className="inline-flex h-10 min-w-0 flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-lg bg-indigo-600 px-2 text-xs font-semibold text-white shadow-sm shadow-indigo-200/70 transition-all hover:bg-indigo-700 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 sm:px-3"
+                      disabled={!document.demo_ready}
+                      title={!document.demo_ready ? "A demo becomes available after ten saved traces are validated." : undefined}
+                      className="inline-flex h-10 min-w-0 flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-lg bg-indigo-600 px-2 text-xs font-semibold text-white shadow-sm shadow-indigo-200/70 transition-all hover:bg-indigo-700 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:bg-slate-200 disabled:text-slate-500 disabled:shadow-none sm:px-3"
                     >
-                      <Check className="size-3.5" />
-                      Use document
+                      {document.demo_ready ? <Check className="size-3.5" /> : <span className="size-1.5 rounded-full bg-slate-400" />}
+                      {document.demo_ready ? "Explore demo" : "Not ready"}
                     </button>
                   </div>
                 </div>

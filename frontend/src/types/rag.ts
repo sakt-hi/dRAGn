@@ -98,4 +98,41 @@ export interface QueryResult {
   retrieved_chunks: RetrievedChunk[];
   retrieval_diagnosis: RetrievalDiagnosis;
   grounding: GroundingResult;
+  response_mode?: "saved_demo" | "live";
+}
+
+export interface DemoQuestion {
+  id: string;
+  question: string;
+  category: string;
+  sort_order: number;
+  available: boolean;
+}
+
+export interface DemoTurn {
+  id: string;
+  turn_number: number;
+  sample_question_id: string;
+  question: string;
+  answer: string;
+  response_mode: "saved";
+  saved_result_id: string;
+  result: QueryResult;
+  created_at: string;
+}
+
+export interface DemoConversation {
+  id: string;
+  document_id: string;
+  initial_sample_question_id: string;
+  turns: DemoTurn[];
+  created_at: string;
+}
+
+export interface DemoQueryResponse {
+  query_id: string;
+  sample_question_id: string;
+  document_id: string;
+  response_mode: "saved_demo";
+  result: QueryResult;
 }

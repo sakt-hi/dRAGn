@@ -59,7 +59,11 @@ export function AnswerPanel({ result }: AnswerPanelProps) {
                 <CardTitle className="text-[14px] tracking-[-0.02em]">Generated answer</CardTitle>
                 <span className="sm:hidden">{copyButton}</span>
               </div>
-              <CardDescription className="mt-1 text-xs">Synthesized from the retrieved passages for this run.</CardDescription>
+              <CardDescription className="mt-1 text-xs">
+                {result.response_mode === "saved_demo"
+                  ? "Saved Demo Trace · A validated response; no live inference was run."
+                  : "Synthesized from the retrieved passages for this run."}
+              </CardDescription>
               <div className="mt-2 sm:hidden">{groundingBadge}</div>
             </div>
           </div>

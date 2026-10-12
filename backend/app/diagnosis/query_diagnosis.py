@@ -120,12 +120,33 @@ def diagnose_retrieval(results: list[dict]) -> dict:
     # Health + confidence
     # ---------------------------------------------------------
 
+    rank_gap = (
+        abs(dense_rank - bm25_rank)
+        if dense_rank is not None and bm25_rank is not None
+        else None
+    )
+
+    # A retrieved chunk with no nearby rank from the other retriever is a
+    # weak result when the overall lists also show little overlap. Keep this
+    # distinct from a missing-results diagnosis above.
     if (
+        agreement_score < 0.25
+        and (rank_gap is None or rank_gap > 5)
+    ):
+        health = "poor"
+        confidence = "low"
+        diagnosis = (
+            "Dense and keyword retrieval disagree on the leading evidence; "
+            "review the query and retrieved chunks before trusting this result."
+        )
+
+    elif (
         dense_rank is not None
         and bm25_rank is not None
         and dense_rank <= 3
         and bm25_rank <= 3
-        and primary_agreement >= 0.5
+        and rank_gap is not None
+        and rank_gap <= 2
     ):
         health = "good"
         confidence = "high"
@@ -135,7 +156,7 @@ def diagnose_retrieval(results: list[dict]) -> dict:
             "the primary evidence."
         )
 
-    elif primary_agreement >= 0.5:
+    elif primary_agreement >= 0.5 and rank_gap is not None and rank_gap <= 2:
         health = "good"
         confidence = "high"
 

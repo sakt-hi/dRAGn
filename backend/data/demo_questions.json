@@ -1,0 +1,76 @@
+{
+  "employee-handbook.pdf": [
+    {"id": "bd78a09b-181a-4b2e-bb8b-cf3c581e8fb1", "key": "annual-leave", "question": "How many days of annual leave do employees receive each calendar year?", "category": "quantity", "sort_order": 1},
+    {"id": "3cbf2e7a-6a23-49b4-8b6f-710b150c3b20", "key": "sick-leave", "question": "How many days of sick leave are provided each year?", "category": "quantity", "sort_order": 2},
+    {"id": "24a84520-5269-41f8-9fe6-045ab0241775", "key": "carry-forward", "question": "How many unused annual-leave days can normally be carried forward?", "category": "policy", "sort_order": 3},
+    {"id": "4e449b92-3d74-47a7-816e-931a30dd4859", "key": "leave-notice", "question": "How much notice should someone normally give for more than three consecutive working days off?", "category": "procedure", "sort_order": 4},
+    {"id": "43e6f155-cee4-41b6-8ecb-529adbe76182", "key": "regular-remote", "question": "How many remote-work days are normally permitted per week when an employee is eligible?", "category": "policy", "sort_order": 5},
+    {"id": "35fadfee-54ca-4aab-a687-ac9de227ef12", "key": "temporary-remote", "question": "How long can a manager approve a temporary full-remote exception before People Operations approval is required?", "category": "exception", "sort_order": 6},
+    {"id": "a61b66a8-c39d-475b-97bf-63addb36c7b2", "key": "security-reporting", "question": "How quickly must suspected credential compromise or accidental disclosure be reported?", "category": "procedure", "sort_order": 7},
+    {"id": "fa542a5f-03a1-4408-8d6a-ac621e21ae94", "key": "lost-equipment", "question": "What should an employee do after discovering that company equipment is lost or stolen, and by when?", "category": "procedure", "sort_order": 8},
+    {"id": "fd24c82e-f110-4270-a10a-91674b20d224", "key": "travel-limits", "question": "What are the standard nightly hotel and daily meal reimbursement caps for business travel?", "category": "comparison", "sort_order": 9},
+    {"id": "26245a65-0cb4-42d3-aa67-acde3d971629", "key": "public-ai", "question": "May employees enter customer data into a public AI tool?", "category": "security", "sort_order": 10},
+    {"id": "fbb31b0d-ec8c-4c81-a3b5-94bdab0a0a01", "key": "leave-form-address", "question": "What street address should employees use to mail signed leave forms?", "category": "coverage-check", "sort_order": 11},
+    {"id": "fbb31b0d-ec8c-4c81-a3b5-94bdab0a0a02", "key": "benefits-hotline", "question": "What is the employee benefits hotline phone number?", "category": "coverage-check", "sort_order": 12}
+  ],
+  "fitness-program-guide.pdf": [
+    {"id": "b1442cc7-8595-43fd-a56f-7fc790c92d01", "key": "weekly-sessions", "question": "How many strength sessions and cardio sessions are planned in a normal week?", "category": "schedule", "sort_order": 1},
+    {"id": "b1442cc7-8595-43fd-a56f-7fc790c92d02", "key": "weekly-recovery", "question": "Which day is the full rest day, and what is planned for Thursday?", "category": "schedule", "sort_order": 2},
+    {"id": "b1442cc7-8595-43fd-a56f-7fc790c92d03", "key": "progression-rule", "question": "When should someone increase the load for a strength exercise?", "category": "progression", "sort_order": 3},
+    {"id": "b1442cc7-8595-43fd-a56f-7fc790c92d04", "key": "cardio-intervals", "question": "When are Saturday intervals introduced, and what does an interval round look like?", "category": "cardio", "sort_order": 4},
+    {"id": "b1442cc7-8595-43fd-a56f-7fc790c92d05", "key": "cardio-volume", "question": "How quickly may weekly cardio duration increase when recovery is good?", "category": "cardio", "sort_order": 5},
+    {"id": "b1442cc7-8595-43fd-a56f-7fc790c92d06", "key": "strength-rest", "question": "How long should rest periods be for demanding compound sets versus accessory work?", "category": "training", "sort_order": 6},
+    {"id": "b1442cc7-8595-43fd-a56f-7fc790c92d07", "key": "warmup", "question": "How should a participant warm up before a strength session?", "category": "training", "sort_order": 7},
+    {"id": "b1442cc7-8595-43fd-a56f-7fc790c92d08", "key": "reduce-workload", "question": "What signs indicate that the participant should reduce training volume instead of progressing?", "category": "recovery", "sort_order": 8},
+    {"id": "b1442cc7-8595-43fd-a56f-7fc790c92d09", "key": "daily-calories", "question": "What exact daily calorie target does the guide prescribe for every participant?", "category": "coverage-check", "sort_order": 9},
+    {"id": "b1442cc7-8595-43fd-a56f-7fc790c92d10", "key": "gym-address", "question": "What is the street address of the gym where this program must be completed?", "category": "coverage-check", "sort_order": 10}
+  ],
+  "health-insurance-policy.pdf": [
+    {"id": "271d156a-64a6-42f7-8ab8-28c65f9c4a01", "key": "hospitalization-cover", "question": "What is the hospitalization family-floater limit and how is it shared?", "category": "limits", "sort_order": 1},
+    {"id": "271d156a-64a6-42f7-8ab8-28c65f9c4a02", "key": "hospital-cost-share", "question": "What deductible and member co-payment apply to hospitalization?", "category": "cost-sharing", "sort_order": 2},
+    {"id": "271d156a-64a6-42f7-8ab8-28c65f9c4a03", "key": "outpatient-limit", "question": "What is the outpatient annual limit and member share?", "category": "limits", "sort_order": 3},
+    {"id": "271d156a-64a6-42f7-8ab8-28c65f9c4a04", "key": "maternity-benefit", "question": "What is the maternity benefit limit and waiting period?", "category": "waiting-periods", "sort_order": 4},
+    {"id": "271d156a-64a6-42f7-8ab8-28c65f9c4a05", "key": "employee-eligibility", "question": "When does an employee become eligible, and when does coverage actually begin?", "category": "eligibility", "sort_order": 5},
+    {"id": "271d156a-64a6-42f7-8ab8-28c65f9c4a06", "key": "dependent-enrollment", "question": "How long does a family have to enroll a dependent after a qualifying life event?", "category": "eligibility", "sort_order": 6},
+    {"id": "271d156a-64a6-42f7-8ab8-28c65f9c4a07", "key": "claim-deadlines", "question": "What are the timing rules for planned admission, emergency notification, and reimbursement claims?", "category": "claims", "sort_order": 7},
+    {"id": "271d156a-64a6-42f7-8ab8-28c65f9c4a08", "key": "room-limit", "question": "What is the per-day room limit, and is it part of the hospitalization deductible?", "category": "limits", "sort_order": 8},
+    {"id": "271d156a-64a6-42f7-8ab8-28c65f9c4a09", "key": "network-hospital-list", "question": "Which network hospital is nearest to my home address?", "category": "coverage-check", "sort_order": 9},
+    {"id": "271d156a-64a6-42f7-8ab8-28c65f9c4a10", "key": "benefits-hotline", "question": "What phone number should members call for the insurer's 24-hour claims hotline?", "category": "coverage-check", "sort_order": 10}
+  ],
+  "software-documentation.pdf": [
+    {"id": "f126d1b3-71b1-43d3-9d2c-148f06108401", "key": "event-payload-limit", "question": "What is the maximum payload size for submitting one event?", "category": "limits", "sort_order": 1},
+    {"id": "f126d1b3-71b1-43d3-9d2c-148f06108402", "key": "batch-limits", "question": "What are the batch event-count and encoded request-size limits?", "category": "limits", "sort_order": 2},
+    {"id": "f126d1b3-71b1-43d3-9d2c-148f06108403", "key": "rate-limit-compare", "question": "How do the single-event and batch ingestion rate limits differ?", "category": "rate-limits", "sort_order": 3},
+    {"id": "f126d1b3-71b1-43d3-9d2c-148f06108404", "key": "auth-errors", "question": "How should a developer distinguish HTTP 401 from HTTP 403?", "category": "errors", "sort_order": 4},
+    {"id": "f126d1b3-71b1-43d3-9d2c-148f06108405", "key": "retry-sequence", "question": "What retry delays are used before a failed event is moved to the dead-letter queue?", "category": "retries", "sort_order": 5},
+    {"id": "f126d1b3-71b1-43d3-9d2c-148f06108406", "key": "http-429", "question": "What should a client do after receiving HTTP 429?", "category": "errors", "sort_order": 6},
+    {"id": "f126d1b3-71b1-43d3-9d2c-148f06108407", "key": "delivery-retention", "question": "What delivery guarantee does the platform provide, and how long are successful events retained?", "category": "delivery", "sort_order": 7},
+    {"id": "f126d1b3-71b1-43d3-9d2c-148f06108408", "key": "destination-security", "question": "What transport security and timeout settings apply to HTTP destinations?", "category": "configuration", "sort_order": 8},
+    {"id": "f126d1b3-71b1-43d3-9d2c-148f06108409", "key": "sdk-languages", "question": "Which programming languages have official StreamForge SDKs?", "category": "coverage-check", "sort_order": 9},
+    {"id": "f126d1b3-71b1-43d3-9d2c-148f06108410", "key": "event-pricing", "question": "What is the monthly price per million ingested events?", "category": "coverage-check", "sort_order": 10}
+  ],
+  "cgrc-exam-notification-2026.pdf": [
+    {"id": "e3524a9e-fbac-46f0-a4c7-104c6d831001", "key": "application-deadline", "question": "What is the application deadline, including the time zone?", "category": "dates", "sort_order": 1},
+    {"id": "e3524a9e-fbac-46f0-a4c7-104c6d831002", "key": "education-qualification", "question": "What educational qualification must an applicant have by document verification?", "category": "eligibility", "sort_order": 2},
+    {"id": "e3524a9e-fbac-46f0-a4c7-104c6d831003", "key": "age-limit", "question": "What is the age range and the age cut-off date?", "category": "eligibility", "sort_order": 3},
+    {"id": "e3524a9e-fbac-46f0-a4c7-104c6d831004", "key": "vacancies", "question": "How many indicative vacancies are proposed, and how are they distributed by category?", "category": "vacancies", "sort_order": 4},
+    {"id": "e3524a9e-fbac-46f0-a4c7-104c6d831005", "key": "exam-format", "question": "How many questions and marks are in the computer-based examination, and how long is it?", "category": "exam", "sort_order": 5},
+    {"id": "e3524a9e-fbac-46f0-a4c7-104c6d831006", "key": "negative-marking", "question": "How many marks are deducted for an incorrect answer?", "category": "exam", "sort_order": 6},
+    {"id": "e3524a9e-fbac-46f0-a4c7-104c6d831007", "key": "age-relaxations", "question": "What age relaxations are listed for SC/ST, OBC-NCL, and PwBD candidates?", "category": "eligibility", "sort_order": 7},
+    {"id": "e3524a9e-fbac-46f0-a4c7-104c6d831008", "key": "selection-process", "question": "What stages make up the selection process from examination to appointment?", "category": "process", "sort_order": 8},
+    {"id": "e3524a9e-fbac-46f0-a4c7-104c6d831009", "key": "exam-center-address", "question": "What is the street address of the examination centre assigned to me?", "category": "coverage-check", "sort_order": 9},
+    {"id": "e3524a9e-fbac-46f0-a4c7-104c6d831010", "key": "support-phone", "question": "What is the recruitment board's telephone support number?", "category": "coverage-check", "sort_order": 10}
+  ],
+  "azure.md": [
+    {"id": "94b6236f-2d36-4523-a23c-a2c0fd890001", "key": "trigger-purpose", "question": "What does a trigger do in Azure Functions, and how many triggers can a function have?", "category": "fundamentals", "sort_order": 1},
+    {"id": "94b6236f-2d36-4523-a23c-a2c0fd890002", "key": "function-app", "question": "How does a function app differ from an individual function?", "category": "fundamentals", "sort_order": 2},
+    {"id": "94b6236f-2d36-4523-a23c-a2c0fd890003", "key": "http-trigger-input", "question": "What kinds of request data can an HTTP-triggered function receive?", "category": "triggers", "sort_order": 3},
+    {"id": "94b6236f-2d36-4523-a23c-a2c0fd890004", "key": "managed-identity", "question": "How can a managed identity help an Azure Function access Key Vault securely?", "category": "security", "sort_order": 4},
+    {"id": "94b6236f-2d36-4523-a23c-a2c0fd890005", "key": "bindings", "question": "What is the difference between an input binding and an output binding?", "category": "integration", "sort_order": 5},
+    {"id": "94b6236f-2d36-4523-a23c-a2c0fd890006", "key": "durable-functions", "question": "What do Durable Functions add for long-running workflows?", "category": "workflows", "sort_order": 6},
+    {"id": "94b6236f-2d36-4523-a23c-a2c0fd890007", "key": "queue-trigger", "question": "How does queue-based processing separate producers from background work?", "category": "triggers", "sort_order": 7},
+    {"id": "94b6236f-2d36-4523-a23c-a2c0fd890008", "key": "monitoring", "question": "Which execution and performance signals can Application Insights monitor?", "category": "operations", "sort_order": 8},
+    {"id": "94b6236f-2d36-4523-a23c-a2c0fd890009", "key": "monthly-pricing", "question": "What exact monthly price will a function app cost at two million invocations?", "category": "coverage-check", "sort_order": 9},
+    {"id": "94b6236f-2d36-4523-a23c-a2c0fd890010", "key": "subscription-id", "question": "What is the subscription ID for the Azure account hosting this function app?", "category": "coverage-check", "sort_order": 10}
+  ]
+}

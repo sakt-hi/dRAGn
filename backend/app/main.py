@@ -10,20 +10,26 @@ from sqlalchemy import select
 from app.db.database import SessionLocal
 from app.db.models import Document
 
-from app.rag.pipeline import RAGPipeline
 import uuid
 
 from fastapi import HTTPException
 from app.ingestion.loader import load_document
 from pathlib import Path
+from threading import Lock
+
+from app.demo.router import router as demo_router
 
 print("main.py started")
+
+_rag_pipeline = None
+_rag_pipeline_lock = Lock()
 
 app = FastAPI(
     title="dRAGn API",
     description="Visual RAG Debugger & Retrieval Intelligence Platform",
     version="0.1.0",
 )
+app.include_router(demo_router)
 
 cors_origins = [
     origin.strip()
@@ -58,8 +64,20 @@ class QueryRequest(BaseModel):
     retrieval: Optional[RetrievalConfig] = None
 
 
-# Load the RAG pipeline once when the API starts
-pipeline = None
+def get_rag_pipeline():
+    """Import and construct ML dependencies only for live RAG requests."""
+    global _rag_pipeline
+    if _rag_pipeline is None:
+        with _rag_pipeline_lock:
+            if _rag_pipeline is None:
+                from app.rag.pipeline import RAGPipeline
+
+                _rag_pipeline = RAGPipeline()
+    return _rag_pipeline
+
+
+def live_queries_enabled() -> bool:
+    return os.getenv("ENABLE_LIVE_QUERIES", "true").strip().lower() == "true"
 
 @app.exception_handler(Exception)
 async def global_exception_handler(
@@ -200,6 +218,15 @@ def preview_document(document_id: uuid.UUID):
 
 @app.post("/api/query")
 def query(request: QueryRequest):
+    if not live_queries_enabled():
+        raise HTTPException(
+            status_code=503,
+            detail={
+                "code": "LIVE_QUERY_DISABLED",
+                "message": "Live inference is disabled for this deployment. Choose a saved demo question instead.",
+            },
+        )
+
     question = request.question.strip()
 
     if not question:
@@ -226,11 +253,10 @@ def query(request: QueryRequest):
                 detail=f"Document is not ready: {document.status}",
             )
 
-    # result = get_pipeline().ask(
-    #     question,
-    #     retrieval_config=request.retrieval,
-    #     document_id=str(request.document_id),
-    # )
+    result = get_rag_pipeline().ask(
+        question,
+        retrieval_config=request.retrieval,
+        document_id=str(request.document_id),
+    )
 
-    # return result
-    return {"status":"test"}
+    return result

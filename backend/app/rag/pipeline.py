@@ -16,7 +16,10 @@ from app.retrieval.bm25 import BM25Retriever
 from app.retrieval.hybrid import reciprocal_rank_fusion
 
 from app.generation.llm import LLMGenerator
-from app.generation.response import build_structured_citations
+from app.generation.response import (
+    build_structured_citations,
+    remove_inline_citation_markers,
+)
 
 from app.tracing.models import RAGTrace
 from app.tracing.instrumentation import (
@@ -537,6 +540,8 @@ class RAGPipeline:
                 answer,
                 citations,
             )
+
+            answer = remove_inline_citation_markers(answer)
 
             trace.add_stage(
                 name="Answer Grounding",

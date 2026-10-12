@@ -19,6 +19,11 @@ def extract_citation_ids(answer: str) -> list[int]:
     return list(dict.fromkeys(int(match) for match in matches))
 
 
+def remove_inline_citation_markers(answer: str) -> str:
+    """Keep citations in structured metadata instead of answer prose."""
+    return re.sub(r"\s*\[\d+\]", "", answer).rstrip()
+
+
 def build_structured_citations(
     answer: str,
     results: list[dict],

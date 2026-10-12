@@ -14,10 +14,17 @@ export function RetrievalDiagnosisPanel({ diagnosis }: RetrievalDiagnosisProps) 
   const agreement = diagnosis.agreement_score;
   const agreementPercent = typeof agreement === "number" ? Math.max(0, Math.min(100, Math.round(agreement <= 1 ? agreement * 100 : agreement))) : null;
   const healthy = /healthy|good|high|strong/i.test(health);
+  const poor = /poor|bad|low/i.test(health);
   const unknownHealth = health === "Unavailable" || /unknown/i.test(health);
+  const healthTone = healthy ? "text-emerald-700" : poor ? "text-rose-700" : "text-amber-700";
+  const badgeTone = healthy
+    ? "border-emerald-200 bg-emerald-50 text-emerald-700"
+    : poor
+      ? "border-rose-200 bg-rose-50 text-rose-700"
+      : "border-amber-200 bg-amber-50 text-amber-800";
 
   const metrics = [
-    { label: "Retrieval health", value: health, icon: healthy ? CheckCircle2 : CircleAlert, tone: healthy ? "text-emerald-700" : "text-amber-700" },
+    { label: "Retrieval health", value: health, icon: healthy ? CheckCircle2 : CircleAlert, tone: healthTone },
     { label: "Confidence", value: confidence, icon: Gauge, tone: "text-indigo-700" },
     { label: "Dominant signal", value: diagnosis.dominant_signal ?? "Unavailable", icon: Activity, tone: "text-violet-700" },
   ];
@@ -27,10 +34,10 @@ export function RetrievalDiagnosisPanel({ diagnosis }: RetrievalDiagnosisProps) 
       <CardHeader className="border-b border-slate-100 px-5 py-4 sm:px-6">
         <div className="flex items-center justify-between gap-3">
           <div className="flex min-w-0 items-center gap-2">
-            {healthy ? <CheckCircle2 className="size-4 shrink-0 text-emerald-600" /> : <Activity className="size-4 shrink-0 text-violet-600" />}
+            {healthy ? <CheckCircle2 className="size-4 shrink-0 text-emerald-600" /> : poor ? <CircleAlert className="size-4 shrink-0 text-rose-600" /> : <Activity className="size-4 shrink-0 text-amber-600" />}
             <CardTitle className="text-[14px] tracking-[-0.02em]">Retrieval diagnosis</CardTitle>
           </div>
-          {!unknownHealth && <Badge variant="outline" className={healthy ? "border-emerald-200 bg-emerald-50 text-emerald-700" : "border-amber-200 bg-amber-50 text-amber-800"}>{health}</Badge>}
+          {!unknownHealth && <Badge variant="outline" className={badgeTone}>{health}</Badge>}
         </div>
         <CardDescription className="text-xs">Understand how the retrievers behaved and what influenced the final ranking.</CardDescription>
       </CardHeader>
@@ -60,13 +67,13 @@ export function RetrievalDiagnosisPanel({ diagnosis }: RetrievalDiagnosisProps) 
             <span className="text-sm font-semibold tabular-nums text-slate-900">{agreementPercent === null ? "Unavailable" : `${agreementPercent}%`}</span>
           </div>
           <div className="mt-3 h-2 overflow-hidden rounded-full bg-slate-100" role="img" aria-label={agreementPercent === null ? "Retriever agreement unavailable" : `Dense and BM25 agreement ${agreementPercent}%`}>
-            {agreementPercent !== null && <div className="h-full rounded-full bg-indigo-500 transition-[width]" style={{ width: `${agreementPercent}%` }} />}
+            {agreementPercent !== null && <div className={`h-full rounded-full transition-[width] ${poor ? "bg-rose-500" : healthy ? "bg-emerald-500" : "bg-amber-500"}`} style={{ width: `${agreementPercent}%` }} />}
           </div>
         </div>
 
         {diagnosis.diagnosis ? (
-          <div className="rounded-xl border border-indigo-100 bg-indigo-50/50 p-4">
-            <div className="mb-2 flex items-center gap-2 text-xs font-semibold text-indigo-900"><Info className="size-3.5" />What the diagnosis means</div>
+          <div className={`rounded-xl border p-4 ${poor ? "border-rose-100 bg-rose-50/60" : "border-indigo-100 bg-indigo-50/50"}`}>
+            <div className={`mb-2 flex items-center gap-2 text-xs font-semibold ${poor ? "text-rose-900" : "text-indigo-900"}`}><Info className="size-3.5" />What the diagnosis means</div>
             <p className="text-xs leading-5 text-slate-700">{diagnosis.diagnosis}</p>
           </div>
         ) : (

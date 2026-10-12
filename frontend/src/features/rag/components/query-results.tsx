@@ -9,7 +9,6 @@ import {
   FileSearch,
   GitBranch,
   MessageSquareText,
-  FileText,
   ShieldCheck,
 } from "lucide-react";
 
@@ -25,13 +24,28 @@ import { EvidencePanel } from "@/features/rag/components/evidence-panel";
 import { GroundingPanel } from "@/features/rag/components/grounding-panel";
 import { RetrievalDiagnosisPanel } from "@/features/rag/components/retrieval-diagnosis";
 import type { QueryResult } from "@/types/rag";
-import type { DocumentItem } from "@/types/document";
 
 type ResultTab = "evidence" | "grounding" | "diagnosis" | "trace";
 
 interface QueryResultsProps {
   result: QueryResult;
-  selectedDocument?: DocumentItem;
+  createdAt?: string;
+}
+
+function formatQuestionTimestamp(timestamp: string): string {
+  const date = new Date(timestamp);
+  if (Number.isNaN(date.getTime())) return "";
+
+  const now = new Date();
+  const localDayNumber = (value: Date) => Date.UTC(value.getFullYear(), value.getMonth(), value.getDate()) / 86_400_000;
+  const dayDifference = localDayNumber(now) - localDayNumber(date);
+  const time = date.toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" });
+
+  if (dayDifference === 0) return `Today · ${time}`;
+  if (dayDifference === 1) return `Yesterday · ${time}`;
+
+  const localizedDate = date.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
+  return `${localizedDate} · ${time}`;
 }
 
 function PipelineTracePanel({ result }: { result: QueryResult }) {
@@ -115,7 +129,7 @@ function PipelineTracePanel({ result }: { result: QueryResult }) {
   );
 }
 
-export function QueryResults({ result, selectedDocument }: QueryResultsProps) {
+export function QueryResults({ result, createdAt }: QueryResultsProps) {
   const [activeTab, setActiveTab] = useState<ResultTab>("evidence");
   const tabs: { id: ResultTab; label: string; mobileLabel: string; count?: number; icon: typeof FileSearch }[] = [
     { id: "evidence", label: "Evidence", mobileLabel: "Evidence", count: result.retrieved_chunks.length, icon: FileSearch },
@@ -137,20 +151,19 @@ export function QueryResults({ result, selectedDocument }: QueryResultsProps) {
     <section className="min-w-0">
       {result.trace.query.trim() && (
         <div className="mb-4 flex justify-end sm:mb-5">
-          <div className="w-full max-w-2xl rounded-2xl rounded-br-md border border-indigo-200/80 bg-indigo-100/70 px-3.5 py-3 sm:px-4">
-            <div className="mb-1.5 flex min-w-0 items-center justify-between gap-2">
-              <div className="flex shrink-0 items-center gap-1.5 text-[10px] font-semibold text-indigo-700">
-                <MessageSquareText className="size-3.5" />
-                <span>You asked</span>
-              </div>
-              {selectedDocument && (
-                <div className="flex min-w-0 items-center gap-1.5 text-[10px] text-slate-500">
-                  <FileText className="size-3.5 shrink-0 text-indigo-500" />
-                  <span className="truncate">{selectedDocument.title}</span>
-                </div>
-              )}
+          <div className="w-fit max-w-2xl rounded-2xl rounded-br-md border border-indigo-200/80 bg-indigo-100/70 px-3.5 py-3 sm:px-4">
+            <div className="mb-1.5 flex items-center gap-1.5 text-[10px] font-semibold text-indigo-700">
+              <MessageSquareText className="size-3.5" />
+              <span>You asked</span>
             </div>
             <p className="whitespace-pre-wrap break-words text-[13px] leading-5 text-slate-800 sm:text-sm sm:leading-6">{result.trace.query}</p>
+            {createdAt && (
+              <div className="mt-1.5 flex justify-end">
+                <time dateTime={createdAt} className="text-[9px] text-slate-500">
+                  {formatQuestionTimestamp(createdAt)}
+                </time>
+              </div>
+            )}
           </div>
         </div>
       )}

@@ -15,6 +15,10 @@ export interface InvestigationRun {
   question: string;
   result: QueryResult;
   created_at: string;
+  conversation_id?: string;
+  turn_id?: string;
+  sample_question_id?: string;
+  response_mode?: "saved_demo";
 }
 
 export interface InvestigationDetail extends InvestigationSummary {
@@ -105,10 +109,17 @@ export async function getInvestigation(id: string): Promise<InvestigationDetail>
   }
 }
 
-function titleFromFirstQuestion(question: string): string {
-  const normalized = question.trim().replace(/\s+/g, " ");
-  const characters = Array.from(normalized);
-  return characters.length > 72 ? `${characters.slice(0, 71).join("").trimEnd()}…` : normalized;
+function titleFromDocumentAndTime(documentTitle: string, createdAt: string): string {
+  const normalizedTitle = documentTitle.trim().replace(/\s+/g, " ");
+  const shortTitle = Array.from(normalizedTitle).slice(0, 64).join("").trimEnd();
+  const localTime = new Date(createdAt).toLocaleString(undefined, {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+  });
+  return `${shortTitle}${normalizedTitle.length > 64 ? "…" : ""} · ${localTime}`;
 }
 
 export async function saveInvestigationRun(
@@ -131,7 +142,7 @@ export async function saveInvestigationRun(
       ? { ...existing, updated_at: now, runs: [...existing.runs, run], run_count: existing.runs.length + 1 }
       : {
           id,
-          title: titleFromFirstQuestion(run.question),
+          title: titleFromDocumentAndTime(document.title, now),
           document_id: document.id,
           document_title: document.title,
           created_at: now,

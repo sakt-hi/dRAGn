@@ -9,4 +9,7 @@ export interface DocumentItem {
   page_count: number | null;
   chunk_count: number | null;
   status: string;
+  sample_question_count?: number;
+  available_question_count?: number;
+  demo_ready?: boolean;
 }

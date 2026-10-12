@@ -5,17 +5,20 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
-    "faiss-cpu>=1.15.1",
     "fastapi>=0.143.0",
-    "groq>=1.7.0",
-    "langchain-text-splitters>=1.1.3",
     "psycopg[binary]>=3.3.6",
     "pypdf>=6.19.0",
     "python-dotenv>=1.2.4",
+    "sqlalchemy>=2.1.4",
+    "uvicorn>=0.54.0",
+]
+
+[project.optional-dependencies]
+rag = [
+    "faiss-cpu>=1.15.1",
+    "groq>=1.7.0",
+    "langchain-text-splitters>=1.1.3",
     "rank-bm25>=0.2.2",
     "requests>=2.34.2",
     "sentence-transformers>=6.1.0",
-    "sqlalchemy>=2.1.4",
-    "streamlit>=1.65.0",
-    "uvicorn>=0.54.0",
 ]
