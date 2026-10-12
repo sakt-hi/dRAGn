@@ -45,9 +45,14 @@ class RAGPipeline:
 
         self.default_index_path = index_path
         self.default_chunks_path = chunks_path
-
+        
+        print("Loading Embedding Service")
         self.embedding_service = EmbeddingService()
+        print("EmbeddingService Loaded")
+
+        print("Loading LLMGenerator")
         self.generator = LLMGenerator()
+        print("LLMGenerator loaded")
 
         # These are loaded lazily when a document is selected.
         self.vector_store = None
