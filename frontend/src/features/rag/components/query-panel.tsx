@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronDown, LoaderCircle, Minimize2, SlidersHorizontal, Sparkles } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -25,7 +25,18 @@ const questionSuggestions = [
 
 export function QueryPanel({ selectedDocument, hasResult, composerOpen, onComposerOpenChange, onResult }: QueryPanelProps) {
   const [question, setQuestion] = useState("");
+  const [showColdStartNotice, setShowColdStartNotice] = useState(false);
   const queryMutation = useRAGQuery();
+
+  useEffect(() => {
+    if (!queryMutation.isPending) {
+      setShowColdStartNotice(false);
+      return;
+    }
+
+    const timeoutId = window.setTimeout(() => setShowColdStartNotice(true), 5000);
+    return () => window.clearTimeout(timeoutId);
+  }, [queryMutation.isPending]);
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -70,7 +81,7 @@ export function QueryPanel({ selectedDocument, hasResult, composerOpen, onCompos
             ))}
           </div>
         )}
-        <form onSubmit={handleSubmit} className="rounded-2xl border border-white/90 bg-white/95 p-1.5 shadow-[0_8px_28px_rgba(24,35,70,0.08)] backdrop-blur-2xl transition focus-within:border-indigo-200/90 focus-within:bg-white focus-within:ring-4 focus-within:ring-indigo-500/5 sm:p-2">
+        <form onSubmit={handleSubmit} aria-busy={queryMutation.isPending} className="rounded-2xl border border-white/90 bg-white/95 p-1.5 shadow-[0_8px_28px_rgba(24,35,70,0.08)] backdrop-blur-2xl transition focus-within:border-indigo-200/90 focus-within:bg-white focus-within:ring-4 focus-within:ring-indigo-500/5 sm:p-2">
             <label htmlFor="question" className="sr-only">Question</label>
             <Textarea
               id="question"
@@ -83,6 +94,15 @@ export function QueryPanel({ selectedDocument, hasResult, composerOpen, onCompos
               disabled={!selectedDocument}
               className="min-h-[52px] resize-y border-0 bg-transparent px-2.5 py-1.5 text-[13px] leading-5 shadow-none placeholder:text-slate-400 focus-visible:border-0 focus-visible:ring-0 disabled:bg-transparent sm:min-h-[56px]"
             />
+            {showColdStartNotice && queryMutation.isPending && (
+              <div role="status" aria-live="polite" className="mx-2 mb-2 flex items-start gap-2.5 rounded-xl border border-indigo-100 bg-indigo-50/80 px-3 py-2.5 text-xs text-indigo-950">
+                <LoaderCircle className="mt-0.5 size-4 shrink-0 animate-spin text-indigo-600" />
+                <div>
+                  <p className="font-semibold">Waking the demo server</p>
+                  <p className="mt-0.5 leading-5 text-indigo-800">The first response can take up to a minute while the server starts. Keep this page open.</p>
+                </div>
+              </div>
+            )}
             {queryMutation.isError && (
               <div role="alert" className="mx-2 mb-2 rounded-lg border border-rose-200 bg-rose-50 px-3 py-2 text-xs text-rose-800">
                 <span className="font-semibold">Query failed:</span> {queryMutation.error.message}
