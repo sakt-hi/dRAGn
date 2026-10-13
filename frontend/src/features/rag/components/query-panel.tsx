@@ -48,7 +48,7 @@ export function QueryPanel({ selectedDocument, hasResult, composerOpen, onCompos
   return (
     <section aria-label="Ask a question" className="pointer-events-none absolute inset-x-0 bottom-0 z-20 px-3 pb-[max(env(safe-area-inset-bottom),0.75rem)] sm:px-5 lg:px-7">
       {composerOpen && <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[var(--background)] via-[var(--background)]/80 to-transparent backdrop-blur-[1px]" />}
-      <div className={`pointer-events-auto relative z-10 mx-auto w-full ${composerOpen ? "max-w-4xl" : "flex max-w-6xl justify-end"}`}>
+      <div className={`pointer-events-auto relative z-10 mx-auto w-full ${composerOpen ? "max-w-4xl" : "flex justify-end"}`}>
         {!composerOpen ? (
           <Button
             type="button"

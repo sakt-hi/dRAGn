@@ -1,129 +1,17 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, Menu, SquarePen, X } from "lucide-react";
+import { Menu, SquarePen, X } from "lucide-react";
 import { InvestigationHistory } from "@/features/investigations/components/investigation-history";
-import type { InvestigationRun } from "@/lib/investigations/store";
 
 interface AppHeaderProps {
   activeInvestigationId?: string;
   activeInvestigationTitle?: string;
-  runs?: InvestigationRun[];
-  activeRunId?: string;
-  onSelectRun?: (runId: string) => void;
 }
-
-function formatRunAge(timestamp: string): string {
-  const elapsedSeconds = Math.max(0, Math.floor((Date.now() - new Date(timestamp).getTime()) / 1000));
-  if (elapsedSeconds < 60) return "just now";
-  if (elapsedSeconds < 3600) return `${Math.floor(elapsedSeconds / 60)}m ago`;
-  if (elapsedSeconds < 86400) return `${Math.floor(elapsedSeconds / 3600)}h ago`;
-  if (elapsedSeconds < 2592000) return `${Math.floor(elapsedSeconds / 86400)}d ago`;
-  return `${Math.floor(elapsedSeconds / 2592000)}mo ago`;
-}
-
-function RunTabs({ runs, activeRunId, onSelectRun, compact = false }: { runs: InvestigationRun[]; activeRunId?: string; onSelectRun?: (runId: string) => void; compact?: boolean }) {
-  const tabsRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(false);
-
-  useEffect(() => {
-    const element = tabsRef.current;
-    if (!element) return;
-
-    const updateScrollState = () => {
-      setCanScrollLeft(element.scrollLeft > 2);
-      setCanScrollRight(element.scrollLeft + element.clientWidth < element.scrollWidth - 2);
-    };
-
-    updateScrollState();
-    element.addEventListener("scroll", updateScrollState, { passive: true });
-    const observer = new ResizeObserver(updateScrollState);
-    observer.observe(element);
-    return () => {
-      element.removeEventListener("scroll", updateScrollState);
-      observer.disconnect();
-    };
-  }, [runs.length]);
-
-  useEffect(() => {
-    const activeTab = tabsRef.current?.querySelector<HTMLElement>("[aria-selected='true']");
-    activeTab?.scrollIntoView({ block: "nearest", inline: "nearest", behavior: "smooth" });
-  }, [activeRunId, runs.length]);
-
-  function scrollTabs(direction: -1 | 1) {
-    tabsRef.current?.scrollBy({ left: direction * 220, behavior: "smooth" });
-  }
-
-  return (
-    <div className={`flex h-full min-w-0 items-center gap-1.5 ${compact ? "justify-start" : "justify-end"}`}>
-      {!compact && (canScrollLeft || canScrollRight) && (
-        <button type="button" aria-label="Scroll to earlier runs" disabled={!canScrollLeft} onClick={() => scrollTabs(-1)} className="flex size-7 shrink-0 items-center justify-center rounded-md text-slate-500 transition hover:bg-slate-100 hover:text-indigo-700 disabled:cursor-default disabled:opacity-30">
-          <ChevronLeft className="size-4" />
-        </button>
-      )}
-      <div
-        ref={tabsRef}
-        className={`flex h-full min-w-0 flex-1 gap-2 overflow-x-auto border-b border-slate-200 scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${compact ? "gap-3" : "sm:gap-4"}`}
-        role="tablist"
-        aria-label="Runs in this investigation"
-        onKeyDown={(event) => {
-          if (!["ArrowRight", "ArrowLeft", "Home", "End"].includes(event.key)) return;
-          const tabs = Array.from(event.currentTarget.querySelectorAll<HTMLButtonElement>("[role='tab']"));
-          const currentTab = (event.target as HTMLElement).closest<HTMLButtonElement>("[role='tab']");
-          const currentIndex = currentTab ? tabs.indexOf(currentTab) : -1;
-          if (currentIndex < 0 || tabs.length === 0) return;
-          event.preventDefault();
-          const nextIndex = event.key === "Home" ? 0 : event.key === "End" ? tabs.length - 1 : (currentIndex + (event.key === "ArrowRight" ? 1 : -1) + tabs.length) % tabs.length;
-          tabs[nextIndex].focus();
-          tabs[nextIndex].click();
-        }}
-      >
-        {runs.map((run, index) => {
-          const selected = (activeRunId ?? runs[runs.length - 1].id) === run.id;
-          return (
-            <button
-              key={run.id}
-              type="button"
-              role="tab"
-              id={`run-tab-${run.id}`}
-              aria-selected={selected}
-              aria-controls={`run-panel-${run.id}`}
-              onClick={() => onSelectRun?.(run.id)}
-              title={run.question}
-              className={`relative flex h-full shrink-0 cursor-pointer flex-col items-start justify-center border-b-2 border-x-0 border-t-0 bg-transparent text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-indigo-500 ${compact ? "min-w-[112px] max-w-[150px] px-1 py-1" : "min-h-[48px] min-w-[122px] max-w-[240px] px-1.5 py-1.5 sm:min-w-[160px] sm:px-2"} ${selected ? "border-b-indigo-600" : "border-b-transparent hover:border-b-slate-300"}`}
-            >
-              {compact ? (
-                <>
-                  <span className={`w-full truncate text-[10px] font-semibold ${selected ? "text-indigo-700" : "text-slate-600"}`}>Run {index + 1}</span>
-                  <span className="w-full truncate text-[9px] text-slate-400">{run.question}</span>
-                </>
-              ) : (
-                <>
-                  <span className={`w-full truncate text-[10px] font-semibold sm:text-[11px] ${selected ? "text-indigo-700" : "text-slate-600"}`}>Run {index + 1} · {run.question}</span>
-                  <span className="mt-0.5 flex items-center gap-1.5 text-[9px] text-slate-400 sm:text-[10px]">
-                {selected && <><span className="size-1.5 rounded-full bg-teal-500" /><span className="font-medium text-teal-700">Current</span><span aria-hidden="true">·</span></>}
-                {formatRunAge(run.created_at)}
-                  </span>
-                </>
-              )}
-            </button>
-          );
-        })}
-      </div>
-      {!compact && (canScrollLeft || canScrollRight) && (
-        <button type="button" aria-label="Scroll to later runs" disabled={!canScrollRight} onClick={() => scrollTabs(1)} className="flex size-7 shrink-0 items-center justify-center rounded-md text-slate-500 transition hover:bg-slate-100 hover:text-indigo-700 disabled:cursor-default disabled:opacity-30">
-          <ChevronRight className="size-4" />
-        </button>
-      )}
-    </div>
-  );
-}
-
-export function AppHeader({ activeInvestigationId, activeInvestigationTitle, runs = [], activeRunId, onSelectRun }: AppHeaderProps) {
+export function AppHeader({ activeInvestigationId, activeInvestigationTitle }: AppHeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const title = activeInvestigationTitle ?? (activeInvestigationId ? "Investigation" : "Start investigation");
 
@@ -154,12 +42,6 @@ export function AppHeader({ activeInvestigationId, activeInvestigationTitle, run
             <Image src="/dragn-icon.svg" alt="" width={32} height={32} priority className="size-8" />
           </Link>
           <span className="shrink-0 text-sm font-semibold tracking-[-0.04em] text-slate-900">dRAGn</span>
-          {activeInvestigationId && (
-            <>
-              <span aria-hidden="true" className="h-5 w-px shrink-0 bg-slate-200" />
-              <span className="min-w-0 truncate text-xs font-medium text-slate-700" title={title}>{title}</span>
-            </>
-          )}
         </div>
         <Link
           href="/"
@@ -170,20 +52,8 @@ export function AppHeader({ activeInvestigationId, activeInvestigationTitle, run
           <SquarePen className="size-[18px]" />
         </Link>
       </div>
-      {runs.length > 0 && (
-        <div className="h-[52px] px-3 md:hidden">
-          <RunTabs runs={runs} activeRunId={activeRunId} onSelectRun={onSelectRun} compact />
-        </div>
-      )}
-
-      <div className="hidden min-h-[72px] grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] items-center gap-4 px-5 md:grid lg:px-8">
-        <div className="flex min-w-0 items-center gap-2 sm:gap-3">
-          <span className="min-w-0 truncate text-xs font-semibold text-slate-800 sm:text-sm" title={title}>{title}</span>
-        </div>
-
-        <div className="h-full min-w-0 border-l border-slate-200 pl-2 sm:pl-4">
-          {runs.length > 0 && <RunTabs runs={runs} activeRunId={activeRunId} onSelectRun={onSelectRun} />}
-        </div>
+      <div className="hidden min-h-[72px] items-center px-5 md:flex lg:px-8">
+        <span className="min-w-0 truncate text-xs font-semibold text-slate-800 sm:text-sm" title={title}>{title}</span>
       </div>
 
       {menuOpen && typeof document !== "undefined" && createPortal(

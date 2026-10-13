@@ -2,9 +2,9 @@
 
 ### See what your RAG sees.
 
-**dRAGn** is a visual debugging and retrieval intelligence platform for **Retrieval-Augmented Generation (RAG)** systems.
+**dRAGn** is a visual debugging and retrieval intelligence platform for **Retrieval-Augmented Generation (RAG)** systems. The repository includes a locally runnable full app on `main` and a lightweight, curated demo mode on [`codex/demo-query-playground`](https://github.com/sakt-hi/dRAGn/tree/codex/demo-query-playground).
 
-Instead of treating RAG as a black box, dRAGn lets developers inspect what happens between a user's question and the final AI answer — from document ingestion and chunking to retrieval, ranking, generation, citations, and grounding.
+Instead of treating RAG as a black box, dRAGn lets developers inspect the path from a user's question to the final answer: retrieval, ranking, evidence, generation, citations, grounding, and pipeline trace.
 
 ---
 
@@ -71,7 +71,7 @@ dRAGn turns RAG into an observable pipeline.
                     Final Answer
 ```
 
-Every important stage can be inspected.
+The playground exposes the key stages of a RAG query so developers can inspect how an answer was produced.
 
 ---
 
@@ -287,37 +287,9 @@ The objective is to distinguish supported answers from unsupported claims.
 
 ---
 
-# 🧪 Retrieval Experiments
+## 🔧 Retrieval Configuration
 
-One of the core ideas behind dRAGn is experimentation.
-
-Instead of changing retrieval parameters blindly, developers can compare different configurations.
-
-```text
-Experiment A
-
-Dense Top-K       10
-Sparse Top-K      10
-Final Top-K        5
-Dense Weight      0.7
-Sparse Weight     0.3
-```
-
-versus:
-
-```text
-Experiment B
-
-Dense Top-K       20
-Sparse Top-K      10
-Final Top-K        5
-Dense Weight      0.5
-Sparse Weight     0.5
-```
-
-The goal is to understand:
-
-> Which retrieval configuration actually improves the system?
+Each investigation can be run with configurable dense, sparse, and final top-K values, RRF K, and dense/sparse weights. Inspect the resulting evidence and diagnosis to understand how those settings affect a query.
 
 ---
 
@@ -371,8 +343,6 @@ dRAGn
 - TypeScript
 - Tailwind CSS
 - shadcn/ui
-- React Flow
-- Recharts
 
 ## Retrieval
 
@@ -391,7 +361,7 @@ dRAGn
 
 # 📊 Current Demo Corpus
 
-The repository contains a small demo corpus for experimenting with dRAGn.
+The playground uses a curated demo corpus so the same questions can be explored consistently.
 
 ```text
 backend/data/documents/demo/
@@ -412,7 +382,7 @@ backend/data/index/demo/
 
 These demo assets are intentionally committed to the repository.
 
-User-uploaded documents and runtime-generated indexes are **not** committed.
+The current playground is limited to these curated demo documents. Custom uploads and private workspaces are outside this release.
 
 ---
 
@@ -431,60 +401,8 @@ Make sure you have:
 ## Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/dragn.git
-cd dragn
-```
-
----
-
-# 🐍 Backend Setup
-
-```bash
-cd backend
-```
-
-Activate the virtual environment:
-
-```bash
-source .venv/bin/activate
-```
-
-Install dependencies:
-
-```bash
-uv sync
-```
-
-Create your environment file:
-
-```bash
-cp .env.example .env
-```
-
-Configure:
-
-```env
-GROQ_API_KEY=your_groq_api_key
-GROQ_MODEL=openai/gpt-oss-120b
-DATABASE_URL=your_database_url
-```
-
-Start the API:
-
-```bash
-uvicorn app.main:app --reload
-```
-
-The API will be available at:
-
-```text
-http://127.0.0.1:8000
-```
-
-API documentation:
-
-```text
-http://127.0.0.1:8000/docs
+git clone https://github.com/sakt-hi/dRAGn.git
+cd dRAGn
 ```
 
 ---
@@ -549,110 +467,64 @@ Optional retrieval configuration:
 
 ---
 
-# 🖥️ Frontend
+# 🖥️ Playground Features
 
-The frontend is being built with:
+The current interface supports the complete demo investigation flow:
 
-- Next.js
-- TypeScript
-- Tailwind CSS
-- shadcn/ui
-- React Flow
-- Recharts
+- Browse the curated source documents and preview PDFs or Markdown.
+- Ask a question or use a suggested prompt.
+- Review the generated answer and its citations.
+- Inspect ranked evidence chunks and their dense, BM25, and RRF ranks.
+- Check citation grounding and evidence coverage.
+- Review retrieval health, confidence, and dense/BM25 agreement.
+- Trace the request through the pipeline stages.
+- Tune retrieval settings and ask follow-up questions within an investigation.
 
-The frontend will provide a visual interface for:
+## Two ways to explore dRAGn
 
-- document selection
-- querying
-- retrieval inspection
-- RAG pipeline visualization
-- evidence inspection
-- citations
-- grounding
-- retrieval diagnosis
-- experiments
+### Full app — `main`
 
----
+Run the full app locally to ask questions against the demo documents with the live RAG backend. This mode requires a Groq API key, a PostgreSQL-compatible database, and the compute needed to run the embedding and retrieval pipeline.
 
-# 🔮 Roadmap
+### Curated demo — `codex/demo-query-playground`
 
-## Phase 1 — RAG Core
+The [demo branch](https://github.com/sakt-hi/dRAGn/tree/codex/demo-query-playground) provides an interactive showcase built around predefined questions and saved responses. It presents the same kinds of insights—answers, evidence, citations, grounding, retrieval diagnosis, and pipeline traces—without requiring free-form model generation for every question. It is a guided demo, rather than an unrestricted chatbot.
 
-- [x] Document ingestion
-- [x] Page-aware PDF extraction
-- [x] Recursive chunking
-- [x] Embeddings
-- [x] FAISS dense retrieval
-- [x] BM25 retrieval
-- [x] Reciprocal Rank Fusion
-- [x] Retrieval diagnosis
-- [x] LLM generation
-- [x] Citation resolution
-- [x] Answer grounding
-- [x] Pipeline tracing
-- [x] Runtime retrieval configuration
+Neither version is currently hosted as a public service. The full app needs dedicated backend, database, and model infrastructure; the demo branch is available in the repository for local setup.
 
-## Phase 2 — Visual Debugger
+## Run locally
 
-- [ ] Next.js frontend
-- [ ] Interactive RAG pipeline
-- [ ] Retrieval score visualization
-- [ ] Dense vs BM25 comparison
-- [ ] Evidence inspector
-- [ ] Citation visualization
-- [ ] Grounding dashboard
-- [ ] Query trace timeline
+### Backend
 
-## Phase 3 — RAG Experiments
+1. Install Python 3.11+ and [`uv`](https://docs.astral.sh/uv/).
+2. Configure the backend environment:
 
-- [ ] Experiment creation
-- [ ] Configuration comparison
-- [ ] Retrieval evaluation
-- [ ] Precision / recall metrics
-- [ ] Retrieval quality dashboard
-- [ ] Experiment history
+   ```bash
+   cd backend
+   uv sync
+   cp .env.example .env
+   ```
 
-## Phase 4 — User Workspaces
+3. Set `GROQ_API_KEY`, `GROQ_MODEL`, and `DATABASE_URL` in `backend/.env`.
+4. Start the API:
 
-- [ ] Authentication
-- [ ] Google SSO
-- [ ] Private document uploads
-- [ ] User-specific workspaces
-- [ ] Query history
-- [ ] Saved experiments
+   ```bash
+   uv run uvicorn app.main:app --reload
+   ```
 
-## Phase 5 — Production Retrieval
+   The API runs at `http://127.0.0.1:8000`; interactive API docs are at `http://127.0.0.1:8000/docs`.
 
-- [ ] Supabase Storage
-- [ ] PostgreSQL pgvector
-- [ ] Persistent embeddings
-- [ ] Production document processing
-- [ ] Background ingestion
-- [ ] Scalable retrieval
+### Frontend
 
----
+In a second terminal:
 
-# ☁️ Deployment Architecture
-
-The target deployment architecture is:
-
-```text
-                    GitHub
-                       │
-             ┌─────────┴─────────┐
-             ▼                   ▼
-          Vercel               Render
-             │                   │
-             ▼                   ▼
-       Next.js Frontend     FastAPI Backend
-                                 │
-                    ┌────────────┼────────────┐
-                    ▼            ▼            ▼
-                Supabase       Groq       Embeddings
-                PostgreSQL                 / Models
-                + Storage
-                + pgvector
+```bash
+cd frontend
+npm install
+npm run dev
 ```
+
+Open `http://localhost:3000`. Set `NEXT_PUBLIC_API_BASE_URL=http://127.0.0.1:8000` in `frontend/.env.local` so the frontend can reach the local API.
 
 ---
 
@@ -670,7 +542,7 @@ And then goes one step further:
 
 > **"Can we prove where that answer came from?"**
 
-The long-term goal is to make RAG systems as observable and debuggable as traditional software systems.
+The goal is to make RAG systems more observable and debuggable by showing the evidence and processing path behind each answer.
 
 ---
 
@@ -690,18 +562,16 @@ It should be inspectable.
 
 ---
 
-# 📌 Status
+# 📌 Project Status
 
-**Early development**
+**Complete for the current project scope.** `main` contains the locally runnable, live RAG application, and `codex/demo-query-playground` contains the guided demo experience. No additional development phases are planned.
 
-The backend RAG pipeline is functional.
-
-The visual debugging interface and experimentation platform are under active development.
+The project is not currently hosted. Authentication, private user workspaces, arbitrary document uploads, and production-scale hosting are outside this release.
 
 ---
 
 ## ⭐ If you find this project useful
 
-Star the repository and follow the development of dRAGn.
+Star the repository to save the project.
 
 **See what your RAG sees.** 🐉

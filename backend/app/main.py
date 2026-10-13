@@ -34,14 +34,6 @@ cors_origins = [
     if origin.strip()
 ]
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=cors_origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
 class RetrievalConfig(BaseModel):
     dense_top_k: Optional[int] = None
     sparse_top_k: Optional[int] = None
@@ -233,3 +225,14 @@ def query(request: QueryRequest):
     )
 
     return result
+
+
+# Wrap the whole ASGI app so CORS headers are also present on unhandled errors.
+fastapi_app = app
+app = CORSMiddleware(
+    app=fastapi_app,
+    allow_origins=cors_origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)

@@ -83,3 +83,6 @@ dist/
 build/
 *.tmp
 *.temp
+
+/linkedin-dragn-flow
+/linkedin-flow

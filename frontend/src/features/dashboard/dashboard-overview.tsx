@@ -7,6 +7,7 @@ import { FileText } from "lucide-react";
 
 import { AppHeader } from "@/components/layout/app-header";
 import { AppSidebar } from "@/components/layout/app-sidebar";
+import { RunTabs } from "@/features/dashboard/run-tabs";
 import { DocumentGallery } from "@/features/documents/components/document-gallery";
 import { DocumentPreviewDialog } from "@/features/documents/components/document-preview-dialog";
 import { QueryPanel } from "@/features/rag/components/query-panel";
@@ -79,21 +80,15 @@ export function DashboardOverview({ initialDocumentId, initialInvestigationId }:
           <AppHeader
             activeInvestigationId={initialInvestigationId}
             activeInvestigationTitle={investigation.data?.title}
-            runs={runs}
-            activeRunId={selectedRun?.id}
-            onSelectRun={setActiveRunId}
           />
           <main className="relative mx-auto flex min-h-0 w-full max-w-[1600px] flex-1 flex-col overflow-hidden">
             <section aria-live="polite" className={`min-h-0 min-w-0 flex-1 overflow-y-auto overscroll-contain px-4 pt-3 ${selectedDocument ? (composerOpen ? "pb-48 sm:pb-40" : "pb-20") : "pb-5"} sm:px-6 sm:pt-4 lg:px-8`}>
                 {runs.length > 0 ? (
                   <div className="space-y-4" aria-label="Investigation runs">
+                    <RunTabs runs={runs} activeRunId={selectedRun?.id} onSelectRun={setActiveRunId} />
                     {selectedRun && (
                       <article role="tabpanel" tabIndex={0} id={`run-panel-${selectedRun.id}`} aria-labelledby={`run-tab-${selectedRun.id}`} aria-label={`Run ${runs.findIndex((run) => run.id === selectedRun.id) + 1}`} className="min-w-0 outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">
-                        <div className="mb-2 flex items-center gap-2 px-1 text-[10px] text-slate-500">
-                          <span className="rounded-full border border-slate-200 bg-white px-2 py-0.5 font-semibold text-slate-600">Run {runs.findIndex((run) => run.id === selectedRun.id) + 1}</span>
-                          <time dateTime={selectedRun.created_at}>{new Date(selectedRun.created_at).toISOString().slice(0, 16).replace("T", " ")} UTC</time>
-                        </div>
-                        <QueryResults result={selectedRun.result} selectedDocument={selectedDocument} />
+                        <QueryResults result={selectedRun.result} createdAt={selectedRun.created_at} />
                       </article>
                     )}
                     {historySaveError && <p role="status" className="mx-auto max-w-3xl rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800">{historySaveError}</p>}
