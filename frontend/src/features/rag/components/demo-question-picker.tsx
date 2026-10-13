@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ArrowUpRight, Check, LoaderCircle, Search, Sparkles } from "lucide-react";
 
 import { addDemoTurn, createDemoConversation } from "@/lib/api/demo";
@@ -33,10 +33,32 @@ export function DemoQuestionPicker({
 }: DemoQuestionPickerProps) {
   const [open, setOpen] = useState(!hasResult);
   const [activeId, setActiveId] = useState<string | null>(null);
+  const [showColdStartNotice, setShowColdStartNotice] = useState(false);
+  const [showQuestionsColdStartNotice, setShowQuestionsColdStartNotice] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("all");
   const questionsQuery = useDemoQuestions(document.id, hasResult ? conversationId : undefined);
+
+  useEffect(() => {
+    if (!questionsQuery.isPending) {
+      setShowQuestionsColdStartNotice(false);
+      return;
+    }
+
+    const timeoutId = window.setTimeout(() => setShowQuestionsColdStartNotice(true), 5000);
+    return () => window.clearTimeout(timeoutId);
+  }, [questionsQuery.isPending]);
+
+  useEffect(() => {
+    if (!activeId) {
+      setShowColdStartNotice(false);
+      return;
+    }
+
+    const timeoutId = window.setTimeout(() => setShowColdStartNotice(true), 5000);
+    return () => window.clearTimeout(timeoutId);
+  }, [activeId]);
   const asked = useMemo(() => new Set(askedQuestionIds), [askedQuestionIds]);
   const categories = useMemo(
     () => [...new Set((questionsQuery.data ?? []).map((question) => question.category))].sort(),
@@ -123,7 +145,10 @@ export function DemoQuestionPicker({
       )}
       {questionsQuery.isPending ? (
         <div role="status" className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white p-4 text-xs text-slate-500">
-          <LoaderCircle className="size-4 animate-spin text-indigo-600" /> Loading saved questions…
+          <LoaderCircle className="size-4 animate-spin text-indigo-600" />
+          {showQuestionsColdStartNotice ? (
+            <span><strong className="font-semibold text-slate-700">Waking the demo server.</strong> The first response can take up to a minute while the server starts. Keep this page open.</span>
+          ) : "Loading saved questions…"}
         </div>
       ) : questionsQuery.isError ? (
         <div role="alert" className="rounded-xl border border-rose-200 bg-rose-50 p-4 text-xs text-rose-800">
@@ -165,6 +190,15 @@ export function DemoQuestionPicker({
         </div>
       )}
       {errorMessage && <p role="alert" className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-900">{errorMessage}</p>}
+      {showColdStartNotice && activeId && (
+        <div role="status" aria-live="polite" className="flex items-start gap-2.5 rounded-xl border border-indigo-100 bg-indigo-50/80 px-3 py-2.5 text-xs text-indigo-950">
+          <LoaderCircle className="mt-0.5 size-4 shrink-0 animate-spin text-indigo-600" />
+          <div>
+            <p className="font-semibold">Waking the demo server</p>
+            <p className="mt-0.5 leading-5 text-indigo-800">The first response can take up to a minute while the server starts. Keep this page open.</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 

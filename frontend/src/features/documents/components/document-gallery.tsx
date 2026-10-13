@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   BookOpen,
   Check,
@@ -9,6 +9,7 @@ import {
   Eye,
   FileText,
   Landmark,
+  LoaderCircle,
   Search,
   ShieldCheck,
 } from "lucide-react";
@@ -53,6 +54,18 @@ function getDocumentStyle(document: DocumentItem) {
 
 export function DocumentGallery({ documents, isPending, isError, errorMessage, onPreview, onSelect }: DocumentGalleryProps) {
   const [search, setSearch] = useState("");
+  const [showColdStartNotice, setShowColdStartNotice] = useState(false);
+
+  useEffect(() => {
+    if (!isPending) {
+      setShowColdStartNotice(false);
+      return;
+    }
+
+    const timeoutId = window.setTimeout(() => setShowColdStartNotice(true), 5000);
+    return () => window.clearTimeout(timeoutId);
+  }, [isPending]);
+
   const filteredDocuments = useMemo(() => {
     const term = search.trim().toLowerCase();
     return [...documents]
@@ -95,11 +108,22 @@ export function DocumentGallery({ documents, isPending, isError, errorMessage, o
       </div>
 
       {isPending && (
-        <div className="grid gap-4 lg:grid-cols-2 2xl:grid-cols-3">
-          {Array.from({ length: 6 }).map((_, index) => (
-            <div key={index} className="h-[270px] animate-pulse rounded-2xl border border-slate-200 bg-white" />
-          ))}
-        </div>
+        <>
+          {showColdStartNotice && (
+            <div role="status" aria-live="polite" className="flex items-start gap-2.5 rounded-xl border border-indigo-100 bg-indigo-50/80 px-3 py-2.5 text-xs text-indigo-950">
+              <LoaderCircle className="mt-0.5 size-4 shrink-0 animate-spin text-indigo-600" />
+              <div>
+                <p className="font-semibold">Waking the demo server</p>
+                <p className="mt-0.5 leading-5 text-indigo-800">The first response can take up to a minute while the server starts. Keep this page open.</p>
+              </div>
+            </div>
+          )}
+          <div className="grid gap-4 lg:grid-cols-2 2xl:grid-cols-3">
+            {Array.from({ length: 6 }).map((_, index) => (
+              <div key={index} className="h-[270px] animate-pulse rounded-2xl border border-slate-200 bg-white" />
+            ))}
+          </div>
+        </>
       )}
 
       {isError && (
